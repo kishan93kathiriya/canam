@@ -173,7 +173,10 @@
 <body class="antialiased">
     <!-- Logo Splash Screen -->
     <div id="splash-screen" class="fixed inset-0 z-[9999] cursor-pointer" onclick="hideSplash()">
-        <img src="assets/images/foreground.jpeg" alt="Can-Am Logo" class="w-full h-full object-cover">
+        <picture>
+            <source media="(min-width: 768px)" srcset="assets/images/foreground.jpeg">
+            <img src="assets/images/foreground-mobile.jpeg" alt="Can-Am Logo" class="w-full h-full object-cover">
+        </picture>
     </div>
     <!-- Navbar -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
