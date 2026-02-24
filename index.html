@@ -262,23 +262,24 @@
     <!-- Navbar -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
         <div class="absolute inset-0 glass shadow-md"></div>
-        <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+        <nav class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 flex justify-between items-center"
+            id="nav-inner">
             <!-- Logo -->
             <a href="#home" class="text-2xl font-extrabold tracking-tight text-primary flex items-center gap-2 group">
                 <img src="assets/images/logo-short.png" alt="Can-Am Physical Therapy"
-                    class="h-20 w-auto object-contain transition-transform transform group-hover:scale-105" />
+                    class="h-28 w-auto object-contain transition-transform transform group-hover:scale-105" />
             </a>
 
             <!-- Desktop Nav -->
             <div class="hidden lg:flex space-x-8 items-center">
                 <a href="#services"
-                    class="text-slate-700 hover:text-secondary font-medium transition duration-300">Services</a>
+                    class="text-slate-800 hover:text-accent font-bold text-lg transition duration-300">Services</a>
                 <a href="#approach"
-                    class="text-slate-700 hover:text-secondary font-medium transition duration-300">Philosophy</a>
+                    class="text-slate-800 hover:text-accent font-bold text-lg transition duration-300">Philosophy</a>
                 <a href="#therapist"
-                    class="text-slate-700 hover:text-secondary font-medium transition duration-300">Meet The Team</a>
+                    class="text-slate-800 hover:text-accent font-bold text-lg transition duration-300">Meet The Team</a>
                 <a href="#contact"
-                    class="text-slate-700 hover:text-secondary font-medium transition duration-300">Contact</a>
+                    class="text-slate-800 hover:text-accent font-bold text-lg transition duration-300">Contact</a>
             </div>
 
             <!-- CTA -->
@@ -299,11 +300,15 @@
         <div id="mobile-menu"
             class="lg:hidden hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100">
             <div class="px-4 py-6 space-y-4 flex flex-col">
-                <a href="#services" class="text-lg font-medium text-gray-800 hover:text-secondary">Services</a>
-                <a href="#approach" class="text-lg font-medium text-gray-800 hover:text-secondary">Philosophy</a>
-                <a href="#therapist" class="text-lg font-medium text-gray-800 hover:text-secondary">Meet The Team</a>
-                <a href="#contact" class="text-lg font-medium text-gray-800 hover:text-secondary">Contact</a>
-                <a href="#contact" class="btn-gold py-3 text-center rounded-xl mt-4">Book Now</a>
+                <a href="#services"
+                    class="text-xl font-bold text-gray-800 hover:text-accent transition duration-300">Services</a>
+                <a href="#approach"
+                    class="text-xl font-bold text-gray-800 hover:text-accent transition duration-300">Philosophy</a>
+                <a href="#therapist"
+                    class="text-xl font-bold text-gray-800 hover:text-accent transition duration-300">Meet The Team</a>
+                <a href="#contact"
+                    class="text-xl font-bold text-gray-800 hover:text-accent transition duration-300">Contact</a>
+                <a href="#contact" class="btn-gold py-3 text-center rounded-xl mt-4 text-xl">Book Now</a>
             </div>
         </div>
     </header>
@@ -938,15 +943,14 @@
         </section>
     </main>
 
-    <footer class="bg-[#081630] text-slate-400 py-12 border-t border-[#C8960C]/20">
+    <footer class="bg-gray-50 text-slate-500 py-12 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center gap-4">
-                    <img src="assets/images/logo-short.png" alt="Can-Am Logo"
-                        class="h-10 opacity-80 hover:opacity-100 transition">
+                    <img src="assets/images/logo-short.png" alt="Can-Am Logo" class="h-16 hover:opacity-100 transition">
                     <div>
-                        <div class="text-white font-bold text-lg">Can-Am Physical Therapy</div>
-                        <div class="text-xs text-accent">Elevating Health. Restoring Motion.</div>
+                        <div class="text-primary font-bold text-lg">Can-Am Physical Therapy</div>
+                        <div class="text-xs text-secondary font-medium mt-1">Elevating Health. Restoring Motion.</div>
                     </div>
                 </div>
 
@@ -1027,17 +1031,18 @@
 
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
+            const header = document.getElementById('navbar');
+            const navInner = document.getElementById('nav-inner');
             if (window.scrollY > 20) {
-                nav.classList.add('glass-dark');
-                nav.classList.remove('glass');
-                nav.classList.remove('py-3');
-                nav.classList.add('py-2');
+                header.classList.add('glass-light');
+                header.classList.remove('glass');
+                navInner.classList.remove('py-1');
+                navInner.classList.add('py-2');
             } else {
-                nav.classList.remove('glass-dark');
-                nav.classList.add('glass');
-                nav.classList.add('py-3');
-                nav.classList.remove('py-2');
+                header.classList.remove('glass-light');
+                header.classList.add('glass');
+                navInner.classList.add('py-1');
+                navInner.classList.remove('py-2');
             }
         });
     </script>
