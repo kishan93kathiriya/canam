@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/favicon-transparent.png"
+    />
+    <title>Bones & Balance | Premium Physical Therapy & Rehabilitation</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Outfit for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* Enhanced Medical Color Palette */
+        --color-primary: #1e3a8a;
+        /* Deep Medical Blue */
+        --color-secondary: #0ea5e9;
+        /* Sky Blue */
+        --color-accent: #06d6a0;
+        /* Medical Teal */
+        --color-accent-hover: #048a5c;
+        --color-warning: #f59e0b;
+        /* Amber */
+        --color-success: #10b981;
+        /* Emerald */
+        --color-light: #f0f9ff;
+        /* Light Blue Tint */
+        --color-surface: #ffffff;
+        --color-gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --color-gradient-2: linear-gradient(135deg, #06d6a0 0%, #0ea5e9 100%);
+        --color-gradient-3: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--color-light);
+        color: #334155;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Outfit", sans-serif;
+      }
+
+      /* Glassmorphism Utilities */
+      .glass {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .glass-dark {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Enhanced Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+
+      .animate-slide-in-left {
+        animation: slideInLeft 0.8s ease-out forwards;
+      }
+
+      .animate-slide-in-right {
+        animation: slideInRight 0.8s ease-out forwards;
+      }
+
+      .animate-pulse-slow {
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+
+      .delay-500 {
+        animation-delay: 0.5s;
+      }
+
+      /* Enhanced Gradient Effects */
+      .text-gradient {
+        background: var(--color-gradient-2);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .bg-gradient-primary {
+        background: var(--color-gradient-1);
+      }
+
+      .bg-gradient-accent {
+        background: var(--color-gradient-2);
+      }
+
+      .bg-gradient-warm {
+        background: var(--color-gradient-3);
+      }
+
+      /* Interactive Elements */
+      .card-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .btn-glow {
+        box-shadow: 0 0 20px rgba(6, 214, 160, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .btn-glow:hover {
+        box-shadow: 0 0 30px rgba(6, 214, 160, 0.5);
+        transform: translateY(-2px);
+      }
+
+      /* Scroll Reveal */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease-out;
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Mobile Optimizations */
+      @media (max-width: 768px) {
+        .card-hover:hover {
+          transform: translateY(-4px) scale(1.01);
+        }
+      }
+
+      /* Social Media Icon Hover Effects */
+      .social-instagram:hover svg {
+        display: none;
+      }
+      .social-instagram::after {
+        content: '';
+        display: none;
+        width: 20px;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>') center/contain no-repeat;
+      }
+      .social-instagram:hover::after {
+        display: inline-block;
+      }
+
+      .social-facebook:hover svg {
+        display: none;
+      }
+      .social-facebook::after {
+        content: '';
+        display: none;
+        width: 20px;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>') center/contain no-repeat;
+      }
+      .social-facebook:hover::after {
+        display: inline-block;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "var(--color-primary)",
+              secondary: "var(--color-secondary)",
+              accent: "var(--color-accent)",
+              "accent-hover": "var(--color-accent-hover)",
+              light: "var(--color-light)",
+              surface: "var(--color-surface)",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Outfit", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="antialiased">
+    <!-- Navbar -->
+    <header
+      class="fixed w-full top-0 z-50 transition-all duration-300"
+      id="navbar"
+    >
+      <div class="absolute inset-0 glass shadow-sm"></div>
+      <nav
+        class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a
+          href="#home"
+          class="text-2xl font-extrabold tracking-tight text-primary flex items-center gap-2 group animate-slide-in-left"
+        >
+          <img
+            src="assets/images/logo-horizontal-transparent.png"
+            alt="Bones & Balance"
+            class="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div
+          class="hidden lg:flex space-x-8 items-center animate-fade-in-up delay-200"
+        >
+          <a
+            href="#services"
+            class="text-gray-700 hover:text-secondary font-medium transition duration-300 relative group text-lg px-3 py-2"
+          >
+            Services
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-secondary font-medium transition duration-300 relative group text-lg px-3 py-2"
+          >
+            Approach
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="resources.html"
+            class="text-gray-700 hover:text-secondary font-medium transition duration-300 relative group text-lg px-3 py-2"
+          >
+            Resources
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-secondary font-medium transition duration-300 relative group text-lg px-3 py-2"
+          >
+            Contact
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </div>
+
+        <!-- CTA Button -->
+        <div
+          class="hidden lg:flex items-center gap-4 animate-slide-in-right delay-300"
+        >
+          <div class="flex gap-3 text-gray-500">
+            <a
+              href="https://www.instagram.com/bonesandbalance.pt"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-instagram hover:text-accent transition transform hover:scale-110"
+              ><i data-lucide="instagram" class="w-5 h-5"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/share/17JEF5wpNv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-facebook hover:text-accent transition transform hover:scale-110"
+              ><i data-lucide="facebook" class="w-5 h-5"></i
+            ></a>
+          </div>
+          <a
+            href="#contact"
+            class="bg-gradient-accent text-white font-semibold py-3 px-6 rounded-full shadow-lg btn-glow transition duration-300"
+          >
+            Book Appointment
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="lg:hidden text-primary focus:outline-none p-2 rounded-md hover:bg-accent/10 transition duration-300"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="lg:hidden hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-xl border-t border-gray-100"
+      >
+        <div class="px-4 py-6 space-y-4 flex flex-col">
+          <a
+            href="#services"
+            class="text-lg font-medium text-gray-800 hover:text-accent transition py-2"
+            >Services</a
+          >
+          <a
+            href="#about"
+            class="text-lg font-medium text-gray-800 hover:text-accent transition py-2"
+            >Our Approach</a
+          >
+          <a
+            href="resources.html"
+            class="text-lg font-medium text-gray-800 hover:text-accent transition py-2"
+            >Resources</a
+          >
+          <a
+            href="#contact"
+            class="text-lg font-medium text-gray-800 hover:text-accent transition py-2"
+            >Contact</a
+          >
+          <div class="pt-4 border-t border-gray-100 flex gap-4 justify-center">
+            <a
+              href="https://www.instagram.com/bonesandbalance.pt"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-instagram text-gray-500 hover:text-accent transition transform hover:scale-110"
+              ><i data-lucide="instagram" class="w-6 h-6"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/share/17JEF5wpNv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-facebook text-gray-500 hover:text-accent transition transform hover:scale-110"
+              ><i data-lucide="facebook" class="w-6 h-6"></i
+            ></a>
+            <!-- <a href="#" class="text-gray-500 hover:text-accent transition transform hover:scale-110"><i data-lucide="message-circle" class="w-6 h-6"></i></a> -->
+          </div>
+          <a
+            href="#contact"
+            class="bg-gradient-accent text-white font-semibold py-3 px-6 rounded-full text-center mt-4"
+          >
+            Book Appointment
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1. Hero Section -->
+      <section
+        id="home"
+        class="relative min-h-screen flex items-center pt-28 overflow-hidden"
+      >
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+          <img
+            src="assets/images/hero_people_right.png"
+            alt="Modern Physiotherapy Clinic"
+            class="w-full h-full object-cover object-right"
+          />
+          <!-- Enhanced gradient overlay -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-transparent"
+          ></div>
+        </div>
+
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20"
+        >
+          <div class="max-w-3xl animate-slide-in-left">
+            <div
+              class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-accent text-white font-semibold tracking-wide text-sm uppercase mb-6 shadow-lg"
+            >
+              <i data-lucide="award" class="w-4 h-4 mr-2"></i>
+              Premium Rehabilitation Services
+            </div>
+            <h1
+              class="text-5xl sm:text-7xl font-bold text-white leading-tight mb-6"
+            >
+              Heal with <span class="text-accent">Science.</span><br />
+              Move with
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400"
+                >Confidence.</span
+              >
+            </h1>
+            <p
+              class="text-xl text-gray-200 mb-10 font-light max-w-2xl leading-relaxed"
+            >
+              Experience expert physiotherapy and specialized rehabilitation.
+              From neuro-rehab to sports recovery, we provide personalized care
+              for your journey to wellness.
+            </p>
+
+            <!-- Enhanced Claims Banner -->
+            <div
+              class="flex flex-wrap gap-4 mb-10 text-sm font-medium text-white/80"
+            >
+              <div
+                class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg backdrop-blur-sm"
+              >
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
+                MVA Claims Accepted
+              </div>
+              <div
+                class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg backdrop-blur-sm"
+              >
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
+                WCB Claims Accepted
+              </div>
+              <div
+                class="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-lg backdrop-blur-sm"
+              >
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
+                Direct Billing
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#contact"
+                class="bg-gradient-accent text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl btn-glow transition duration-300 text-center group"
+              >
+                <span class="flex items-center justify-center gap-2">
+                  Book Your Assessment
+                  <i
+                    data-lucide="arrow-right"
+                    class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                  ></i>
+                </span>
+              </a>
+              <a
+                href="#services"
+                class="glass text-white hover:bg-white hover:text-primary font-semibold py-4 px-8 rounded-full text-lg transition duration-300 text-center border border-white/30"
+              >
+                Explore Services
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Mission & Vision Section -->
+      <section
+        class="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-hidden"
+      >
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">
+              Our Mission & Vision
+            </h2>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-10">
+            <!-- Mission Card -->
+            <div
+              class="bg-white rounded-3xl shadow-2xl overflow-hidden card-hover scroll-reveal border-t-4 border-accent"
+            >
+              <div class="p-10">
+                <div
+                  class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-warm text-white font-semibold text-sm uppercase tracking-wider mb-6"
+                >
+                  <i data-lucide="target" class="w-4 h-4 mr-2"></i>
+                  Our Mission
+                </div>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                  At Bones and Balance Physical Therapy & Rehab our mission is
+                  to provide individualized care to everyone regardless of age,
+                  and abilities to become independent and successful with their
+                  functional goals using various therapeutic techniques, backed
+                  by sciences and researches.
+                </p>
+              </div>
+            </div>
+
+            <!-- Vision Card -->
+            <div
+              class="bg-white rounded-3xl shadow-2xl overflow-hidden card-hover scroll-reveal delay-200 border-t-4 border-secondary"
+            >
+              <div class="p-10">
+                <div
+                  class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-primary text-white font-semibold text-sm uppercase tracking-wider mb-6"
+                >
+                  <i data-lucide="eye" class="w-4 h-4 mr-2"></i>
+                  Our Vision
+                </div>
+                <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                  Movement Without Pain, Dependence, or Limitations.
+                  <br /><br />
+                  Everyone deserves the ability to move freely, confidently, and
+                  within their own physical capabilities—without relying on
+                  supportive or pain-masking medications. True health is not
+                  simply the absence of pain, but the restoration of function,
+                  strength, balance, and control that allows individuals to
+                  participate fully in their daily lives.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Services Section -->
+      <section
+        id="services"
+        class="pt-16 pb-24 bg-gradient-to-br from-gray-50 via-blue-50 to-teal-50 relative overflow-hidden"
+      >
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse-slow delay-500"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-16 scroll-reveal">
+            <div
+              class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-accent text-white font-semibold tracking-wider uppercase text-sm mb-4"
+            >
+              <i data-lucide="heart-pulse" class="w-4 h-4 mr-2"></i>
+              Comprehensive Care
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6">
+              Specialized
+              <span class="text-gradient">Rehabilitation</span> Services
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              We offer a wide range of evidence-based treatments tailored to
+              your specific needs, from neurological conditions to sports
+              injuries.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1: Neuro Rehab -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover border-l-4 border-accent group scroll-reveal"
+            >
+              <div class="h-64 overflow-hidden relative">
+                <img
+                  src="assets/images/neuro_rehab_stroke_parkinsons_1763801138790.png"
+                  alt="Neuro Rehabilitation"
+                  class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+                ></div>
+              </div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="brain" class="w-5 h-5 text-accent"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary">
+                    Neuro Rehabilitation
+                  </h3>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  Specialized care for Stroke, Multiple Sclerosis (MS), ALS, and
+                  Parkinson's disease. We focus on neuroplasticity and
+                  functional independence.
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">Stroke Recovery</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Parkinson's Management</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">MS & ALS Support</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Service 2: Cardiac Rehab -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover border-l-4 border-secondary group scroll-reveal delay-100"
+            >
+              <div class="h-64 overflow-hidden relative">
+                <img
+                  src="assets/images/cardiac_rehab_1763801158285.png"
+                  alt="Cardiac Rehabilitation"
+                  class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+                ></div>
+              </div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="heart" class="w-5 h-5 text-secondary"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary">
+                    Cardiac Rehabilitation
+                  </h3>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  Safe, monitored exercise programs to improve heart health and
+                  endurance following cardiac events or for prevention.
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-secondary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">Post-MI Recovery</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-secondary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Heart Failure Management</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-secondary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Prevention Programs</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Service 3: Home Care -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover border-l-4 border-primary group scroll-reveal delay-200"
+            >
+              <div class="h-64 overflow-hidden relative">
+                <img
+                  src="assets/images/home_care_physio_1763801193280.png"
+                  alt="Home Care Physiotherapy"
+                  class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+                ></div>
+              </div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="home" class="w-5 h-5 text-primary"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary">
+                    Home Care Services
+                  </h3>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  We bring the clinic to you. Professional rehabilitation
+                  services provided in the comfort of your own home.
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-primary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Post-Surgical Home Visits</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-primary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Geriatric Mobility</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-primary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Convenient & Personalized</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Service 4: Workplace Analysis -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover border-l-4 border-accent group scroll-reveal delay-300"
+            >
+              <div class="h-64 overflow-hidden relative">
+                <img
+                  src="assets/images/workplace_ergonomics_1763801210057.png"
+                  alt="Workplace Ergonomics"
+                  class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+                ></div>
+              </div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="briefcase" class="w-5 h-5 text-accent"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary">
+                    Workplace Analysis
+                  </h3>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  Professional ergonomic assessments and injury prevention
+                  strategies tailored for your workplace environment.
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-warning/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Desk Setup Optimization</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-warning/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Injury Prevention Training</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-warning/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Return-to-Work Programs</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Service 5: Manual Therapy -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover border-l-4 border-secondary group scroll-reveal delay-400"
+            >
+              <div class="h-64 overflow-hidden relative">
+                <img
+                  src="assets/images/manual_therapy_dry_needling_1763801229097.png"
+                  alt="Manual Therapy"
+                  class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+                ></div>
+              </div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="hand" class="w-5 h-5 text-secondary"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary">
+                    Advanced Therapy
+                  </h3>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  Specialized hands-on techniques including IASTM, Functional
+                  Dry Needling, and Manual Therapy for pain relief and mobility.
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-secondary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Joint Mobilization</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-secondary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Soft Tissue Release</span
+                    >
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-secondary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-secondary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">Dry Needling</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Service 6: Vestibular Rehab -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover border-l-4 border-primary group scroll-reveal delay-500"
+            >
+              <div class="h-64 overflow-hidden relative">
+                <img
+                  src="assets/images/vestibular_rehab_1763801256707.png"
+                  alt="Vestibular Rehabilitation"
+                  class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"
+                ></div>
+              </div>
+              <div class="p-8">
+                <div class="flex items-center gap-3 mb-4">
+                  <div
+                    class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center"
+                  >
+                    <i data-lucide="activity" class="w-5 h-5 text-primary"></i>
+                  </div>
+                  <h3 class="text-2xl font-bold text-primary">
+                    Vestibular Rehab
+                  </h3>
+                </div>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                  Treatment for dizziness, vertigo, and balance disorders to
+                  restore stability and confidence in movement.
+                </p>
+                <ul class="space-y-3">
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-primary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">BPPV Treatment</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-primary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">Gait Training</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-primary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600">Fall Prevention</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <div
+                      class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center"
+                    >
+                      <i data-lucide="check" class="w-3 h-3 text-primary"></i>
+                    </div>
+                    <span class="text-sm text-gray-600"
+                      >Concussion Treatments</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Services List -->
+          <div class="mt-20 scroll-reveal">
+            <!-- Physical Therapy -->
+            <div class="bg-white shadow-2xl overflow-hidden scroll-reveal card-hover rounded-3xl p-8 border-t-4 border-primary">
+              <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-primary mb-4">
+                  Complete Range of Therapy Services
+                </h3>
+                <!-- <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive treatment options tailored to your specific needs</p> -->
+              </div>
+              <div class="grid md:grid-cols-3 gap-10 mb-8">
+                <div class="flex items-center gap-1 mb-6">
+                  <div
+                    class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center"
+                  >
+                    <i
+                      data-lucide="heart-pulse"
+                      class="w-6 h-6 text-primary"
+                    ></i>
+                  </div>
+                  <h4 class="text-2xl font-bold text-primary">
+                    Physical Therapy
+                  </h4>
+                </div>
+                <div class="flex items-center gap-1 mb-6">
+                  <div
+                    class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center"
+                  >
+                    <i data-lucide="hand" class="w-6 h-6 text-accent-hover"></i>
+                  </div>
+                  <h4 class="text-2xl font-bold text-primary">
+                    Massage Therapy
+                  </h4>
+                </div>
+
+                <!-- Athletic Therapy -->
+                <div class="flex items-center gap-1 mb-6">
+                  <div
+                    class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center"
+                  >
+                    <i
+                      data-lucide="activity"
+                      class="w-6 h-6 text-secondary"
+                    ></i>
+                  </div>
+                  <h4 class="text-2xl font-bold text-primary">
+                    Athletic Therapy
+                  </h4>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-4 gap-x-5 gap-y-3">
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Acute injury care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Chronic pain management</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Orthopedic surgical care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Spinal care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Lower back pain management</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Shoulder pain management</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Knee and hip pain</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Sports medicine</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Post surgical care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Post MVA care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Concussion care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Vestibular rehab</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >WCB/WSIB care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Short & long term disability care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Cardiac care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Post MI care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >CHF management</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Post cardiac surgery care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Stroke recovery</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Multiple sclerosis</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Parkinson's disease care</span
+                  >
+                </div>
+                <div class="flex items-center gap-2">
+                  <i
+                    data-lucide="check-circle"
+                    class="w-4 h-4 text-accent flex-shrink-0"
+                  ></i
+                  ><span class="text-m font-bold text-gray-600"
+                    >Fall prevention and recovery</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Our Approach -->
+      <section id="about" class="py-16 bg-white relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-accent/10 to-secondary/10 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-primary/10 to-accent/10 rounded-full blur-3xl animate-float delay-500"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="scroll-reveal">
+              <div
+                class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-accent text-white font-semibold text-sm uppercase tracking-wider mb-6"
+              >
+                <i data-lucide="target" class="w-4 h-4 mr-2"></i>
+                Our Philosophy
+              </div>
+              <h2 class="text-4xl lg:text-5xl font-bold text-primary mt-2 mb-6">
+                Where Expertise Meets
+                <span class="text-gradient">Personalized Recovery</span>
+              </h2>
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                At Bones and Balance Physical Therapy & Rehab our mission is to
+                provide individualized care to everyone regardless of age, and
+                abilities to become independent and successful with their
+                functional goals using various therapeutic techniques, backed by
+                sciences and researches.
+              </p>
+
+              <div class="space-y-8">
+                <div class="flex items-start space-x-6 group">
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent-hover flex items-center justify-center flex-shrink-0 text-white shadow-lg group-hover:scale-110 transition duration-300"
+                  >
+                    <i data-lucide="users" class="w-8 h-8"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-primary text-xl mb-2">
+                      One-on-One Sessions
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">
+                      Focused, customized care with dedicated attention to your
+                      unique needs and recovery goals.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-6 group">
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary to-blue-600 flex items-center justify-center flex-shrink-0 text-white shadow-lg group-hover:scale-110 transition duration-300"
+                  >
+                    <i data-lucide="layout" class="w-8 h-8"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-primary text-xl mb-2">
+                      Holistic Approach
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">
+                      Integrating posture, strength, flexibility, and overall
+                      well-being for comprehensive healing.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-6 group">
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-300 to-pink-600 flex items-center justify-center flex-shrink-0 text-white shadow-lg group-hover:scale-110 transition duration-300"
+                  >
+                    <i data-lucide="lightbulb" class="w-8 h-8"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-primary text-xl mb-2">
+                      Patient Empowerment
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">
+                      Providing you with the tools and knowledge to manage your
+                      health long after treatment ends.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stats Section -->
+              <!-- <div
+                class="grid grid-cols-3 gap-6 mt-12 p-6 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl"
+              >
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-primary mb-1">15+</div>
+                  <div class="text-sm text-gray-600">Years Experience</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-primary mb-1">98%</div>
+                  <div class="text-sm text-gray-600">Success Rate</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-primary mb-1">24/7</div>
+                  <div class="text-sm text-gray-600">Support</div>
+                </div>
+              </div> -->
+            </div>
+
+            <div class="relative scroll-reveal delay-300">
+              <div
+                class="absolute -inset-6 bg-gradient-accent rounded-3xl transform rotate-3 opacity-20"
+              ></div>
+              <div
+                class="absolute -inset-3 bg-gradient-primary rounded-3xl transform -rotate-2 opacity-10"
+              ></div>
+              <div
+                class="relative bg-white rounded-3xl shadow-2xl overflow-hidden"
+              >
+                <img
+                  src="assets/images/physio_session.png"
+                  alt="Therapy Session"
+                  class="w-full object-cover h-[500px] hover:scale-105 transition duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"
+                ></div>
+                <!-- Floating Elements -->
+                <div
+                  class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-3 h-3 bg-green-500 rounded-full animate-pulse"
+                    ></div>
+                    <span class="text-sm font-medium text-gray-700"
+                      >Live Session</span
+                    >
+                  </div>
+                </div>
+                <div
+                  class="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                >
+                  <div class="text-2xl font-bold text-primary">4.9★</div>
+                  <div class="text-xs text-gray-600">Patient Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4.5 Community Section -->
+      <section class="py-16 bg-white relative overflow-hidden">
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-16 scroll-reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+              Bones and Balance
+              <span class="text-gradient">in the Community</span>
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <a
+              href="https://www.niagaracatholic.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex justify-center items-center p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg card-hover"
+            >
+              <img
+                src="assets/images/csb.webp"
+                alt="Niagara Catholic District School Board"
+                class="max-h-32 w-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://www.dsbn.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex justify-center items-center p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg card-hover"
+            >
+              <img
+                src="assets/images/ndsb.webp"
+                alt="District School Board of Niagara"
+                class="max-h-32 w-auto object-contain"
+              />
+            </a>
+            <a
+              href="https://niagararugby.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex justify-center items-center p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg card-hover"
+            >
+              <img
+                src="assets/images/rugby-niagara.webp"
+                alt="The Niagara Rugby Club"
+                class="max-h-32 w-auto object-contain"
+              />
+            </a>
+          </div>
+
+          <div class="text-center max-w-4xl mx-auto scroll-reveal delay-200">
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Bones and Balance is proud to be the Official Athletic Sideline
+              Trainer for football and contact sports for the Niagara Catholic
+              District School Board, the District School Board of Niagara. We
+              are also the Official Trainers for Niagara Rugby Club's Wasps
+              Junior and Senior teams.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4.6 Meet Our Team Section -->
+      <section
+        class="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 relative overflow-hidden"
+      >
+        <div
+          class="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-16 scroll-reveal">
+            <div
+              class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-accent text-white font-semibold tracking-wider uppercase text-sm mb-4"
+            >
+              <i data-lucide="users" class="w-4 h-4 mr-2"></i>
+              Expert Care Team
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6">
+              Meet Our
+              <span class="text-gradient">Healthcare Professionals</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our dedicated team brings decades of combined experience in
+              rehabilitation, sports medicine, and personalized patient care.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-8">
+            <!-- Team Member 1: Marianna -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover scroll-reveal"
+            >
+              <div class="relative h-80 overflow-hidden">
+                <img
+                  src="assets/images/marianna-profile.webp"
+                  alt="Marianna Varpalotai"
+                  class="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-primary mb-2">
+                  Marianna Varpalotai
+                </h3>
+                <div class="flex items-center gap-2 text-sm text-gray-600 mb-4">
+                  <i data-lucide="award" class="w-4 h-4 text-accent"></i>
+                  <span>Masters in Athletic Therapy</span>
+                </div>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-accent rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Certified Athletic Therapist
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-accent rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Kinesiologist
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-accent rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Certified ImPACT Athletic Trainer
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-4 mb-4">
+                  <p class="text-sm text-gray-700 mb-3 leading-relaxed">
+                    Certified Athletic Therapist since 1991 with dual Bachelor's
+                    degrees in Physical & Health Education and Health Sciences
+                    from Queen's University. Varsity soccer and hockey player.
+                  </p>
+                </div>
+                <p class="text-xs font-bold text-primary mb-2">
+                  Career Highlights:
+                </p>
+                <ul class="space-y-2 text-xs text-gray-600">
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Medical team member, Athens Paralympics 2004</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span
+                      >Head Athletic Therapist, Ridley College (13 years)</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Athletic Therapist, Brock University</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span
+                      >Concussion management specialist for all athlete
+                      levels</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Team Member 2: Karen -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover scroll-reveal delay-100"
+            >
+              <div class="relative h-80 overflow-hidden">
+                <img
+                  src="assets/images/karen-millar-bio.webp"
+                  alt="Karen Millar"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-primary mb-2">
+                  Karen Millar
+                </h3>
+                <div class="flex items-center gap-2 text-sm text-gray-600 mb-4">
+                  <i
+                    data-lucide="graduation-cap"
+                    class="w-4 h-4 text-accent"
+                  ></i>
+                  <span>Community Health Degree</span>
+                </div>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Registered Massage Therapist
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Registered Kinesiologist
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Certified Athletic Therapist
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-4 mb-4">
+                  <p class="text-sm text-gray-700 mb-3 leading-relaxed">
+                    Multi-disciplinary expert combining massage therapy,
+                    athletic therapy, and kinesiology. Holds diplomas from
+                    George Brown College (Fitness) and Sheridan College (Sport
+                    Injury Management).
+                  </p>
+                </div>
+                <p class="text-xs font-bold text-primary mb-2">
+                  Specializations:
+                </p>
+                <ul class="space-y-2 text-xs text-gray-600">
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Certified Strength & Conditioning Specialist</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Pilates Matwork Certification</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Brock University's first Pilates instructor</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Lower Body Mobilizations specialist</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Team Member 3: Foram -->
+            <div
+              class="bg-white rounded-3xl shadow-xl overflow-hidden card-hover scroll-reveal delay-200"
+            >
+              <div class="relative h-80 overflow-hidden">
+                <img
+                  src="assets/images/foram.webp"
+                  alt="Foram Manish Shah"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-primary mb-2">
+                  Foram Manish Shah
+                </h3>
+                <div class="flex items-center gap-2 text-sm text-gray-600 mb-4">
+                  <i
+                    data-lucide="graduation-cap"
+                    class="w-4 h-4 text-accent"
+                  ></i>
+                  <span>Masters in Kinesiology</span>
+                </div>
+                <div class="space-y-2 mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Resident Physiotherapist
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Manual Therapy Specialist
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-sm font-semibold text-gray-800">
+                      Bachelor of Physiotherapy
+                    </p>
+                  </div>
+                </div>
+                <div class="border-t border-gray-100 pt-4 mb-4">
+                  <p class="text-sm text-gray-700 mb-3 leading-relaxed">
+                    Compassionate physiotherapist with international
+                    training—Bachelor of Physiotherapy from India (2021) and
+                    Master's in Kinesiology from Lakehead University, ON (2024).
+                    Patient-centered care philosophy.
+                  </p>
+                </div>
+                <p class="text-xs font-bold text-primary mb-2">Expertise:</p>
+                <ul class="space-y-2 text-xs text-gray-600">
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Joint mobilizations & soft tissue release</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Myofascial techniques specialist</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Functional rehabilitation expert</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 h-3 text-accent flex-shrink-0 mt-0.5"
+                    ></i>
+                    <span>Patient education & empowerment</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Stats -->
+          <div class="mt-16 grid md:grid-cols-4 gap-6 scroll-reveal delay-300">
+            <div class="bg-white rounded-2xl p-6 text-center shadow-lg">
+              <div class="text-4xl font-bold text-primary mb-2">50+</div>
+              <div class="text-sm text-gray-600">Years Combined Experience</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center shadow-lg">
+              <div class="text-4xl font-bold text-accent mb-2">3</div>
+              <div class="text-sm text-gray-600">Expert Practitioners</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center shadow-lg">
+              <div class="text-4xl font-bold text-secondary mb-2">15+</div>
+              <div class="text-sm text-gray-600">Specializations</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center shadow-lg">
+              <div class="text-4xl font-bold text-primary mb-2">100%</div>
+              <div class="text-sm text-gray-600">
+                Dedicated to Your Recovery
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Contact Section -->
+      <section
+        id="contact"
+        class="py-24 bg-gradient-primary text-white relative overflow-hidden"
+      >
+        <!-- Enhanced Decorative Elements -->
+        <div
+          class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-400/30 rounded-full blur-3xl animate-pulse-slow delay-300"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl animate-float"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-16">
+            <!-- Contact Info -->
+            <div class="scroll-reveal">
+              <div
+                class="inline-flex items-center px-4 py-2 rounded-full bg-gradient-accent backdrop-blur-sm text-white font-semibold text-sm uppercase tracking-wider mb-6"
+              >
+                <i data-lucide="phone-call" class="w-4 h-4 mr-2"></i>
+                Get In Touch
+              </div>
+              <h3 class="text-2xl md:text-4xl font-bold mb-6">
+                Ready to Find Your <span class="text-accent">Balance?</span>
+              </h3>
+              <p class="text-lg text-gray-200 mb-10 font-light leading-relaxed">
+                Don't let pain limit your life. Contact us today to schedule
+                your initial consultation and assessment.
+              </p>
+
+              <div class="space-y-6 mb-10">
+                <a
+                  href="https://maps.app.goo.gl/MuDUnV3ZkR4Zp4hg8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center space-x-4 p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition duration-300 group cursor-pointer"
+                >
+                  <div
+                    class="w-12 h-12 bg-red-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition duration-300"
+                  >
+                    <i data-lucide="map-pin" class="w-6 h-6 text-red-400"></i>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-semibold text-lg">Our Location</div>
+                    <div class="text-gray-300">
+                      Pio Plaza, 8685 Lundy's Ln unit 8, Niagara Falls, ON L2H
+                      1H4
+                    </div>
+                  </div>
+                  <i
+                    data-lucide="external-link"
+                    class="w-5 h-5 text-gray-300 opacity-0 group-hover:opacity-100 transition"
+                  ></i>
+                </a>
+                <div
+                  class="flex items-center space-x-4 p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition duration-300 group"
+                >
+                  <div
+                    class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center group-hover:scale-110 transition duration-300"
+                  >
+                    <i data-lucide="phone" class="w-6 h-6 text-green-500"></i>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-lg">Call Us Now</div>
+                    <div class="text-gray-300">(905) 358-8088</div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center space-x-4 p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition duration-300 group"
+                >
+                  <div
+                    class="w-12 h-12 bg-blue-700/20 rounded-full flex items-center justify-center group-hover:scale-110 transition duration-300"
+                  >
+                    <i data-lucide="mail" class="w-6 h-6 text-blue-700"></i>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-lg">Email Us</div>
+                    <div class="text-gray-300">admin@bonesandbalancept.com</div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center space-x-4 p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition duration-300 group"
+                >
+                  <div
+                    class="w-12 h-12 bg-yellow-400/20 rounded-full flex items-center justify-center group-hover:scale-110 transition duration-300"
+                  >
+                    <i data-lucide="clock" class="w-6 h-6 text-yellow-200"></i>
+                  </div>
+                  <div>
+                    <div class="font-semibold text-lg">Clinic Hours</div>
+                    <div class="text-gray-300">
+                      Mon - Fri: 7:00 AM - 7:00 PM
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Enhanced Social Media -->
+              <div class="">
+                <p
+                  class="text-sm text-gray-300 mb-6 uppercase tracking-wider font-semibold"
+                >
+                  Connect With Us
+                </p>
+                <div class="flex gap-4">
+                  <a
+                    href="https://www.instagram.com/bonesandbalance.pt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-instagram w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-accent hover:scale-110 transition duration-300 border border-white/20"
+                  >
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/share/17JEF5wpNv/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-facebook w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-secondary hover:scale-110 transition duration-300 border border-white/20"
+                  >
+                    <i data-lucide="facebook" class="w-6 h-6"></i>
+                  </a>
+                  <!-- <a href="#" class="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-warning hover:scale-110 transition duration-300 border border-white/20">
+                  <i data-lucide="message-circle" class="w-6 h-6"></i>
+                </a> -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Enhanced Contact Form -->
+            <div
+              class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 text-gray-800 border border-white/20 scroll-reveal delay-300"
+            >
+              <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold mb-2 text-primary">
+                  Request an Appointment
+                </h3>
+                <p class="text-gray-600">
+                  Fill out the form below and we'll get back to you within 24
+                  hours
+                </p>
+              </div>
+              <form id="contact-form" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      class="block text-sm font-semibold text-gray-700 mb-2"
+                      >Full Name *</label
+                    >
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-accent outline-none transition bg-gray-50 hover:bg-white"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      class="block text-sm font-semibold text-gray-700 mb-2"
+                      >Phone Number *</label
+                    >
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      pattern="^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$"
+                      title="Please enter a valid 10-digit phone number (e.g., 555-555-5555)"
+                      class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-accent outline-none transition bg-gray-50 hover:bg-white"
+                      placeholder="(555) 555-5555"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-accent outline-none transition bg-gray-50 hover:bg-white"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Service Interested In</label
+                  >
+                  <select
+                    name="service"
+                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-accent outline-none transition bg-gray-50 hover:bg-white"
+                  >
+                    <option>General Physiotherapy</option>
+                    <option>Neuro Rehab (Stroke, MS, Parkinson's)</option>
+                    <option>Cardiac Rehab</option>
+                    <option>Home Care</option>
+                    <option>Workplace Analysis</option>
+                    <option>Manual Therapy & Dry Needling</option>
+                    <option>Vestibular Rehabilitation</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-gray-700 mb-2"
+                    >Tell us about your condition</label
+                  >
+                  <textarea
+                    name="message"
+                    rows="4"
+                    class="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-accent outline-none transition bg-gray-50 hover:bg-white resize-none"
+                    placeholder="Describe your symptoms, pain level, or what you'd like help with..."
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  id="submit-button"
+                  class="w-full bg-gradient-accent text-white font-bold py-4 rounded-xl text-lg shadow-xl btn-glow transition duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed group"
+                >
+                  <span class="flex items-center justify-center gap-2">
+                    Send Request
+                    <i
+                      data-lucide="send"
+                      class="w-5 h-5 transition-transform group-hover:translate-x-1"
+                    ></i>
+                  </span>
+                </button>
+              </form>
+              <div
+                id="message-box"
+                class="hidden mt-6 p-4 bg-green-50 text-green-700 rounded-xl border-2 border-green-200 text-center"
+              >
+                <p class="font-bold">Message Sent Successfully!</p>
+                <p class="text-sm">We'll get back to you within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-slate-300 py-16 border-t border-slate-700 relative overflow-hidden"
+    >
+      <!-- Decorative Elements -->
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-4 gap-8 mb-12">
+          <!-- Brand Section -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-3 mb-6">
+              <img
+                src="assets/images/logo-horizontal-transparent.png"
+                alt="Bones & Balance"
+                class="h-20 w-auto"
+              />
+            </div>
+            <p class="text-white mb-6 leading-relaxed max-w-md">
+              Professional physiotherapy and rehabilitation services in Niagara
+              Region in Ontario, Canada. Helping you heal with science and move
+              with confidence.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="https://www.instagram.com/bonesandbalance.pt"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-instagram w-10 h-10 rounded-full bg-slate-700 hover:bg-accent flex items-center justify-center transition duration-300 group"
+              >
+                <i
+                  data-lucide="instagram"
+                  class="w-5 h-5 group-hover:scale-110 transition"
+                ></i>
+              </a>
+              <a
+                href="https://www.facebook.com/share/17JEF5wpNv/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-facebook w-10 h-10 rounded-full bg-slate-700 hover:bg-secondary flex items-center justify-center transition duration-300 group"
+              >
+                <i
+                  data-lucide="facebook"
+                  class="w-5 h-5 group-hover:scale-110 transition"
+                ></i>
+              </a>
+              <!-- <a href="#" class="w-10 h-10 rounded-full bg-slate-700 hover:bg-warning flex items-center justify-center transition duration-300 group">
+              <i data-lucide="message-circle" class="w-5 h-5 group-hover:scale-110 transition"></i>
+            </a> -->
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#services"
+                  class="hover:text-accent transition duration-300 flex items-center gap-2"
+                >
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i> Our
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="hover:text-accent transition duration-300 flex items-center gap-2"
+                >
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i> Our
+                  Approach
+                </a>
+              </li>
+              <li>
+                <a
+                  href="resources.html"
+                  class="hover:text-accent transition duration-300 flex items-center gap-2"
+                >
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i> Resources
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-accent transition duration-300 flex items-center gap-2"
+                >
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i> Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-white font-semibold text-lg mb-4">Contact Info</h4>
+            <div class="space-y-3">
+              <a
+                href="https://maps.app.goo.gl/MuDUnV3ZkR4Zp4hg8"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-start gap-3 hover:text-accent transition duration-300"
+              >
+                <i
+                  data-lucide="map-pin"
+                  class="w-5 h-5 text-red-400 mt-0.5"
+                ></i>
+                <span class="text-sm"
+                  >Pio Plaza, 8685 Lundy's Ln unit 8<br />Niagara Falls, ON L2H
+                  1H4</span
+                >
+              </a>
+              <div class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-5 h-5 text-green-500"></i>
+                <span class="text-sm">(905) 358-8088</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-5 h-5 text-blue-700"></i>
+                <span class="text-sm">admin@bonesandbalancept.com</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="clock" class="w-5 h-5 text-yellow-200"></i>
+                <span class="text-sm">Mon - Fri: 7:00 AM - 7:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div
+          class="border-t border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <div class="text-center md:text-left">
+            <p class="text-sm text-slate-400">
+              © 2025 Bones & Balance Physical Therapy. All rights reserved.
+            </p>
+          </div>
+          <div class="flex gap-6 text-sm">
+            <a href="#" class="hover:text-accent transition duration-300"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-accent transition duration-300"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      // Mobile Menu
+      const btn = document.getElementById("mobile-menu-button");
+      const menu = document.getElementById("mobile-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking on links
+      const mobileLinks = menu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+        });
+      });
+
+      // Enhanced Navbar Scroll Effect
+      // window.addEventListener('scroll', () => {
+      //   const nav = document.getElementById('navbar');
+      //   // if (window.scrollY > 50) {
+      //   //   nav.classList.add('shadow-sm');
+      //   //   nav.querySelector('.glass').classList.add('bg-white/95');
+      //   // } else {
+      //   //   nav.classList.remove('shadow-sm');
+      //   //   nav.querySelector('.glass').classList.remove('bg-white/95');
+      //   // }
+      // });
+
+      // Scroll Reveal Animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all scroll-reveal elements
+      document.querySelectorAll(".scroll-reveal").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Enhanced Form Logic
+      const form = document.getElementById("contact-form");
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const messageBox = document.getElementById("message-box");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        formData.append("access_key", "c25d1676-f76a-4389-b6e7-ded54348f0d2");
+
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = `
+        <span class="flex items-center justify-center gap-2">
+          <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Sending...
+        </span>
+      `;
+        submitBtn.disabled = true;
+
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData,
+          });
+          const data = await response.json();
+
+          if (response.ok) {
+            messageBox.classList.remove("hidden");
+            messageBox.className =
+              "mt-6 p-4 bg-green-50 text-green-700 rounded-xl border-2 border-green-200 text-center";
+            messageBox.innerHTML = `
+            <div class="flex items-center justify-center gap-2 mb-2">
+              <i data-lucide="check-circle" class="w-5 h-5"></i>
+              <p class="font-bold">Message Sent Successfully!</p>
+            </div>
+            <p class="text-sm">We'll get back to you within 24 hours.</p>
+          `;
+            form.reset();
+            setTimeout(() => {
+              messageBox.classList.add("hidden");
+            }, 8000);
+          } else {
+            throw new Error(data.message || "Something went wrong");
+          }
+        } catch (error) {
+          messageBox.classList.remove("hidden");
+          messageBox.className =
+            "mt-6 p-4 bg-red-50 text-red-700 rounded-xl border-2 border-red-200 text-center";
+          messageBox.innerHTML = `
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <i data-lucide="alert-circle" class="w-5 h-5"></i>
+            <p class="font-bold">Error Sending Message</p>
+          </div>
+          <p class="text-sm">Please try again or call us directly.</p>
+        `;
+          setTimeout(() => {
+            messageBox.classList.add("hidden");
+          }, 8000);
+        } finally {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          lucide.createIcons(); // Recreate icons after DOM update
+        }
+      });
+
+      // Add loading animation to page
+      window.addEventListener("load", () => {
+        document.body.classList.add("loaded");
+      });
+
+      // Add parallax effect to hero section
+      window.addEventListener("scroll", () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector("#home");
+        if (parallax) {
+          const speed = scrolled * 0.5;
+          parallax.style.transform = `translateY(${speed}px)`;
+        }
+      });
+    </script>
+  </body>
+</html>
