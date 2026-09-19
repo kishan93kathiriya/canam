@@ -1,0 +1,353 @@
+<style id="canam-header-styles">
+    .cam-skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 10000;
+        padding: 10px 16px;
+        border-radius: 8px;
+        color: #ffffff;
+        background: #0d2247;
+        font: 700 0.9rem/1.2 Inter, Arial, sans-serif;
+        text-decoration: none;
+        transform: translateY(-160%);
+        transition: transform 160ms ease;
+    }
+
+    .cam-skip-link:focus {
+        transform: translateY(0);
+    }
+
+    .cam-site-header {
+        --cam-navy: #0d2247;
+        --cam-blue: #1b3a6b;
+        --cam-gold: #c8960c;
+        --cam-gold-dark: #9f7405;
+        --cam-text: #172033;
+        --cam-muted: #5d687b;
+        --cam-line: #e2e8f0;
+        position: sticky;
+        top: 0;
+        z-index: 900;
+        width: 100%;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.92);
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 8px 30px rgba(13, 34, 71, 0.06);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .cam-site-header,
+    .cam-site-header * {
+        box-sizing: border-box;
+    }
+
+    .cam-header-shell {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1180px, calc(100% - 40px));
+        min-height: 82px;
+        margin: 0 auto;
+        gap: 28px;
+    }
+
+    .cam-brand {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .cam-brand img {
+        display: block;
+        width: auto;
+        height: 68px;
+        max-width: 190px;
+        object-fit: contain;
+    }
+
+    .cam-desktop-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        margin-left: auto;
+    }
+
+    .cam-nav-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        color: var(--cam-text);
+        font-size: 0.94rem;
+        font-weight: 650;
+        line-height: 1;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: color 160ms ease;
+    }
+
+    .cam-nav-link::after {
+        position: absolute;
+        right: 0;
+        bottom: 6px;
+        left: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--cam-gold);
+        content: "";
+        opacity: 0;
+        transform: scaleX(0.4);
+        transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .cam-nav-link:hover,
+    .cam-nav-link[aria-current="page"] {
+        color: var(--cam-blue);
+    }
+
+    .cam-nav-link:hover::after,
+    .cam-nav-link[aria-current="page"]::after {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    .cam-header-actions {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .cam-phone-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        color: var(--cam-blue);
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .cam-phone-link svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .cam-book-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 19px;
+        border: 1px solid var(--cam-gold);
+        border-radius: 999px;
+        color: #ffffff;
+        background: var(--cam-gold);
+        box-shadow: 0 8px 22px rgba(159, 116, 5, 0.16);
+        font-size: 0.9rem;
+        font-weight: 750;
+        line-height: 1;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+    }
+
+    .cam-book-button:hover {
+        border-color: var(--cam-gold-dark);
+        background: var(--cam-gold-dark);
+        transform: translateY(-1px);
+    }
+
+    .cam-menu-button {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: 1px solid var(--cam-line);
+        border-radius: 11px;
+        color: var(--cam-navy);
+        background: #ffffff;
+        cursor: pointer;
+    }
+
+    .cam-menu-button svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .cam-menu-button .cam-close-icon,
+    .cam-menu-button[aria-expanded="true"] .cam-menu-icon {
+        display: none;
+    }
+
+    .cam-menu-button[aria-expanded="true"] .cam-close-icon {
+        display: block;
+    }
+
+    .cam-mobile-nav {
+        border-top: 1px solid var(--cam-line);
+        background: #ffffff;
+    }
+
+    .cam-mobile-nav[hidden] {
+        display: none !important;
+    }
+
+    .cam-mobile-nav-inner {
+        display: grid;
+        width: min(100% - 32px, 1180px);
+        margin: 0 auto;
+        padding: 14px 0 20px;
+        gap: 2px;
+    }
+
+    .cam-mobile-nav .cam-nav-link {
+        min-height: 48px;
+        padding: 0 4px;
+        border-bottom: 1px solid #f0f3f7;
+    }
+
+    .cam-mobile-nav .cam-nav-link::after {
+        display: none;
+    }
+
+    .cam-mobile-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 14px;
+        gap: 10px;
+    }
+
+    .cam-mobile-call {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        border: 1px solid var(--cam-blue);
+        border-radius: 999px;
+        color: var(--cam-blue);
+        font-size: 0.9rem;
+        font-weight: 750;
+        text-decoration: none;
+    }
+
+    .cam-site-header a:focus-visible,
+    .cam-site-header button:focus-visible {
+        outline: 3px solid rgba(200, 150, 12, 0.42);
+        outline-offset: 3px;
+    }
+
+    @media (max-width: 1080px) {
+        .cam-desktop-nav {
+            gap: 19px;
+        }
+
+        .cam-phone-link {
+            display: none;
+        }
+    }
+
+    @media (max-width: 860px) {
+        .cam-header-shell {
+            width: min(100% - 30px, 1180px);
+            min-height: 74px;
+        }
+
+        .cam-brand img {
+            height: 60px;
+            max-width: 166px;
+        }
+
+        .cam-desktop-nav,
+        .cam-header-actions > .cam-book-button {
+            display: none;
+        }
+
+        .cam-menu-button {
+            display: inline-flex;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .cam-mobile-actions {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .cam-skip-link,
+        .cam-nav-link,
+        .cam-nav-link::after,
+        .cam-book-button {
+            transition: none;
+        }
+    }
+</style>
+
+<a class="cam-skip-link" href="#main-content">Skip to main content</a>
+
+<header class="cam-site-header" id="canam-site-header">
+    <div class="cam-header-shell">
+        <a class="cam-brand" href="index.html" aria-label="Can-Am Physical Therapy home">
+            <img src="assets/images/logo-short.png" alt="Can-Am Physical Therapy &amp; Rehab">
+        </a>
+
+        <nav class="cam-desktop-nav" aria-label="Primary navigation">
+            <a class="cam-nav-link" href="index.html" data-page="home">Home</a>
+            <a class="cam-nav-link" href="index.html#services">Services</a>
+            <a class="cam-nav-link" href="index.html#therapist">Meet the Team</a>
+            <a class="cam-nav-link" href="physiotherapy-carstairs.html" data-page="carstairs">Carstairs</a>
+            <a class="cam-nav-link" href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="cam-header-actions">
+            <a class="cam-phone-link" href="tel:+15878991653" aria-label="Call Can-Am at 587-899-1653">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"/>
+                </svg>
+                587-899-1653
+            </a>
+
+            <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">
+                Book Appointment
+            </a>
+
+            <button class="cam-menu-button" id="cam-menu-button" type="button" aria-expanded="false"
+                aria-controls="cam-mobile-nav" aria-label="Open navigation menu">
+                <svg class="cam-menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <path d="M4 7h16M4 12h16M4 17h16"/>
+                </svg>
+                <svg class="cam-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <path d="m6 6 12 12M18 6 6 18"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <nav class="cam-mobile-nav" id="cam-mobile-nav" aria-label="Mobile navigation" hidden>
+        <div class="cam-mobile-nav-inner">
+            <a class="cam-nav-link" href="index.html" data-page="home">Home</a>
+            <a class="cam-nav-link" href="index.html#services">Services</a>
+            <a class="cam-nav-link" href="index.html#therapist">Meet the Team</a>
+            <a class="cam-nav-link" href="physiotherapy-carstairs.html" data-page="carstairs">Carstairs</a>
+            <a class="cam-nav-link" href="index.html#contact">Contact</a>
+
+            <div class="cam-mobile-actions">
+                <a class="cam-mobile-call" href="tel:+15878991653">Call 587-899-1653</a>
+                <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">
+                    Book Appointment
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
