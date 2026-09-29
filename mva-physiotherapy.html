@@ -30,15 +30,9 @@
 
     <!-- Open Graph -->
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <meta property="og:type" content="website">
 
-    <meta
-        property="og:locale"
-        content="en_CA"
-    >
+    <meta property="og:locale" content="en_CA">
 
     <meta
         property="og:site_name"
@@ -66,7 +60,10 @@
     >
 
 
-    <!-- Google Analytics -->
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+    ====================================================== -->
 
     <script
         async
@@ -75,7 +72,8 @@
 
     <script>
 
-        window.dataLayer = window.dataLayer || [];
+        window.dataLayer =
+            window.dataLayer || [];
 
         function gtag() {
             dataLayer.push(arguments);
@@ -83,14 +81,19 @@
 
         gtag("js", new Date());
 
-        gtag("config", "G-MNQC6XSFZ4");
+        gtag(
+            "config",
+            "G-MNQC6XSFZ4"
+        );
 
     </script>
+
 
 
     <!-- Shared header/footer -->
 
     <script src="https://cdn.tailwindcss.com"></script>
+
 
 
     <!-- Icons -->
@@ -99,6 +102,7 @@
         src="https://unpkg.com/lucide@latest"
         defer>
     </script>
+
 
 
     <!-- Fonts -->
@@ -120,139 +124,241 @@
     >
 
 
-    <!-- Structured Data -->
+
+    <!-- =====================================================
+         STRUCTURED DATA
+    ====================================================== -->
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@graph": [
+
             {
                 "@type": "MedicalClinic",
                 "@id": "https://www.canamrehab.com/#clinic",
+
                 "name": "Can-Am Physical Therapy & Rehab",
+
                 "url": "https://www.canamrehab.com/",
+
                 "telephone": "+1-587-899-1653",
+
                 "email": "admin@canamrehab.com",
+
                 "address": {
+
                     "@type": "PostalAddress",
+
                     "streetAddress": "818 Railway St",
+
                     "addressLocality": "Crossfield",
+
                     "addressRegion": "AB",
+
                     "postalCode": "T0M 0S0",
+
                     "addressCountry": "CA"
+
                 },
+
                 "areaServed": [
+
                     "Crossfield, Alberta",
+
                     "Carstairs, Alberta",
+
                     "Airdrie, Alberta",
+
                     "Balzac, Alberta"
+
                 ]
             },
+
             {
                 "@type": "Service",
+
                 "@id": "https://www.canamrehab.com/mva-physiotherapy.html#service",
+
                 "name": "MVA Physiotherapy",
+
                 "alternateName": "Motor Vehicle Accident Physiotherapy",
+
                 "serviceType": "Motor vehicle accident physiotherapy and rehabilitation",
+
                 "provider": {
+
                     "@id": "https://www.canamrehab.com/#clinic"
+
                 },
+
                 "areaServed": [
+
                     "Crossfield, Alberta",
+
                     "Carstairs, Alberta",
+
                     "Airdrie, Alberta",
+
                     "Balzac, Alberta"
+
                 ],
+
                 "url": "https://www.canamrehab.com/mva-physiotherapy.html"
             },
+
             {
                 "@type": "Person",
+
                 "name": "Ankit Patel",
+
                 "jobTitle": "Physiotherapist and Clinic Owner",
+
                 "worksFor": {
+
                     "@id": "https://www.canamrehab.com/#clinic"
+
                 }
             },
+
             {
                 "@type": "FAQPage",
+
                 "mainEntity": [
+
                     {
                         "@type": "Question",
+
                         "name": "What is MVA physiotherapy?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "MVA physiotherapy is rehabilitation for injuries and symptoms related to a motor vehicle accident. Your physiotherapist assesses your movement, symptoms and function and builds a treatment plan around your needs and recovery goals."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "Can physiotherapy help with whiplash after a car accident?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "Physiotherapy can assess neck pain, stiffness, reduced movement and other symptoms that may occur with whiplash. Treatment depends on your assessment and individual symptoms."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "Do I need to see a doctor before booking MVA physiotherapy?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "A doctor's referral is generally not required to see a physiotherapist in Alberta. Insurance and claim requirements can vary, so check with your insurer if you are unsure."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "Will my auto insurance cover physiotherapy?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "Physiotherapy may be covered through your motor vehicle accident claim. Coverage and requirements depend on your injury, insurer and individual claim."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "Do I have to use the physiotherapy clinic recommended by my insurance company?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "Your insurer may recommend a physiotherapy provider, but patients in Alberta have the right to choose their physiotherapy provider as long as the provider can provide appropriate care and meet the funding requirements of the claim."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "What should I bring to my first MVA physiotherapy appointment?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "If available, bring your insurance company name, claim number, adjuster information, medical reports or forms, and information about your current symptoms."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "What if I felt okay after the accident but started hurting later?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "Some symptoms may become more noticeable after a collision. Tell your physiotherapist when your symptoms started, how they have changed and what activities are now difficult."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "How do I know if I am improving after a car accident?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "Progress can include changes in symptoms, movement, strength and your ability to return to activities such as driving, working, sleeping, lifting and exercising."
+
                         }
                     },
+
                     {
                         "@type": "Question",
+
                         "name": "Where does Can-Am provide MVA physiotherapy?",
+
                         "acceptedAnswer": {
+
                             "@type": "Answer",
+
                             "text": "Can-Am Physical Therapy & Rehab provides MVA physiotherapy from its clinic at 818 Railway Street in Crossfield, Alberta, serving patients from Crossfield, Carstairs, Airdrie, Balzac and nearby communities."
+
                         }
                     }
+
                 ]
             }
+
         ]
     }
     </script>
+
 
 
     <style>
@@ -264,19 +370,25 @@
         :root {
 
             --navy: #183963;
+
             --navy-dark: #0c294d;
 
             --blue: #315e91;
+
             --blue-light: #edf5fa;
+
             --blue-soft: #f5f9fc;
 
             --cream: #fffaf4;
+
             --cream-dark: #f5efe6;
 
             --gold: #c8960c;
+
             --gold-soft: #f5e8bd;
 
             --text: #27354b;
+
             --muted: #687487;
 
             --white: #ffffff;
@@ -304,15 +416,22 @@
 
             margin: 0;
 
-            background: var(--white);
+            overflow-x: hidden;
 
-            color: var(--text);
+            background:
+                var(--white);
 
-            font-family: "Inter", sans-serif;
+            color:
+                var(--text);
+
+            font-family:
+                "Inter",
+                sans-serif;
 
             line-height: 1.65;
 
-            -webkit-font-smoothing: antialiased;
+            -webkit-font-smoothing:
+                antialiased;
 
         }
 
@@ -341,9 +460,12 @@
 
             margin: 0;
 
-            color: var(--navy-dark);
+            color:
+                var(--navy-dark);
 
             line-height: 1.08;
+
+            text-wrap: balance;
 
         }
 
@@ -351,7 +473,9 @@
         h1,
         h2 {
 
-            font-family: "DM Serif Display", serif;
+            font-family:
+                "DM Serif Display",
+                serif;
 
             font-weight: 400;
 
@@ -360,46 +484,63 @@
 
         h3 {
 
-            font-family: "Outfit", sans-serif;
+            font-family:
+                "Outfit",
+                sans-serif;
 
         }
 
 
         p {
-
             margin: 0;
-
         }
 
 
         .container {
 
-            width: min(
-                1240px,
-                calc(100% - 48px)
-            );
+            width:
+                min(
+                    1240px,
+                    calc(100% - 48px)
+                );
 
-            margin: 0 auto;
+            margin:
+                0 auto;
 
         }
 
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
 
         .button {
 
             display: inline-flex;
 
             align-items: center;
+
             justify-content: center;
 
             min-height: 52px;
 
-            padding: 13px 25px;
+            padding:
+                13px 25px;
 
-            border: 1px solid transparent;
-            border-radius: 999px;
+            border:
+                1px solid transparent;
+
+            border-radius:
+                999px;
 
             font-size: .96rem;
+
             font-weight: 700;
+
+            line-height: 1.2;
+
+            text-align: center;
 
             transition:
                 transform .2s ease,
@@ -410,43 +551,52 @@
 
         .button:hover {
 
-            transform: translateY(-2px);
+            transform:
+                translateY(-2px);
 
         }
 
 
         .button-primary {
 
-            background: var(--navy);
+            background:
+                var(--navy);
 
-            color: var(--white);
+            color:
+                var(--white);
 
         }
 
 
         .button-primary:hover {
 
-            background: var(--navy-dark);
+            background:
+                var(--navy-dark);
 
         }
 
 
         .button-outline {
 
-            border-color: var(--navy);
+            border-color:
+                var(--navy);
 
-            background: transparent;
+            background:
+                transparent;
 
-            color: var(--navy);
+            color:
+                var(--navy);
 
         }
 
 
         .button-light {
 
-            background: var(--white);
+            background:
+                var(--white);
 
-            color: var(--navy-dark);
+            color:
+                var(--navy-dark);
 
         }
 
@@ -465,7 +615,8 @@
 
             min-height: 710px;
 
-            background: var(--cream);
+            background:
+                var(--cream);
 
         }
 
@@ -478,12 +629,18 @@
 
             padding:
                 100px
-                clamp(45px, 7vw, 125px);
+                clamp(
+                    45px,
+                    7vw,
+                    125px
+                );
 
         }
 
 
         .hero-copy-inner {
+
+            width: 100%;
 
             max-width: 720px;
 
@@ -501,7 +658,8 @@
                     6.6rem
                 );
 
-            letter-spacing: -.04em;
+            letter-spacing:
+                -.04em;
 
         }
 
@@ -512,7 +670,8 @@
 
             margin-top: 26px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 1.13rem;
 
@@ -538,7 +697,12 @@
 
         .hero-phone {
 
-            color: var(--navy);
+            display: inline-flex;
+
+            align-items: center;
+
+            color:
+                var(--navy);
 
             font-weight: 700;
 
@@ -552,6 +716,7 @@
             color: #566478;
 
             font-size: .92rem;
+
             font-weight: 600;
 
         }
@@ -565,7 +730,8 @@
 
             overflow: hidden;
 
-            background: var(--blue-light);
+            background:
+                var(--blue-light);
 
         }
 
@@ -573,6 +739,7 @@
         .hero-image img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -585,35 +752,49 @@
             position: absolute;
 
             right: 28px;
+
             bottom: 28px;
 
             max-width: 360px;
 
-            padding: 16px 21px;
+            padding:
+                16px 21px;
+
+            border-radius: 12px;
 
             background:
-                rgba(255, 255, 255, .93);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .93
+                );
 
-            color: var(--navy-dark);
+            color:
+                var(--navy-dark);
 
             font-size: .9rem;
+
             font-weight: 700;
 
-            backdrop-filter: blur(8px);
+            backdrop-filter:
+                blur(8px);
 
         }
 
 
 
         /* =====================================================
-           COMMON PROBLEMS
+           PROBLEMS
         ===================================================== */
 
         .problems-section {
 
-            padding: 110px 0;
+            padding:
+                110px 0;
 
-            background: var(--white);
+            background:
+                var(--white);
 
         }
 
@@ -652,9 +833,12 @@
 
             padding-top: 8px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 1.07rem;
+
+            line-height: 1.75;
 
         }
 
@@ -669,7 +853,8 @@
             margin-top: 60px;
 
             border-top:
-                1px solid var(--line);
+                1px solid
+                var(--line);
 
         }
 
@@ -685,7 +870,8 @@
             min-height: 74px;
 
             border-bottom:
-                1px solid var(--line);
+                1px solid
+                var(--line);
 
             font-family:
                 "Outfit",
@@ -710,7 +896,8 @@
             padding-left: 45px;
 
             border-left:
-                1px solid var(--line);
+                1px solid
+                var(--line);
 
         }
 
@@ -718,13 +905,15 @@
         .problem-mark {
 
             width: 8px;
+
             height: 8px;
 
             flex: 0 0 auto;
 
             border-radius: 50%;
 
-            background: var(--gold);
+            background:
+                var(--gold);
 
         }
 
@@ -735,9 +924,12 @@
 
             margin-top: 34px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: .98rem;
+
+            line-height: 1.75;
 
         }
 
@@ -756,7 +948,8 @@
 
             min-height: 680px;
 
-            background: var(--blue-light);
+            background:
+                var(--blue-light);
 
         }
 
@@ -773,6 +966,7 @@
         .assessment-image img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -788,7 +982,11 @@
 
             padding:
                 80px
-                clamp(45px, 6vw, 95px);
+                clamp(
+                    45px,
+                    6vw,
+                    95px
+                );
 
         }
 
@@ -812,13 +1010,18 @@
         }
 
 
-        .assessment-copy > .assessment-inner > p {
+        .assessment-copy
+        > .assessment-inner
+        > p {
 
             margin-top: 22px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 1.06rem;
+
+            line-height: 1.75;
 
         }
 
@@ -844,18 +1047,25 @@
 
             gap: 14px;
 
-            padding: 15px 0;
+            padding:
+                15px 0;
 
             border-top:
                 1px solid
-                rgba(12, 41, 77, .12);
+                rgba(
+                    12,
+                    41,
+                    77,
+                    .12
+                );
 
         }
 
 
         .assessment-list strong {
 
-            color: var(--gold);
+            color:
+                var(--gold);
 
             font-family:
                 "DM Serif Display",
@@ -877,14 +1087,17 @@
 
         .recovery-note {
 
-            margin-top: 28px !important;
+            margin-top:
+                28px !important;
 
             padding-left: 18px;
 
             border-left:
-                3px solid var(--gold);
+                3px solid
+                var(--gold);
 
-            color: var(--navy-dark) !important;
+            color:
+                var(--navy-dark) !important;
 
             font-weight: 600;
 
@@ -898,9 +1111,11 @@
 
         .after-section {
 
-            padding: 110px 0;
+            padding:
+                110px 0;
 
-            background: var(--navy-dark);
+            background:
+                var(--navy-dark);
 
         }
 
@@ -914,7 +1129,8 @@
 
         .after-heading h2 {
 
-            color: var(--white);
+            color:
+                var(--white);
 
             font-size:
                 clamp(
@@ -936,6 +1152,8 @@
 
             font-size: 1.05rem;
 
+            line-height: 1.7;
+
         }
 
 
@@ -944,17 +1162,30 @@
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(
+                    3,
+                    1fr
+                );
 
             margin-top: 62px;
 
             border-top:
                 1px solid
-                rgba(255,255,255,.2);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .2
+                );
 
             border-bottom:
                 1px solid
-                rgba(255,255,255,.2);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .2
+                );
 
         }
 
@@ -962,18 +1193,25 @@
         .after-step {
 
             padding:
-                36px 42px 40px 0;
+                36px 42px
+                40px 0;
 
         }
 
 
-        .after-step + .after-step {
+        .after-step
+        + .after-step {
 
             padding-left: 42px;
 
             border-left:
                 1px solid
-                rgba(255,255,255,.2);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .2
+                );
 
         }
 
@@ -999,7 +1237,8 @@
 
             margin-bottom: 10px;
 
-            color: var(--white);
+            color:
+                var(--white);
 
             font-size: 1.35rem;
 
@@ -1010,14 +1249,19 @@
 
             color: #cfdae6;
 
+            line-height: 1.7;
+
         }
 
 
         .after-message {
 
+            max-width: 850px;
+
             margin-top: 38px;
 
-            color: var(--white);
+            color:
+                var(--white);
 
             font-family:
                 "DM Serif Display",
@@ -1030,6 +1274,8 @@
                     2.35rem
                 );
 
+            line-height: 1.35;
+
         }
 
 
@@ -1040,9 +1286,11 @@
 
         .therapist-section {
 
-            padding: 110px 0;
+            padding:
+                110px 0;
 
-            background: var(--white);
+            background:
+                var(--white);
 
         }
 
@@ -1067,17 +1315,42 @@
 
             overflow: hidden;
 
-            background: var(--blue-light);
+            border-radius: 24px;
+
+            background:
+                var(--blue-light);
+
+            box-shadow:
+                0 22px 55px
+                rgba(
+                    12,
+                    41,
+                    77,
+                    .11
+                );
 
         }
 
 
         .therapist-photo img {
 
+            width: 100%;
+
             height: 100%;
+
             min-height: 550px;
 
             object-fit: cover;
+
+            object-position:
+                center top;
+
+        }
+
+
+        .therapist-copy {
+
+            max-width: 760px;
 
         }
 
@@ -1105,22 +1378,49 @@
 
         .therapist-role {
 
-            margin-top: 5px;
+            margin-top: 6px;
 
-            color: var(--blue);
+            color:
+                var(--blue);
 
             font-weight: 700;
 
         }
 
 
-        .therapist-copy > p:not(.therapist-role) {
+        .therapist-copy
+        > p:not(.therapist-role) {
 
             max-width: 730px;
 
             margin-top: 20px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
+
+            line-height: 1.78;
+
+        }
+
+
+        .expertise-label {
+
+            margin-top: 30px;
+
+            color:
+                var(--navy-dark);
+
+            font-family:
+                "Outfit",
+                sans-serif;
+
+            font-size: .82rem;
+
+            font-weight: 700;
+
+            letter-spacing: .13em;
+
+            text-transform: uppercase;
 
         }
 
@@ -1131,23 +1431,39 @@
 
             flex-wrap: wrap;
 
-            gap: 10px 20px;
+            gap:
+                10px 12px;
 
-            margin-top: 30px;
+            margin-top: 15px;
 
         }
 
 
         .expertise-list span {
 
-            padding-bottom: 5px;
+            display: inline-flex;
 
-            border-bottom:
-                1px solid var(--line);
+            align-items: center;
 
-            color: var(--text);
+            min-height: 38px;
 
-            font-size: .92rem;
+            padding:
+                8px 14px;
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius:
+                999px;
+
+            background:
+                var(--blue-soft);
+
+            color:
+                var(--text);
+
+            font-size: .9rem;
 
             font-weight: 600;
 
@@ -1161,9 +1477,11 @@
 
         .reviews-section {
 
-            padding: 105px 0;
+            padding:
+                105px 0;
 
-            background: var(--cream);
+            background:
+                var(--cream);
 
         }
 
@@ -1198,7 +1516,8 @@
 
             max-width: 600px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
         }
 
@@ -1224,14 +1543,16 @@
             padding-top: 26px;
 
             border-top:
-                2px solid var(--gold);
+                2px solid
+                var(--gold);
 
         }
 
 
         .review p {
 
-            color: var(--navy-dark);
+            color:
+                var(--navy-dark);
 
             font-family:
                 "DM Serif Display",
@@ -1253,7 +1574,8 @@
 
             margin-top: 20px;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: .9rem;
 
@@ -1276,7 +1598,8 @@
 
             min-height: 620px;
 
-            background: var(--navy);
+            background:
+                var(--navy);
 
         }
 
@@ -1289,7 +1612,11 @@
 
             padding:
                 85px
-                clamp(45px, 7vw, 115px);
+                clamp(
+                    45px,
+                    7vw,
+                    115px
+                );
 
         }
 
@@ -1303,7 +1630,8 @@
 
         .location-copy h2 {
 
-            color: var(--white);
+            color:
+                var(--white);
 
             font-size:
                 clamp(
@@ -1325,6 +1653,8 @@
 
             font-size: 1.05rem;
 
+            line-height: 1.75;
+
         }
 
 
@@ -1334,11 +1664,13 @@
 
             flex-wrap: wrap;
 
-            gap: 9px 21px;
+            gap:
+                9px 21px;
 
             margin-top: 27px;
 
-            color: var(--white);
+            color:
+                var(--white);
 
             font-weight: 700;
 
@@ -1353,7 +1685,8 @@
 
             margin-top: 35px;
 
-            color: var(--white);
+            color:
+                var(--white);
 
         }
 
@@ -1406,7 +1739,8 @@
 
             gap: 8px;
 
-            color: var(--white);
+            color:
+                var(--white);
 
             font-weight: 700;
 
@@ -1425,6 +1759,7 @@
         .location-image img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -1439,9 +1774,11 @@
 
         .faq-section {
 
-            padding: 110px 0;
+            padding:
+                110px 0;
 
-            background: var(--white);
+            background:
+                var(--white);
 
         }
 
@@ -1477,7 +1814,8 @@
         .faq-list {
 
             border-top:
-                1px solid var(--line);
+                1px solid
+                var(--line);
 
         }
 
@@ -1485,7 +1823,8 @@
         details {
 
             border-bottom:
-                1px solid var(--line);
+                1px solid
+                var(--line);
 
         }
 
@@ -1500,7 +1839,8 @@
 
             cursor: pointer;
 
-            color: var(--navy-dark);
+            color:
+                var(--navy-dark);
 
             font-family:
                 "Outfit",
@@ -1509,6 +1849,8 @@
             font-size: 1.07rem;
 
             font-weight: 700;
+
+            line-height: 1.45;
 
             list-style: none;
 
@@ -1527,9 +1869,11 @@
             position: absolute;
 
             top: 50%;
+
             right: 4px;
 
             width: 30px;
+
             height: 30px;
 
             display: grid;
@@ -1540,9 +1884,11 @@
 
             border-radius: 50%;
 
-            background: var(--blue-light);
+            background:
+                var(--blue-light);
 
-            color: var(--navy);
+            color:
+                var(--navy);
 
             transform:
                 translateY(-50%);
@@ -1550,7 +1896,8 @@
         }
 
 
-        details[open] summary::after {
+        details[open]
+        summary::after {
 
             content: "−";
 
@@ -1565,21 +1912,26 @@
                 0 52px
                 27px 0;
 
-            color: var(--muted);
+            color:
+                var(--muted);
+
+            line-height: 1.72;
 
         }
 
 
 
         /* =====================================================
-           CTA
+           FINAL CTA
         ===================================================== */
 
         .final-cta {
 
-            padding: 105px 24px;
+            padding:
+                105px 24px;
 
-            background: var(--blue-light);
+            background:
+                var(--blue-light);
 
             text-align: center;
 
@@ -1614,7 +1966,8 @@
             margin:
                 18px auto 0;
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-size: 1.05rem;
 
@@ -1638,7 +1991,7 @@
 
 
         /* =====================================================
-           MOBILE ACTION BAR
+           MOBILE BOTTOM ACTIONS
         ===================================================== */
 
         .mobile-actions {
@@ -1646,7 +1999,9 @@
             position: fixed;
 
             right: 0;
+
             bottom: 0;
+
             left: 0;
 
             z-index: 90;
@@ -1662,14 +2017,31 @@
                 10px 12px
                 calc(
                     10px +
-                    env(safe-area-inset-bottom)
+                    env(
+                        safe-area-inset-bottom
+                    )
                 );
 
             border-top:
-                1px solid var(--line);
+                1px solid
+                var(--line);
 
             background:
-                rgba(255,255,255,.97);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .97
+                );
+
+            box-shadow:
+                0 -8px 30px
+                rgba(
+                    12,
+                    41,
+                    77,
+                    .08
+                );
 
         }
 
@@ -1681,11 +2053,25 @@
 
         @media (max-width: 1000px) {
 
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 40px),
+                        1240px
+                    );
+
+            }
+
+
             .hero,
             .assessment-section,
             .location-section {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
+
+                min-height: auto;
 
             }
 
@@ -1693,14 +2079,39 @@
             .hero-copy {
 
                 padding:
-                    85px 45px;
+                    80px 40px
+                    65px;
+
+            }
+
+
+            .hero h1 {
+
+                max-width: 760px;
+
+                font-size:
+                    clamp(
+                        3.5rem,
+                        8vw,
+                        5.4rem
+                    );
 
             }
 
 
             .hero-image {
 
-                min-height: 570px;
+                min-height: 520px;
+
+                max-height: 620px;
+
+            }
+
+
+            .hero-image img {
+
+                object-position:
+                    center center;
 
             }
 
@@ -1709,9 +2120,10 @@
             .reviews-heading,
             .therapist-layout {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
-                gap: 30px;
+                gap: 38px;
 
             }
 
@@ -1720,7 +2132,42 @@
             .location-copy {
 
                 padding:
-                    75px 45px;
+                    70px 40px;
+
+            }
+
+
+            .assessment-image {
+
+                min-height: 500px;
+
+                max-height: 600px;
+
+            }
+
+
+            .therapist-photo {
+
+                width: 100%;
+
+                min-height: 0;
+
+                aspect-ratio:
+                    16 / 10;
+
+            }
+
+
+            .therapist-photo img {
+
+                min-height: 0;
+
+                height: 100%;
+
+                object-fit: cover;
+
+                object-position:
+                    center 18%;
 
             }
 
@@ -1741,9 +2188,17 @@
             }
 
 
+            .location-image {
+
+                min-height: 500px;
+
+            }
+
+
             .faq-layout {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
                 gap: 45px;
 
@@ -1766,56 +2221,123 @@
 
         @media (max-width: 700px) {
 
+            body {
+
+                padding-bottom:
+                    76px;
+
+            }
+
+
+            /*
+                IMPORTANT:
+                Real 24px side margin instead of only 15px.
+            */
+
             .container {
 
-                width:
-                    min(
-                        100% - 30px,
-                        1240px
-                    );
+                width: 100%;
+
+                max-width: none;
+
+                padding-left: 24px;
+
+                padding-right: 24px;
 
             }
 
 
-            .hero-copy {
 
-                padding:
-                    70px 25px;
-
-            }
-
+            /* ---------------------------------------------
+               MOBILE HEADINGS
+            --------------------------------------------- */
 
             .hero h1 {
 
                 font-size:
                     clamp(
-                        3rem,
-                        14vw,
-                        4.7rem
+                        2.8rem,
+                        12.5vw,
+                        3.9rem
                     );
 
-            }
+                line-height: 1.02;
 
-
-            .hero-image {
-
-                min-height: 430px;
+                letter-spacing:
+                    -.035em;
 
             }
 
 
-            .hero-location {
+            .problems-top h2,
+            .assessment-copy h2,
+            .after-heading h2,
+            .therapist-copy h2,
+            .reviews-heading h2,
+            .location-copy h2,
+            .faq-heading h2 {
 
-                right: 16px;
-                bottom: 16px;
-                left: 16px;
+                font-size:
+                    clamp(
+                        2.3rem,
+                        10vw,
+                        3.35rem
+                    );
+
+                line-height: 1.06;
+
+            }
+
+
+            .final-cta h2 {
+
+                font-size:
+                    clamp(
+                        2.5rem,
+                        11vw,
+                        3.7rem
+                    );
+
+                line-height: 1.05;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               HERO
+            --------------------------------------------- */
+
+            .hero-copy {
+
+                padding:
+                    58px 24px
+                    48px;
+
+            }
+
+
+            .hero-intro {
+
+                margin-top: 21px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
 
             }
 
 
             .hero-actions {
 
-                align-items: stretch;
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 12px;
+
+                margin-top: 27px;
 
             }
 
@@ -1827,20 +2349,103 @@
             }
 
 
+            .hero-phone {
+
+                justify-content: center;
+
+                min-height: 48px;
+
+            }
+
+
+            .hero-areas {
+
+                margin-top: 21px;
+
+                font-size: .89rem;
+
+                line-height: 1.6;
+
+            }
+
+
+            .hero-image {
+
+                min-height: 350px;
+
+                max-height: 440px;
+
+            }
+
+
+            .hero-location {
+
+                right: 18px;
+
+                bottom: 18px;
+
+                left: 18px;
+
+                max-width: none;
+
+                padding:
+                    13px 15px;
+
+                font-size: .84rem;
+
+                line-height: 1.45;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               SECTION SPACING
+            --------------------------------------------- */
+
             .problems-section,
             .therapist-section,
             .reviews-section,
             .faq-section {
 
                 padding:
-                    75px 0;
+                    68px 0;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               PROBLEMS
+            --------------------------------------------- */
+
+            .problems-top {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 22px;
+
+            }
+
+
+            .problems-top p {
+
+                padding-top: 0;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
 
             }
 
 
             .problem-list {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
+
+                margin-top: 38px;
 
             }
 
@@ -1849,57 +2454,182 @@
             .problem-item:nth-child(odd),
             .problem-item:nth-child(even) {
 
+                min-height: 0;
+
                 padding:
                     20px 0;
 
                 border-left: 0;
 
-            }
-
-
-            .assessment-image,
-            .location-image {
-
-                min-height: 420px;
+                font-size: 1rem;
 
             }
 
 
-            .assessment-copy,
-            .location-copy {
+            .problem-mark {
+
+                width: 7px;
+
+                height: 7px;
+
+            }
+
+
+            .symptom-note {
+
+                margin-top: 27px;
+
+                font-size: .95rem;
+
+                line-height: 1.7;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               ASSESSMENT
+            --------------------------------------------- */
+
+            .assessment-image {
+
+                min-height: 350px;
+
+                max-height: 430px;
+
+            }
+
+
+            .assessment-image img {
+
+                object-position:
+                    center center;
+
+            }
+
+
+            .assessment-copy {
 
                 padding:
-                    65px 25px;
+                    58px 24px;
 
             }
 
+
+            .assessment-copy
+            > .assessment-inner
+            > p {
+
+                margin-top: 20px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .assessment-list {
+
+                margin-top: 28px;
+
+            }
+
+
+            .assessment-list li {
+
+                grid-template-columns:
+                    37px 1fr;
+
+                gap: 11px;
+
+                padding:
+                    14px 0;
+
+            }
+
+
+            .assessment-list strong {
+
+                font-size: 1.2rem;
+
+            }
+
+
+            .assessment-list span {
+
+                font-size: .95rem;
+
+                line-height: 1.55;
+
+            }
+
+
+            .recovery-note {
+
+                margin-top:
+                    25px !important;
+
+                padding-left: 15px;
+
+                font-size: .96rem !important;
+
+                line-height: 1.68 !important;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               AFTER ACCIDENT
+            --------------------------------------------- */
 
             .after-section {
 
                 padding:
-                    75px 0;
+                    68px 0;
+
+            }
+
+
+            .after-heading p {
+
+                margin-top: 17px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
 
             }
 
 
             .after-steps {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
+
+                margin-top: 40px;
 
             }
 
 
             .after-step,
-            .after-step + .after-step {
+            .after-step
+            + .after-step {
 
                 padding:
-                    27px 0;
+                    26px 0;
 
                 border-left: 0;
 
                 border-top:
                     1px solid
-                    rgba(255,255,255,.18);
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        .18
+                    );
 
             }
 
@@ -1911,47 +2641,509 @@
             }
 
 
-            .therapist-photo,
+            .after-number {
+
+                margin-bottom: 9px;
+
+                font-size: 1.9rem;
+
+            }
+
+
+            .after-step h3 {
+
+                font-size: 1.25rem;
+
+            }
+
+
+            .after-step p {
+
+                font-size: .96rem;
+
+                line-height: 1.65;
+
+            }
+
+
+            .after-message {
+
+                margin-top: 30px;
+
+                font-size: 1.55rem;
+
+                line-height: 1.4;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               THERAPIST
+            --------------------------------------------- */
+
+            .therapist-layout {
+
+                gap: 31px;
+
+            }
+
+
+            .therapist-photo {
+
+                width: 100%;
+
+                min-height: 0;
+
+                aspect-ratio:
+                    4 / 5;
+
+                border-radius: 20px;
+
+            }
+
+
             .therapist-photo img {
 
-                min-height: 420px;
+                width: 100%;
+
+                height: 100%;
+
+                min-height: 0;
+
+                object-fit: cover;
+
+                object-position:
+                    center 15%;
+
+            }
+
+
+            .therapist-copy {
+
+                width: 100%;
+
+                max-width: none;
+
+            }
+
+
+            .therapist-copy h3 {
+
+                margin-top: 22px;
+
+                font-size: 1.48rem;
+
+                line-height: 1.2;
+
+            }
+
+
+            .therapist-role {
+
+                margin-top: 7px;
+
+                font-size: .94rem;
+
+                line-height: 1.4;
+
+            }
+
+
+            .therapist-copy
+            > p:not(.therapist-role) {
+
+                margin-top: 18px;
+
+                font-size: .98rem;
+
+                line-height: 1.72;
+
+            }
+
+
+            .expertise-label {
+
+                margin-top: 30px;
+
+            }
+
+
+            .expertise-list {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 8px;
+
+                margin-top: 14px;
+
+            }
+
+
+            .expertise-list span {
+
+                width: 100%;
+
+                min-height: 0;
+
+                padding:
+                    10px 14px;
+
+                border-radius: 12px;
+
+                font-size: .91rem;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               REVIEWS
+            --------------------------------------------- */
+
+            .reviews-heading {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 18px;
+
+            }
+
+
+            .reviews-heading p {
+
+                font-size: .98rem;
+
+                line-height: 1.7;
 
             }
 
 
             .reviews {
 
-                grid-template-columns: 1fr;
+                grid-template-columns:
+                    1fr;
 
-                gap: 40px;
+                gap: 38px;
+
+                margin-top: 40px;
 
             }
 
 
             .review:first-child {
 
-                grid-column: auto;
+                grid-column:
+                    auto;
 
             }
 
 
+            .review {
+
+                padding-top: 21px;
+
+            }
+
+
+            .review p {
+
+                font-size: 1.3rem;
+
+                line-height: 1.48;
+
+            }
+
+
+            .review footer {
+
+                margin-top: 16px;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               LOCATION
+            --------------------------------------------- */
+
+            .location-copy {
+
+                padding:
+                    60px 24px;
+
+            }
+
+
+            .location-copy p {
+
+                margin-top: 18px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .communities {
+
+                gap:
+                    8px 14px;
+
+                margin-top: 24px;
+
+                font-size: .93rem;
+
+            }
+
+
+            .clinic-address {
+
+                margin-top: 29px;
+
+            }
+
+
+            .location-actions {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 13px;
+
+                margin-top: 28px;
+
+            }
+
+
+            .location-actions .button {
+
+                width: 100%;
+
+            }
+
+
+            .location-phone {
+
+                justify-content: center;
+
+                min-height: 48px;
+
+            }
+
+
+            .location-image {
+
+                min-height: 350px;
+
+                max-height: 430px;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               FAQ
+            --------------------------------------------- */
+
             .faq-layout {
 
-                gap: 35px;
+                gap: 30px;
+
+            }
+
+
+            summary {
+
+                padding:
+                    22px 46px
+                    22px 0;
+
+                font-size: .99rem;
+
+                line-height: 1.45;
+
+            }
+
+
+            summary::after {
+
+                right: 0;
+
+                width: 29px;
+
+                height: 29px;
 
             }
 
 
             details p {
 
-                padding-right: 15px;
+                padding:
+                    0 5px
+                    22px 0;
+
+                font-size: .95rem;
+
+                line-height: 1.68;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               FINAL CTA
+            --------------------------------------------- */
+
+            .final-cta {
+
+                padding:
+                    74px 24px;
+
+            }
+
+
+            .final-cta p {
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .final-actions {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                max-width: 420px;
+
+                gap: 10px;
+
+                margin:
+                    26px auto 0;
+
+            }
+
+
+            .final-actions .button {
+
+                width: 100%;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               MOBILE CTA BAR
+            --------------------------------------------- */
+
+            .mobile-actions {
+
+                display: grid;
+
+                grid-template-columns:
+                    .78fr 1.22fr;
+
+                gap: 9px;
+
+                padding:
+                    9px 12px
+                    calc(
+                        9px +
+                        env(
+                            safe-area-inset-bottom
+                        )
+                    );
+
+            }
+
+
+            .mobile-actions .button {
+
+                min-height: 48px;
+
+                padding:
+                    10px 14px;
+
+                font-size: .9rem;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           SMALL PHONES
+        ===================================================== */
+
+        @media (max-width: 420px) {
+
+            .container {
+
+                padding-left: 20px;
+
+                padding-right: 20px;
+
+            }
+
+
+            .hero-copy {
+
+                padding:
+                    52px 20px
+                    43px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 2.65rem;
+
+            }
+
+
+            .hero-image {
+
+                min-height: 320px;
+
+            }
+
+
+            .assessment-copy,
+            .location-copy {
+
+                padding-left: 20px;
+
+                padding-right: 20px;
+
+            }
+
+
+            .therapist-photo {
+
+                aspect-ratio:
+                    1 / 1.18;
 
             }
 
 
             .mobile-actions {
 
-                display: grid;
+                grid-template-columns:
+                    .72fr 1.28fr;
 
             }
 
@@ -1972,7 +3164,7 @@
 
 
 
-    <main>
+    <main id="main-content">
 
 
         <!-- ==================================================
@@ -2005,6 +3197,7 @@
                     </p>
 
 
+
                     <div class="hero-actions">
 
 
@@ -2029,6 +3222,7 @@
 
 
                     </div>
+
 
 
                     <p class="hero-areas">
@@ -2057,8 +3251,8 @@
 
                 <div class="hero-location">
 
-                    MVA physiotherapy in Crossfield for
-                    patients from nearby communities.
+                    MVA physiotherapy in Crossfield for patients
+                    from nearby communities.
 
                 </div>
 
@@ -2108,50 +3302,74 @@
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Neck pain & whiplash
+
                     </div>
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Back pain
+
                     </div>
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Headaches
+
                     </div>
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Shoulder pain
+
                     </div>
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Muscle strains
+
                     </div>
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Reduced movement
+
                     </div>
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Concussion-related symptoms
+
                     </div>
 
 
                     <div class="problem-item">
+
                         <span class="problem-mark"></span>
+
                         Difficulty working, driving or exercising
+
                     </div>
 
 
@@ -2223,7 +3441,9 @@
 
                         <li>
 
-                            <strong>01</strong>
+                            <strong>
+                                01
+                            </strong>
 
                             <span>
                                 Talk about your symptoms and the collision
@@ -2234,7 +3454,9 @@
 
                         <li>
 
-                            <strong>02</strong>
+                            <strong>
+                                02
+                            </strong>
 
                             <span>
                                 Assess movement, joints and muscles
@@ -2245,11 +3467,13 @@
 
                         <li>
 
-                            <strong>03</strong>
+                            <strong>
+                                03
+                            </strong>
 
                             <span>
-                                Look at how symptoms affect work
-                                and daily activities
+                                Look at how symptoms affect work and
+                                daily activities
                             </span>
 
                         </li>
@@ -2257,7 +3481,9 @@
 
                         <li>
 
-                            <strong>04</strong>
+                            <strong>
+                                04
+                            </strong>
 
                             <span>
                                 Explain the assessment findings
@@ -2268,7 +3494,9 @@
 
                         <li>
 
-                            <strong>05</strong>
+                            <strong>
+                                05
+                            </strong>
 
                             <span>
                                 Build your treatment and exercise plan
@@ -2303,7 +3531,7 @@
 
 
         <!-- ==================================================
-             WHAT TO DO AFTER AN ACCIDENT
+             AFTER THE ACCIDENT
         =================================================== -->
 
         <section class="after-section">
@@ -2476,6 +3704,7 @@
                     </p>
 
 
+
                     <p>
 
                         Ankit has worked in the fitness and rehabilitation
@@ -2495,6 +3724,12 @@
                         quality of life.
 
                     </p>
+
+
+
+                    <div class="expertise-label">
+                        Clinical Focus
+                    </div>
 
 
 
@@ -2597,9 +3832,7 @@
 
 
                         <footer>
-
                             Gina — Google Review
-
                         </footer>
 
 
@@ -2612,7 +3845,7 @@
 
                         <p>
 
-                            “instead of just dealing with symptoms,
+                            “Instead of just dealing with symptoms,
                             he worked on what caused the issue in the
                             first place and gave me a plan to deal with it.”
 
@@ -2620,9 +3853,7 @@
 
 
                         <footer>
-
                             Dan Richter — Google Review
-
                         </footer>
 
 
@@ -2643,9 +3874,7 @@
 
 
                         <footer>
-
                             Patrick D'Amour — Google Review
-
                         </footer>
 
 
@@ -2669,7 +3898,8 @@
 
         <section
             id="location"
-            class="location-section">
+            class="location-section"
+        >
 
 
             <div class="location-copy">
@@ -2827,7 +4057,8 @@
 
         <section
             id="faq"
-            class="faq-section">
+            class="faq-section"
+        >
 
 
             <div class="container">
@@ -2840,7 +4071,7 @@
 
 
                         <h2>
-                            Frequently asked questions
+                            Frequently Asked Questions
                         </h2>
 
 
@@ -2992,7 +4223,7 @@
 
                                 If available, bring your insurance
                                 company name, claim number, adjuster's
-                                information, medical reports or forms
+                                information, medical reports or forms,
                                 and information about the symptoms you
                                 have noticed since the accident.
 
@@ -3185,7 +4416,9 @@
 
 
 
-    <!-- Mobile CTA -->
+    <!-- =====================================================
+         MOBILE CTA
+    ====================================================== -->
 
     <div class="mobile-actions">
 
@@ -3214,7 +4447,9 @@
 
 
 
-    <!-- Shared Components -->
+    <!-- =====================================================
+         SHARED COMPONENTS
+    ====================================================== -->
 
     <script>
 
@@ -3305,19 +4540,37 @@
 
 
 
-                    if (button && menu) {
+                    if (
+                        button &&
+                        menu
+                    ) {
 
 
                         button.addEventListener(
                             "click",
                             () => {
 
+
                                 menu.classList.toggle(
                                     "hidden"
                                 );
 
+
+                                const expanded =
+                                    !menu.classList.contains(
+                                        "hidden"
+                                    );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    String(expanded)
+                                );
+
+
                             }
                         );
+
 
 
                         menu
@@ -3329,9 +4582,17 @@
                                     "click",
                                     () => {
 
+
                                         menu.classList.add(
                                             "hidden"
                                         );
+
+
+                                        button.setAttribute(
+                                            "aria-expanded",
+                                            "false"
+                                        );
+
 
                                     }
                                 );

@@ -30,15 +30,9 @@
 
     <!-- Open Graph -->
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <meta property="og:type" content="website">
 
-    <meta
-        property="og:locale"
-        content="en_CA"
-    >
+    <meta property="og:locale" content="en_CA">
 
     <meta
         property="og:site_name"
@@ -67,9 +61,7 @@
 
 
 
-    <!-- =====================================================
-         GOOGLE ANALYTICS
-    ====================================================== -->
+    <!-- Google Analytics -->
 
     <script
         async
@@ -96,13 +88,9 @@
 
 
 
-    <!-- Shared header/footer uses Tailwind -->
+    <!-- Header / Footer -->
 
     <script src="https://cdn.tailwindcss.com"></script>
-
-
-
-    <!-- Lucide Icons -->
 
     <script
         src="https://unpkg.com/lucide@latest"
@@ -111,9 +99,7 @@
 
 
 
-    <!-- =====================================================
-         FONTS
-    ====================================================== -->
+    <!-- Fonts -->
 
     <link
         rel="preconnect"
@@ -133,9 +119,7 @@
 
 
 
-    <!-- =====================================================
-         STRUCTURED DATA
-    ====================================================== -->
+    <!-- Structured Data -->
 
     <script type="application/ld+json">
     {
@@ -206,7 +190,6 @@
 
                     {
                         "@type": "Question",
-
                         "name": "What is pelvic floor physiotherapy?",
 
                         "acceptedAnswer": {
@@ -217,7 +200,6 @@
 
                     {
                         "@type": "Question",
-
                         "name": "Is pelvic floor physiotherapy only for women?",
 
                         "acceptedAnswer": {
@@ -228,7 +210,6 @@
 
                     {
                         "@type": "Question",
-
                         "name": "Can men have pelvic floor problems?",
 
                         "acceptedAnswer": {
@@ -239,7 +220,6 @@
 
                     {
                         "@type": "Question",
-
                         "name": "Do I need a doctor's referral for pelvic floor physiotherapy?",
 
                         "acceptedAnswer": {
@@ -250,7 +230,6 @@
 
                     {
                         "@type": "Question",
-
                         "name": "Is pelvic floor physiotherapy covered by insurance in Alberta?",
 
                         "acceptedAnswer": {
@@ -261,7 +240,6 @@
 
                     {
                         "@type": "Question",
-
                         "name": "Can pelvic floor physiotherapy help during pregnancy or after childbirth?",
 
                         "acceptedAnswer": {
@@ -272,7 +250,6 @@
 
                     {
                         "@type": "Question",
-
                         "name": "Where is Can-Am Physical Therapy located?",
 
                         "acceptedAnswer": {
@@ -326,7 +303,6 @@
         html {
 
             scroll-behavior: smooth;
-
             scroll-padding-top: 100px;
 
         }
@@ -336,15 +312,20 @@
 
             margin: 0;
 
+            overflow-x: hidden;
+
             background: var(--cream);
 
             color: var(--text);
 
-            font-family: "Inter", sans-serif;
+            font-family:
+                "Inter",
+                sans-serif;
 
             line-height: 1.65;
 
-            -webkit-font-smoothing: antialiased;
+            -webkit-font-smoothing:
+                antialiased;
 
         }
 
@@ -383,7 +364,9 @@
         h1,
         h2 {
 
-            font-family: "DM Serif Display", serif;
+            font-family:
+                "DM Serif Display",
+                serif;
 
             font-weight: 400;
 
@@ -392,7 +375,9 @@
 
         h3 {
 
-            font-family: "Outfit", sans-serif;
+            font-family:
+                "Outfit",
+                sans-serif;
 
         }
 
@@ -437,7 +422,12 @@
             border-radius: 999px;
 
             font-size: .96rem;
+
             font-weight: 700;
+
+            line-height: 1.2;
+
+            text-align: center;
 
             transition:
                 transform .2s ease,
@@ -456,11 +446,9 @@
 
         .button-primary {
 
-            background:
-                var(--navy);
+            background: var(--navy);
 
-            color:
-                var(--white);
+            color: var(--white);
 
         }
 
@@ -531,16 +519,23 @@
             display: flex;
 
             flex-direction: column;
+
             justify-content: center;
 
             padding:
                 100px
-                clamp(45px, 7vw, 130px);
+                clamp(
+                    45px,
+                    7vw,
+                    130px
+                );
 
         }
 
 
         .hero-copy-inner {
+
+            width: 100%;
 
             max-width: 720px;
 
@@ -594,6 +589,10 @@
 
         .hero-phone {
 
+            display: inline-flex;
+
+            align-items: center;
+
             color:
                 var(--navy);
 
@@ -609,7 +608,10 @@
             color: #59667a;
 
             font-size: .9rem;
+
             font-weight: 600;
+
+            line-height: 1.6;
 
         }
 
@@ -629,6 +631,7 @@
         .hero-image img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -650,7 +653,12 @@
                 rotate(-7deg);
 
             color:
-                rgba(12, 41, 77, .34);
+                rgba(
+                    12,
+                    41,
+                    77,
+                    .34
+                );
 
             font-family:
                 "Great Vibes",
@@ -670,6 +678,7 @@
             white-space: nowrap;
 
             pointer-events: none;
+
             user-select: none;
 
         }
@@ -728,6 +737,8 @@
                 var(--muted);
 
             font-size: 1.08rem;
+
+            line-height: 1.75;
 
         }
 
@@ -814,6 +825,8 @@
             color:
                 var(--muted);
 
+            line-height: 1.7;
+
         }
 
 
@@ -849,6 +862,7 @@
         .care-image img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -864,7 +878,11 @@
 
             padding:
                 80px
-                clamp(45px, 6vw, 100px);
+                clamp(
+                    45px,
+                    6vw,
+                    100px
+                );
 
             background:
                 var(--blush);
@@ -950,7 +968,12 @@
             border-radius: 50%;
 
             background:
-                rgba(198, 127, 121, .10);
+                rgba(
+                    198,
+                    127,
+                    121,
+                    .10
+                );
 
             filter: blur(20px);
 
@@ -992,7 +1015,12 @@
 
             box-shadow:
                 0 24px 60px
-                rgba(12, 41, 77, .12);
+                rgba(
+                    12,
+                    41,
+                    77,
+                    .12
+                );
 
         }
 
@@ -1000,6 +1028,7 @@
         .therapist-photo img {
 
             width: 100%;
+
             height: 100%;
 
             min-height: 590px;
@@ -1025,7 +1054,12 @@
             background:
                 linear-gradient(
                     to top,
-                    rgba(12, 41, 77, .13),
+                    rgba(
+                        12,
+                        41,
+                        77,
+                        .13
+                    ),
                     transparent
                 );
 
@@ -1059,9 +1093,6 @@
 
             margin-top: 28px;
 
-            color:
-                var(--navy-dark);
-
             font-size:
                 clamp(
                     1.7rem,
@@ -1083,12 +1114,11 @@
 
             font-weight: 700;
 
-            letter-spacing: .02em;
-
         }
 
 
-        .therapist-copy > p:not(.therapist-role) {
+        .therapist-copy
+        > p:not(.therapist-role) {
 
             max-width: 740px;
 
@@ -1109,7 +1139,8 @@
             color:
                 var(--text) !important;
 
-            font-size: 1.08rem !important;
+            font-size:
+                1.08rem !important;
 
         }
 
@@ -1163,12 +1194,22 @@
 
             border:
                 1px solid
-                rgba(198, 127, 121, .2);
+                rgba(
+                    198,
+                    127,
+                    121,
+                    .2
+                );
 
             border-radius: 999px;
 
             background:
-                rgba(255,255,255,.78);
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .78
+                );
 
             color:
                 var(--navy-dark);
@@ -1433,7 +1474,10 @@
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(
+                    3,
+                    1fr
+                );
 
             margin-top: 65px;
 
@@ -1500,6 +1544,8 @@
             color:
                 var(--muted);
 
+            line-height: 1.7;
+
         }
 
 
@@ -1531,7 +1577,11 @@
 
             padding:
                 90px
-                clamp(45px, 7vw, 120px);
+                clamp(
+                    45px,
+                    7vw,
+                    120px
+                );
 
         }
 
@@ -1567,6 +1617,8 @@
             color: #d7e0ed;
 
             font-size: 1.06rem;
+
+            line-height: 1.75;
 
         }
 
@@ -1672,6 +1724,7 @@
         .location-image img {
 
             width: 100%;
+
             height: 100%;
 
             object-fit: cover;
@@ -1761,6 +1814,8 @@
 
             font-weight: 700;
 
+            line-height: 1.45;
+
             list-style: none;
 
         }
@@ -1821,12 +1876,14 @@
             color:
                 var(--muted);
 
+            line-height: 1.72;
+
         }
 
 
 
         /* =====================================================
-           CTA
+           FINAL CTA
         ===================================================== */
 
         .final-cta {
@@ -1918,7 +1975,9 @@
                 10px 12px
                 calc(
                     10px +
-                    env(safe-area-inset-bottom)
+                    env(
+                        safe-area-inset-bottom
+                    )
                 );
 
             border-top:
@@ -1931,6 +1990,15 @@
                     255,
                     255,
                     .97
+                );
+
+            box-shadow:
+                0 -8px 30px
+                rgba(
+                    12,
+                    41,
+                    77,
+                    .08
                 );
 
         }
@@ -1947,7 +2015,7 @@
 
                 width:
                     min(
-                        100% - 40px,
+                        calc(100% - 40px),
                         1240px
                     );
 
@@ -1967,8 +2035,8 @@
             .hero-copy {
 
                 padding:
-                    80px 40px
-                    65px;
+                    78px 40px
+                    60px;
 
             }
 
@@ -1996,14 +2064,23 @@
 
             .hero-image {
 
-                min-height: 520px;
+                min-height: 0;
 
-                max-height: 620px;
+                height: auto;
+
+                aspect-ratio:
+                    16 / 10;
 
             }
 
 
             .hero-image img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: cover;
 
                 object-position:
                     center center;
@@ -2079,6 +2156,7 @@
             .therapist-photo img {
 
                 width: 100%;
+
                 height: 100%;
 
                 min-height: 0;
@@ -2087,13 +2165,6 @@
 
                 object-position:
                     center 18%;
-
-            }
-
-
-            .therapist-copy {
-
-                max-width: 760px;
 
             }
 
@@ -2129,77 +2200,1008 @@
            MOBILE
         ===================================================== */
 
-       @media (max-width: 700px) {
+        @media (max-width: 700px) {
 
-    .therapist-section {
-        padding: 64px 0 80px;
-    }
+            body {
 
-    .therapist-layout {
-        gap: 32px;
-    }
+                padding-bottom: 76px;
 
-    .therapist-copy {
-        width: 100%;
-        max-width: none;
-    }
+            }
 
-    .therapist-copy h2 {
-        font-size: clamp(2.6rem, 11vw, 3.4rem);
-        line-height: 1.04;
-        letter-spacing: -0.02em;
-    }
 
-    .therapist-copy h3 {
-        margin-top: 24px;
-        font-size: 1.55rem;
-        line-height: 1.2;
-    }
+            /*
+             * Consistent real mobile margin.
+             * This fixes text touching the edges.
+             */
 
-    .therapist-role {
-        margin-top: 8px;
-        font-size: 0.95rem;
-        line-height: 1.4;
-    }
+            .container {
 
-    .therapist-copy > p:not(.therapist-role) {
-        margin-top: 22px;
-        font-size: 1rem;
-        line-height: 1.72;
-    }
+                width: 100%;
 
-    .therapist-expertise-title {
-        margin-top: 34px;
-    }
-}
+                max-width: none;
+
+                padding-left: 24px;
+
+                padding-right: 24px;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               MOBILE TYPOGRAPHY
+            --------------------------------------------- */
+
+            .hero h1 {
+
+                font-size:
+                    clamp(
+                        2.75rem,
+                        12vw,
+                        3.75rem
+                    );
+
+                line-height: 1.02;
+
+                letter-spacing:
+                    -.035em;
+
+            }
+
+
+            .help-title h2,
+            .care-copy h2,
+            .therapist-copy h2,
+            .who-heading h2,
+            .reviews-heading h2,
+            .visit-heading h2,
+            .location-copy h2,
+            .faq-heading h2 {
+
+                font-size:
+                    clamp(
+                        2.25rem,
+                        9.5vw,
+                        3.2rem
+                    );
+
+                line-height: 1.06;
+
+            }
+
+
+            .final-cta h2 {
+
+                font-size:
+                    clamp(
+                        2.45rem,
+                        10.5vw,
+                        3.5rem
+                    );
+
+                line-height: 1.05;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               HERO
+            --------------------------------------------- */
+
+            .hero {
+
+                display: block;
+
+                min-height: 0;
+
+            }
+
+
+            .hero-copy {
+
+                display: block;
+
+                padding:
+                    58px 24px
+                    48px;
+
+            }
+
+
+            .hero-copy-inner {
+
+                max-width: none;
+
+            }
+
+
+            .hero-intro {
+
+                margin-top: 21px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .hero-actions {
+
+                display: flex;
+
+                flex-wrap: wrap;
+
+                align-items: center;
+
+                gap: 14px;
+
+                margin-top: 27px;
+
+            }
+
+
+            .hero-actions .button {
+
+                min-height: 48px;
+
+                padding:
+                    11px 18px;
+
+                font-size: .88rem;
+
+            }
+
+
+            .hero-phone {
+
+                min-height: 48px;
+
+                padding:
+                    0 2px;
+
+                font-size: .9rem;
+
+            }
+
+
+            .hero-areas {
+
+                margin-top: 20px;
+
+                font-size: .82rem;
+
+                line-height: 1.55;
+
+            }
+
+
+            /*
+             * Prevents the tall empty area seen in the screenshot.
+             */
+
+            .hero-image {
+
+                width: 100%;
+
+                min-height: 0;
+
+                height: auto;
+
+                aspect-ratio:
+                    4 / 3;
+
+                overflow: hidden;
+
+            }
+
+
+            .hero-image img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: cover;
+
+                object-position:
+                    center center;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               GENERAL SECTION SPACING
+            --------------------------------------------- */
+
+            .help-section,
+            .therapist-section,
+            .who-section,
+            .reviews-section,
+            .visit-section,
+            .faq-section {
+
+                padding:
+                    68px 0;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               HELP
+            --------------------------------------------- */
+
+            .help-top {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 22px;
+
+            }
+
+
+            .help-intro {
+
+                max-width: none;
+
+                padding-top: 0;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .help-list {
+
+                grid-template-columns:
+                    1fr;
+
+                margin-top: 38px;
+
+            }
+
+
+            .help-item,
+            .help-item:nth-child(odd),
+            .help-item:nth-child(even) {
+
+                grid-template-columns:
+                    40px 1fr;
+
+                gap: 12px;
+
+                padding:
+                    22px 0;
+
+                border-left: 0;
+
+            }
+
+
+            .help-number {
+
+                font-size: 1.45rem;
+
+            }
+
+
+            .help-item h3 {
+
+                margin-bottom: 6px;
+
+                font-size: 1.13rem;
+
+            }
+
+
+            .help-item p {
+
+                font-size: .95rem;
+
+                line-height: 1.62;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               CARE
+            --------------------------------------------- */
+
+            .care-section {
+
+                display: flex;
+
+                flex-direction: column;
+
+                min-height: 0;
+
+            }
+
+
+            .care-image {
+
+                width: 100%;
+
+                min-height: 0;
+
+                height: auto;
+
+                aspect-ratio:
+                    4 / 3;
+
+            }
+
+
+            .care-image img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: cover;
+
+            }
+
+
+            .care-copy {
+
+                padding:
+                    58px 24px;
+
+            }
+
+
+            .care-copy p {
+
+                margin-top: 19px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .care-copy .button {
+
+                width: 100%;
+
+                margin-top: 25px;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               THERAPIST
+            --------------------------------------------- */
+
+            .therapist-section {
+
+                padding:
+                    68px 0 78px;
+
+            }
+
+
+            .therapist-layout {
+
+                gap: 32px;
+
+            }
+
+
+            .therapist-photo {
+
+                width: 100%;
+
+                min-height: 0;
+
+                aspect-ratio:
+                    4 / 5;
+
+                border-radius: 20px;
+
+                box-shadow:
+                    0 15px 35px
+                    rgba(
+                        12,
+                        41,
+                        77,
+                        .10
+                    );
+
+            }
+
+
+            .therapist-photo img {
+
+                width: 100%;
+
+                height: 100%;
+
+                min-height: 0;
+
+                object-fit: cover;
+
+                object-position:
+                    center 17%;
+
+            }
+
+
+            .therapist-copy {
+
+                width: 100%;
+
+                max-width: none;
+
+            }
+
+
+            .therapist-copy h2 {
+
+                max-width: 100%;
+
+                overflow-wrap: normal;
+
+                word-break: normal;
+
+            }
+
+
+            .therapist-copy h3 {
+
+                margin-top: 24px;
+
+                font-size: 1.48rem;
+
+                line-height: 1.2;
+
+            }
+
+
+            .therapist-role {
+
+                margin-top: 8px;
+
+                font-size: .93rem;
+
+                line-height: 1.4;
+
+            }
+
+
+            .therapist-copy
+            > p:not(.therapist-role) {
+
+                margin-top: 20px;
+
+                font-size: .98rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .therapist-intro {
+
+                font-size:
+                    1rem !important;
+
+            }
+
+
+            .therapist-expertise-title {
+
+                margin-top: 31px;
+
+                font-size: .78rem;
+
+            }
+
+
+            .therapist-expertise {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 8px;
+
+                margin-top: 14px;
+
+            }
+
+
+            .therapist-expertise span {
+
+                width: 100%;
+
+                min-height: 0;
+
+                padding:
+                    10px 14px;
+
+                border-radius: 12px;
+
+                font-size: .9rem;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               WHO
+            --------------------------------------------- */
+
+            .who-layout {
+
+                gap: 25px;
+
+            }
+
+
+            .who-content {
+
+                max-width: none;
+
+                padding-top: 0;
+
+            }
+
+
+            .who-content > p,
+            .who-content .men-text {
+
+                font-size: 1rem;
+
+                line-height: 1.72;
+
+            }
+
+
+            .who-divider {
+
+                margin: 27px 0;
+
+            }
+
+
+            .who-content h3 {
+
+                font-size: 1.3rem;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               REVIEWS
+            --------------------------------------------- */
+
+            .reviews-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 38px;
+
+                margin-top: 38px;
+
+            }
+
+
+            .review {
+
+                padding-top: 21px;
+
+            }
+
+
+            .review p {
+
+                font-size: 1.32rem;
+
+                line-height: 1.47;
+
+            }
+
+
+            .review footer {
+
+                margin-top: 16px;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               FIRST VISIT
+            --------------------------------------------- */
+
+            .visit-heading p {
+
+                margin-top: 17px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .visit-steps {
+
+                grid-template-columns:
+                    1fr;
+
+                margin-top: 38px;
+
+            }
+
+
+            .visit-step,
+            .visit-step + .visit-step {
+
+                padding:
+                    25px 0;
+
+                border-left: 0;
+
+                border-top:
+                    1px solid
+                    var(--line);
+
+            }
+
+
+            .visit-step:first-child {
+
+                border-top: 0;
+
+            }
+
+
+            .visit-number {
+
+                margin-bottom: 9px;
+
+                font-size: 1.95rem;
+
+            }
+
+
+            .visit-step h3 {
+
+                font-size: 1.25rem;
+
+            }
+
+
+            .visit-step p {
+
+                font-size: .96rem;
+
+                line-height: 1.65;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               LOCATION
+            --------------------------------------------- */
+
+            .location-section {
+
+                display: flex;
+
+                flex-direction: column;
+
+                min-height: 0;
+
+            }
+
+
+            .location-copy {
+
+                padding:
+                    60px 24px;
+
+            }
+
+
+            .location-intro {
+
+                margin-top: 18px;
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .community-list {
+
+                gap:
+                    8px 14px;
+
+                margin-top: 22px;
+
+                font-size: .92rem;
+
+            }
+
+
+            .address {
+
+                margin-top: 28px;
+
+            }
+
+
+            .location-actions {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 12px;
+
+                margin-top: 27px;
+
+            }
+
+
+            .location-actions .button {
+
+                width: 100%;
+
+            }
+
+
+            .phone-link {
+
+                justify-content: center;
+
+                min-height: 48px;
+
+            }
+
+
+            .location-image {
+
+                width: 100%;
+
+                min-height: 0;
+
+                height: auto;
+
+                aspect-ratio:
+                    4 / 3;
+
+            }
+
+
+            .location-image img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: cover;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               FAQ
+            --------------------------------------------- */
+
+            .faq-layout {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 29px;
+
+            }
+
+
+            .faq-heading h2 {
+
+                position: static;
+
+            }
+
+
+            summary {
+
+                padding:
+                    21px 45px
+                    21px 0;
+
+                font-size: .98rem;
+
+                line-height: 1.45;
+
+            }
+
+
+            summary::after {
+
+                right: 0;
+
+                width: 29px;
+
+                height: 29px;
+
+            }
+
+
+            details p {
+
+                padding:
+                    0 3px
+                    22px 0;
+
+                font-size: .95rem;
+
+                line-height: 1.68;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               FINAL CTA
+            --------------------------------------------- */
+
+            .final-cta {
+
+                padding:
+                    72px 24px;
+
+            }
+
+
+            .final-cta p {
+
+                font-size: 1rem;
+
+                line-height: 1.7;
+
+            }
+
+
+            .final-actions {
+
+                display: grid;
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 10px;
+
+                max-width: 420px;
+
+                margin:
+                    25px auto 0;
+
+            }
+
+
+            .final-actions .button {
+
+                width: 100%;
+
+            }
+
+
+
+            /* ---------------------------------------------
+               STICKY MOBILE CTA
+            --------------------------------------------- */
+
+            .mobile-actions {
+
+                display: grid;
+
+                grid-template-columns:
+                    .78fr 1.22fr;
+
+                gap: 9px;
+
+                padding:
+                    9px 12px
+                    calc(
+                        9px +
+                        env(
+                            safe-area-inset-bottom
+                        )
+                    );
+
+            }
+
+
+            .mobile-actions .button {
+
+                min-height: 48px;
+
+                padding:
+                    10px 14px;
+
+                font-size: .9rem;
+
+            }
+
+        }
 
 
 
         /* =====================================================
-           SMALL MOBILE
+           SMALL PHONES
         ===================================================== */
 
         @media (max-width: 420px) {
 
+            .container {
+
+                padding-left: 20px;
+
+                padding-right: 20px;
+
+            }
+
+
             .hero-copy {
 
-                padding-left: 18px;
-
-                padding-right: 18px;
+                padding:
+                    52px 20px
+                    43px;
 
             }
 
 
             .hero h1 {
 
-                font-size: 2.7rem;
+                font-size: 2.65rem;
+
+            }
+
+
+            .hero-actions {
+
+                gap: 10px;
+
+            }
+
+
+            .hero-actions .button {
+
+                padding-left: 16px;
+
+                padding-right: 16px;
 
             }
 
 
             .hero-image {
 
-                min-height: 320px;
+                aspect-ratio:
+                    1.2 / 1;
 
             }
 
@@ -2240,10 +3242,6 @@
 <body>
 
 
-    <!-- =====================================================
-         SHARED HEADER
-    ====================================================== -->
-
     <div id="site-header"></div>
 
 
@@ -2282,6 +3280,7 @@
                     </p>
 
 
+
                     <div class="hero-actions">
 
 
@@ -2306,6 +3305,7 @@
 
 
                     </div>
+
 
 
                     <p class="hero-areas">
@@ -2350,12 +3350,13 @@
 
 
         <!-- ==================================================
-             HOW PELVIC FLOOR PHYSIOTHERAPY CAN HELP
+             HOW WE CAN HELP
         =================================================== -->
 
         <section
             id="care"
-            class="help-section">
+            class="help-section"
+        >
 
 
             <div class="container">
@@ -2548,7 +3549,7 @@
 
 
         <!-- ==================================================
-             CARE SECTION
+             CARE
         =================================================== -->
 
         <section class="care-section">
@@ -2753,7 +3754,7 @@
 
 
         <!-- ==================================================
-             WOMEN + MEN
+             WHO
         =================================================== -->
 
         <section class="who-section">
@@ -2920,7 +3921,8 @@
 
         <section
             id="visit"
-            class="visit-section">
+            class="visit-section"
+        >
 
 
             <div class="container">
@@ -3043,7 +4045,8 @@
 
         <section
             id="location"
-            class="location-section">
+            class="location-section"
+        >
 
 
             <div class="location-copy">
@@ -3070,29 +4073,15 @@
                     <div class="community-list">
 
 
-                        <span>
-                            Crossfield
-                        </span>
+                        <span>Crossfield</span>
 
+                        <span>Carstairs</span>
 
-                        <span>
-                            Carstairs
-                        </span>
+                        <span>Airdrie</span>
 
+                        <span>Madden</span>
 
-                        <span>
-                            Airdrie
-                        </span>
-
-
-                        <span>
-                            Madden
-                        </span>
-
-
-                        <span>
-                            Balzac
-                        </span>
+                        <span>Balzac</span>
 
 
                     </div>
@@ -3196,7 +4185,8 @@
 
         <section
             id="faq"
-            class="faq-section">
+            class="faq-section"
+        >
 
 
             <div class="container">
@@ -3253,9 +4243,7 @@
 
                             <p>
 
-                                No.
-
-                                Pelvic floor problems can affect
+                                No. Pelvic floor problems can affect
                                 both women and men.
 
                                 Treatment depends on your symptoms,
@@ -3278,9 +4266,7 @@
 
                             <p>
 
-                                Yes.
-
-                                Men can experience pelvic pain,
+                                Yes. Men can experience pelvic pain,
                                 bladder leakage, urinary urgency,
                                 frequent urination and other
                                 pelvic floor symptoms.
@@ -3397,9 +4383,7 @@
 
                             <p>
 
-                                No.
-
-                                You can start by explaining what you
+                                No. You can start by explaining what you
                                 have noticed or what has changed.
 
                                 Your physiotherapist can decide
@@ -3472,7 +4456,7 @@
 
 
         <!-- ==================================================
-             FINAL CTA
+             CTA
         =================================================== -->
 
         <section class="final-cta">
@@ -3531,17 +4515,11 @@
 
 
 
-    <!-- =====================================================
-         SHARED FOOTER
-    ====================================================== -->
-
     <div id="site-footer"></div>
 
 
 
-    <!-- =====================================================
-         MOBILE ACTION BAR
-    ====================================================== -->
+    <!-- Mobile sticky actions -->
 
     <div class="mobile-actions">
 
@@ -3570,9 +4548,7 @@
 
 
 
-    <!-- =====================================================
-         SHARED COMPONENTS
-    ====================================================== -->
+    <!-- Shared Components -->
 
     <script>
 
@@ -3663,19 +4639,37 @@
 
 
 
-                    if (button && menu) {
+                    if (
+                        button &&
+                        menu
+                    ) {
 
 
                         button.addEventListener(
                             "click",
                             () => {
 
+
                                 menu.classList.toggle(
                                     "hidden"
                                 );
 
+
+                                const isOpen =
+                                    !menu.classList.contains(
+                                        "hidden"
+                                    );
+
+
+                                button.setAttribute(
+                                    "aria-expanded",
+                                    String(isOpen)
+                                );
+
+
                             }
                         );
+
 
 
                         menu
@@ -3687,9 +4681,17 @@
                                     "click",
                                     () => {
 
+
                                         menu.classList.add(
                                             "hidden"
                                         );
+
+
+                                        button.setAttribute(
+                                            "aria-expanded",
+                                            "false"
+                                        );
+
 
                                     }
                                 );
