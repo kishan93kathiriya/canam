@@ -203,10 +203,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        body.menu-open {
-            overflow: hidden;
-        }
-
         h1,
         h2,
         h3 {
@@ -257,96 +253,6 @@
         .container {
             width: min(1160px, calc(100% - 40px));
             margin-inline: auto;
-        }
-
-        .skip-link {
-            position: fixed;
-            top: 12px;
-            left: 12px;
-            z-index: 1000;
-            padding: 10px 16px;
-            border-radius: 9px;
-            color: var(--white);
-            background: var(--navy-deep);
-            transform: translateY(-180%);
-            transition: transform 0.2s ease;
-        }
-
-        .skip-link:focus {
-            transform: translateY(0);
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(223, 229, 238, 0.9);
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(12px);
-        }
-
-        .nav {
-            min-height: 84px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            flex-shrink: 0;
-        }
-
-        .brand img {
-            width: auto;
-            height: 68px;
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            color: #344157;
-            font-size: 0.94rem;
-            font-weight: 600;
-        }
-
-        .nav-links a:not(.button):hover {
-            color: var(--blue);
-        }
-
-        .menu-button {
-            display: none;
-            width: 44px;
-            height: 44px;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            color: var(--navy);
-            background: var(--white);
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mobile-menu {
-            display: none;
-            padding: 0 20px 20px;
-            background: var(--white);
-        }
-
-        .mobile-menu.is-open {
-            display: grid;
-            gap: 8px;
-        }
-
-        .mobile-menu a:not(.button) {
-            padding: 12px 4px;
-            border-bottom: 1px solid var(--line);
-            font-weight: 600;
         }
 
         .button {
@@ -1017,14 +923,6 @@
 
         @media (max-width: 960px) {
 
-            .nav-links {
-                display: none;
-            }
-
-            .menu-button {
-                display: inline-flex;
-            }
-
             .hero-grid,
             .two-column,
             .home-grid,
@@ -1072,14 +970,6 @@
         @media (max-width: 700px) {
             .container {
                 width: min(100% - 30px, 1160px);
-            }
-
-            .nav {
-                min-height: 72px;
-            }
-
-            .brand img {
-                height: 57px;
             }
 
             .hero {
@@ -1171,41 +1061,111 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="assets/css/header.css">
+    <script src="assets/js/header.js" defer></script>
 </head>
 
 <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
-        <nav class="nav container" aria-label="Primary navigation">
-            <a class="brand" href="index.html" aria-label="Can-Am Physical Therapy home">
-                <img src="assets/images/logo-short.png" alt="Can-Am Physical Therapy &amp; Rehab">
+    <!-- =====================================================
+         MASTER HEADER (styles: assets/css/header.css, behaviour: assets/js/header.js)
+    ====================================================== -->
+    <a class="cam-skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="cam-site-header" id="canam-site-header">
+        <div class="cam-header-shell">
+            <a class="cam-brand" href="index.html" aria-label="Can-Am Physical Therapy home">
+                <img src="assets/images/logo-short.webp" alt="Can-Am Physical Therapy &amp; Rehab" width="168" height="140">
             </a>
 
-            <div class="nav-links">
-                <a href="#orthopedic-care">Orthopedic Care</a>
-                <a href="#home-visits">Home Visits</a>
-                <a href="#location">Location</a>
-                <a href="#faq">FAQs</a>
-                <a class="button button-gold"
-                    href="https://canamrehab.janeapp.com/#/discipline/1/treatment/1" target="_blank"
-                    rel="noopener">Book Appointment</a>
+            <nav class="cam-desktop-nav" aria-label="Primary navigation">
+                <a class="cam-nav-link" href="index.html">Home</a>
+
+                <details class="cam-dropdown">
+                    <summary class="cam-dropdown-summary">
+                        Services
+                        <svg class="cam-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+
+                    <div class="cam-dropdown-menu">
+                        <a class="cam-dropdown-link" href="index.html#services">
+                            <strong>All Services</strong>
+                            <span>View physiotherapy and rehabilitation services.</span>
+                        </a>
+
+                        <div class="cam-dropdown-divider"></div>
+
+                        <a class="cam-dropdown-link" href="concussion-physiotherapy.html">
+                            <strong>Concussion Physiotherapy</strong>
+                            <span>Assessment and rehab after a concussion.</span>
+                        </a>
+
+                        <a class="cam-dropdown-link" href="vestibular-physiotherapy.html">
+                            <strong>Vestibular Physiotherapy</strong>
+                            <span>Care for dizziness, vertigo and balance problems.</span>
+                        </a>
+
+                        <a class="cam-dropdown-link" href="pelvic-floor-physiotherapy.html">
+                            <strong>Pelvic Floor Physiotherapy</strong>
+                            <span>Pelvic health care for women and men.</span>
+                        </a>
+
+                        <a class="cam-dropdown-link" href="mva-physiotherapy.html">
+                            <strong>MVA Physiotherapy</strong>
+                            <span>Rehabilitation after a motor vehicle accident.</span>
+                        </a>
+                    </div>
+                </details>
+
+                <a class="cam-nav-link" href="index.html#therapist">Meet the Team</a>
+                <a class="cam-nav-link" href="physiotherapy-carstairs.html" aria-current="page">Carstairs</a>
+                <a class="cam-nav-link" href="index.html#contact">Contact</a>
+            </nav>
+
+            <div class="cam-header-actions">
+                <a class="cam-phone-link" href="tel:+15878991653" aria-label="Call Can-Am at 587-899-1653">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+                    587&#8209;899&#8209;1653
+                </a>
+
+                <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">Book Appointment</a>
+
+                <button class="cam-menu-button" id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
             </div>
-
-            <button class="menu-button" id="menu-button" type="button" aria-expanded="false"
-                aria-controls="mobile-menu" aria-label="Open navigation menu">
-                <i data-lucide="menu" aria-hidden="true"></i>
-            </button>
-        </nav>
-
-        <div class="mobile-menu" id="mobile-menu">
-            <a href="#orthopedic-care">Orthopedic Care</a>
-            <a href="#home-visits">Home Visits</a>
-            <a href="#location">Location</a>
-            <a href="#faq">FAQs</a>
-            <a class="button button-gold" href="https://canamrehab.janeapp.com/#/discipline/1/treatment/1"
-                target="_blank" rel="noopener">Book Appointment</a>
         </div>
+
+        <nav class="cam-mobile-nav hidden" id="mobile-menu" aria-label="Mobile navigation">
+            <div class="cam-mobile-nav-inner">
+                <a class="cam-nav-link" href="index.html">Home</a>
+
+                <details class="cam-mobile-dropdown">
+                    <summary>
+                        <span>Services</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+
+                    <div class="cam-mobile-dropdown-links">
+                        <a class="cam-mobile-dropdown-link" href="index.html#services">All Services</a>
+
+                        <a class="cam-mobile-dropdown-link" href="concussion-physiotherapy.html">Concussion Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="vestibular-physiotherapy.html">Vestibular Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="pelvic-floor-physiotherapy.html">Pelvic Floor Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="mva-physiotherapy.html">MVA Physiotherapy</a>
+                    </div>
+                </details>
+
+                <a class="cam-nav-link" href="index.html#therapist">Meet the Team</a>
+                <a class="cam-nav-link" href="physiotherapy-carstairs.html" aria-current="page">Physiotherapy in Carstairs</a>
+                <a class="cam-nav-link" href="index.html#contact">Contact</a>
+
+                <div class="cam-mobile-actions">
+                    <a class="cam-mobile-call" href="tel:+15878991653">Call&nbsp;587&#8209;899&#8209;1653</a>
+                    <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">Book Appointment</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main id="main-content">
@@ -1593,7 +1553,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/images/logo-short.png" alt="Can-Am Physical Therapy &amp; Rehab">
+                    <img src="assets/images/logo-short.webp" alt="Can-Am Physical Therapy &amp; Rehab" width="168" height="140">
                     <p>Personalized physiotherapy and rehabilitation from our Crossfield clinic.</p>
                 </div>
                 <div>
@@ -1632,29 +1592,6 @@
             if (window.lucide) {
                 window.lucide.createIcons({ attrs: { "stroke-width": 1.9 } });
             }
-
-            const menuButton = document.getElementById("menu-button");
-            const mobileMenu = document.getElementById("mobile-menu");
-
-            const closeMenu = () => {
-                mobileMenu.classList.remove("is-open");
-                menuButton.setAttribute("aria-expanded", "false");
-                menuButton.setAttribute("aria-label", "Open navigation menu");
-                document.body.classList.remove("menu-open");
-            };
-
-            menuButton.addEventListener("click", () => {
-                const isOpen = mobileMenu.classList.toggle("is-open");
-                menuButton.setAttribute("aria-expanded", String(isOpen));
-                menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
-                document.body.classList.toggle("menu-open", isOpen);
-            });
-
-            mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-
-            document.addEventListener("keydown", (event) => {
-                if (event.key === "Escape") closeMenu();
-            });
         });
     </script>
 </body>

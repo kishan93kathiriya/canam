@@ -3235,14 +3235,116 @@
 
     </style>
 
+    <link rel="stylesheet" href="assets/css/header.css">
+    <script src="assets/js/header.js" defer></script>
 </head>
 
 
 
 <body>
 
+    <!-- =====================================================
+         MASTER HEADER (styles: assets/css/header.css, behaviour: assets/js/header.js)
+    ====================================================== -->
+    <a class="cam-skip-link" href="#main-content">Skip to main content</a>
 
-    <div id="site-header"></div>
+    <header class="cam-site-header" id="canam-site-header">
+        <div class="cam-header-shell">
+            <a class="cam-brand" href="index.html" aria-label="Can-Am Physical Therapy home">
+                <img src="assets/images/logo-short.webp" alt="Can-Am Physical Therapy &amp; Rehab" width="168" height="140">
+            </a>
+
+            <nav class="cam-desktop-nav" aria-label="Primary navigation">
+                <a class="cam-nav-link" href="index.html">Home</a>
+
+                <details class="cam-dropdown is-current">
+                    <summary class="cam-dropdown-summary">
+                        Services
+                        <svg class="cam-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+
+                    <div class="cam-dropdown-menu">
+                        <a class="cam-dropdown-link" href="index.html#services">
+                            <strong>All Services</strong>
+                            <span>View physiotherapy and rehabilitation services.</span>
+                        </a>
+
+                        <div class="cam-dropdown-divider"></div>
+
+                        <a class="cam-dropdown-link" href="concussion-physiotherapy.html">
+                            <strong>Concussion Physiotherapy</strong>
+                            <span>Assessment and rehab after a concussion.</span>
+                        </a>
+
+                        <a class="cam-dropdown-link" href="vestibular-physiotherapy.html">
+                            <strong>Vestibular Physiotherapy</strong>
+                            <span>Care for dizziness, vertigo and balance problems.</span>
+                        </a>
+
+                        <a class="cam-dropdown-link" href="pelvic-floor-physiotherapy.html" aria-current="page">
+                            <strong>Pelvic Floor Physiotherapy</strong>
+                            <span>Pelvic health care for women and men.</span>
+                        </a>
+
+                        <a class="cam-dropdown-link" href="mva-physiotherapy.html">
+                            <strong>MVA Physiotherapy</strong>
+                            <span>Rehabilitation after a motor vehicle accident.</span>
+                        </a>
+                    </div>
+                </details>
+
+                <a class="cam-nav-link" href="index.html#therapist">Meet the Team</a>
+                <a class="cam-nav-link" href="physiotherapy-carstairs.html">Carstairs</a>
+                <a class="cam-nav-link" href="index.html#contact">Contact</a>
+            </nav>
+
+            <div class="cam-header-actions">
+                <a class="cam-phone-link" href="tel:+15878991653" aria-label="Call Can-Am at 587-899-1653">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+                    587&#8209;899&#8209;1653
+                </a>
+
+                <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">Book Appointment</a>
+
+                <button class="cam-menu-button" id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <nav class="cam-mobile-nav hidden" id="mobile-menu" aria-label="Mobile navigation">
+            <div class="cam-mobile-nav-inner">
+                <a class="cam-nav-link" href="index.html">Home</a>
+
+                <details class="cam-mobile-dropdown">
+                    <summary>
+                        <span>Services</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+
+                    <div class="cam-mobile-dropdown-links">
+                        <a class="cam-mobile-dropdown-link" href="index.html#services">All Services</a>
+
+                        <a class="cam-mobile-dropdown-link" href="concussion-physiotherapy.html">Concussion Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="vestibular-physiotherapy.html">Vestibular Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="pelvic-floor-physiotherapy.html" aria-current="page">Pelvic Floor Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="mva-physiotherapy.html">MVA Physiotherapy</a>
+                    </div>
+                </details>
+
+                <a class="cam-nav-link" href="index.html#therapist">Meet the Team</a>
+                <a class="cam-nav-link" href="physiotherapy-carstairs.html">Physiotherapy in Carstairs</a>
+                <a class="cam-nav-link" href="index.html#contact">Contact</a>
+
+                <div class="cam-mobile-actions">
+                    <a class="cam-mobile-call" href="tel:+15878991653">Call&nbsp;587&#8209;899&#8209;1653</a>
+                    <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">Book Appointment</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
 
 
 
@@ -4551,173 +4653,31 @@
     <!-- Shared Components -->
 
     <script>
-
-        async function loadSharedComponent(
-            elementId,
-            path
-        ) {
-
-            const mount =
-                document.getElementById(
-                    elementId
-                );
-
+        async function loadSharedFooter() {
+            const mount = document.getElementById("site-footer");
 
             if (!mount) {
                 return;
             }
 
-
-            const response =
-                await fetch(path);
-
-
-            if (!response.ok) {
-
-                throw new Error(
-                    `Unable to load ${path}`
-                );
-
-            }
-
-
-            mount.innerHTML =
-                await response.text();
-
-        }
-
-
-
-        window.addEventListener(
-            "DOMContentLoaded",
-            async () => {
-
-
-                try {
-
-
-                    await Promise.all([
-
-                        loadSharedComponent(
-                            "site-header",
-                            "components/header.html"
-                        ),
-
-                        loadSharedComponent(
-                            "site-footer",
-                            "components/footer.html"
-                        )
-
-                    ]);
-
-
-
-                    if (window.lucide) {
-
-                        window.lucide.createIcons({
-
-                            attrs: {
-                                "stroke-width": 1.9
-                            }
-
-                        });
-
-                    }
-
-
-
-                    const button =
-                        document.getElementById(
-                            "mobile-menu-button"
-                        );
-
-
-                    const menu =
-                        document.getElementById(
-                            "mobile-menu"
-                        );
-
-
-
-                    if (
-                        button &&
-                        menu
-                    ) {
-
-
-                        button.addEventListener(
-                            "click",
-                            () => {
-
-
-                                menu.classList.toggle(
-                                    "hidden"
-                                );
-
-
-                                const isOpen =
-                                    !menu.classList.contains(
-                                        "hidden"
-                                    );
-
-
-                                button.setAttribute(
-                                    "aria-expanded",
-                                    String(isOpen)
-                                );
-
-
-                            }
-                        );
-
-
-
-                        menu
-                            .querySelectorAll("a")
-                            .forEach(link => {
-
-
-                                link.addEventListener(
-                                    "click",
-                                    () => {
-
-
-                                        menu.classList.add(
-                                            "hidden"
-                                        );
-
-
-                                        button.setAttribute(
-                                            "aria-expanded",
-                                            "false"
-                                        );
-
-
-                                    }
-                                );
-
-
-                            });
-
-
-                    }
-
-
-                } catch (error) {
-
-
-                    console.error(
-                        "Shared layout failed to load:",
-                        error
-                    );
-
-
+            try {
+                const response = await fetch("components/footer.html");
+
+                if (!response.ok) {
+                    throw new Error("Unable to load components/footer.html");
                 }
 
+                mount.innerHTML = await response.text();
 
+                if (window.lucide) {
+                    window.lucide.createIcons({ attrs: { "stroke-width": 1.9 } });
+                }
+            } catch (error) {
+                console.error("Shared footer failed to load:", error);
             }
-        );
+        }
 
+        window.addEventListener("DOMContentLoaded", loadSharedFooter);
     </script>
 
 
