@@ -210,9 +210,29 @@
             {
                 "@type": "Person",
 
+                "@id": "https://www.canamrehab.com/#ankit-patel",
+
                 "name": "Ankit Patel",
 
-                "jobTitle": "Physiotherapist and Clinic Owner",
+                "jobTitle": "Physiotherapist ",
+
+                "worksFor": {
+
+                    "@id": "https://www.canamrehab.com/#clinic"
+
+                }
+            },
+
+            {
+                "@type": "Person",
+
+                "@id": "https://www.canamrehab.com/#sharan-bhambra",
+
+                "name": "Gursharanjit Bhambra",
+
+                "alternateName": "Sharan",
+
+                "jobTitle": "Physiotherapist, Pelvic Health",
 
                 "worksFor": {
 
@@ -1281,10 +1301,11 @@
 
 
         /* =====================================================
-           THERAPIST
+           TEAM (Ankit + Sharan)
+           Photo left, full details right, one physio per row
         ===================================================== */
 
-        .therapist-section {
+        .team-section {
 
             padding:
                 110px 0;
@@ -1295,67 +1316,16 @@
         }
 
 
-        .therapist-layout {
+        .team-section .team-heading {
 
-            display: grid;
+            max-width: 720px;
 
-            grid-template-columns:
-                .78fr 1.22fr;
-
-            gap: 90px;
-
-            align-items: center;
+            margin-bottom: 44px;
 
         }
 
 
-        .therapist-photo {
-
-            min-height: 550px;
-
-            overflow: hidden;
-
-            border-radius: 24px;
-
-            background:
-                var(--blue-light);
-
-            box-shadow:
-                0 22px 55px
-                rgba(
-                    12,
-                    41,
-                    77,
-                    .11
-                );
-
-        }
-
-
-        .therapist-photo img {
-
-            width: 100%;
-
-            height: 100%;
-
-            min-height: 550px;
-
-            object-fit: cover;
-
-            object-position:
-                center top;
-
-        }
-
-
-        .therapist-copy {
-
-            max-width: 760px;
-
-        }
-
-
-        .therapist-copy h2 {
+        .team-section .team-heading h2 {
 
             font-size:
                 clamp(
@@ -1367,45 +1337,148 @@
         }
 
 
-        .therapist-copy h3 {
+        .team-section .team-heading p {
 
-            margin-top: 28px;
+            margin-top: 16px;
 
-            font-size: 1.7rem;
+            color:
+                var(--muted);
+
+            font-size: 1.05rem;
+
+            line-height: 1.7;
 
         }
 
 
-        .therapist-role {
+        .team-section .team-list {
+
+            display: grid;
+
+            gap: 28px;
+
+        }
+
+
+        .team-section .team-card {
+
+            display: grid;
+
+            grid-template-columns:
+                340px minmax(0, 1fr);
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                var(--line);
+
+            border-radius: 22px;
+
+            background:
+                var(--blue-soft);
+
+            box-shadow:
+                0 14px 36px
+                rgba(
+                    12,
+                    41,
+                    77,
+                    .07
+                );
+
+        }
+
+
+        .team-section .team-photo {
+
+            min-height: 440px;
+
+            overflow: hidden;
+
+            background:
+                var(--blue-light);
+
+        }
+
+
+        .team-section .team-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position:
+                center 20%;
+
+        }
+
+
+        .team-section .team-body {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            padding:
+                40px 46px;
+
+        }
+
+
+        .team-section .team-card h3 {
+
+            font-size: 1.9rem;
+
+            line-height: 1.15;
+
+        }
+
+
+        .team-section .team-role {
 
             margin-top: 6px;
 
             color:
                 var(--blue);
 
+            font-size: .95rem;
+
             font-weight: 700;
 
         }
 
 
-        .therapist-copy
-        > p:not(.therapist-role) {
+        .team-section .team-bio {
 
-            max-width: 730px;
+            max-width: 680px;
 
-            margin-top: 20px;
+            margin-top: 16px;
 
             color:
                 var(--muted);
 
-            line-height: 1.78;
+            font-size: .97rem;
+
+            line-height: 1.75;
 
         }
 
 
-        .expertise-label {
+        .team-section .team-bio + .team-bio {
 
-            margin-top: 30px;
+            margin-top: 12px;
+
+        }
+
+
+        .team-section .expertise-title {
+
+            margin-top: 24px;
 
             color:
                 var(--navy-dark);
@@ -1414,7 +1487,7 @@
                 "Outfit",
                 sans-serif;
 
-            font-size: .82rem;
+            font-size: .76rem;
 
             font-weight: 700;
 
@@ -1425,30 +1498,28 @@
         }
 
 
-        .expertise-list {
+        .team-section .expertise-list {
 
             display: flex;
 
             flex-wrap: wrap;
 
             gap:
-                10px 12px;
+                8px 10px;
 
-            margin-top: 15px;
+            margin-top: 12px;
 
         }
 
 
-        .expertise-list span {
+        .team-section .expertise-list span {
 
             display: inline-flex;
 
             align-items: center;
 
-            min-height: 38px;
-
             padding:
-                8px 14px;
+                7px 12px;
 
             border:
                 1px solid
@@ -1458,12 +1529,12 @@
                 999px;
 
             background:
-                var(--blue-soft);
+                var(--white);
 
             color:
-                var(--text);
+                var(--navy-dark);
 
-            font-size: .9rem;
+            font-size: .82rem;
 
             font-weight: 600;
 
@@ -2117,8 +2188,7 @@
 
 
             .problems-top,
-            .reviews-heading,
-            .therapist-layout {
+            .reviews-heading {
 
                 grid-template-columns:
                     1fr;
@@ -2142,32 +2212,6 @@
                 min-height: 500px;
 
                 max-height: 600px;
-
-            }
-
-
-            .therapist-photo {
-
-                width: 100%;
-
-                min-height: 0;
-
-                aspect-ratio:
-                    16 / 10;
-
-            }
-
-
-            .therapist-photo img {
-
-                min-height: 0;
-
-                height: 100%;
-
-                object-fit: cover;
-
-                object-position:
-                    center 18%;
 
             }
 
@@ -2208,6 +2252,44 @@
             .faq-heading h2 {
 
                 position: static;
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           TEAM: TABLET
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .team-section .team-card {
+
+                grid-template-columns:
+                    260px minmax(0, 1fr);
+
+            }
+
+
+            .team-section .team-photo {
+
+                min-height: 380px;
+
+            }
+
+
+            .team-section .team-body {
+
+                padding: 32px;
+
+            }
+
+
+            .team-section .team-card h3 {
+
+                font-size: 1.65rem;
 
             }
 
@@ -2272,7 +2354,6 @@
             .problems-top h2,
             .assessment-copy h2,
             .after-heading h2,
-            .therapist-copy h2,
             .reviews-heading h2,
             .location-copy h2,
             .faq-heading h2 {
@@ -2404,7 +2485,7 @@
             --------------------------------------------- */
 
             .problems-section,
-            .therapist-section,
+            .team-section,
             .reviews-section,
             .faq-section {
 
@@ -2679,122 +2760,80 @@
 
 
             /* ---------------------------------------------
-               THERAPIST
+               TEAM
             --------------------------------------------- */
 
-            .therapist-layout {
+            .team-section .team-heading {
 
-                gap: 31px;
-
-            }
-
-
-            .therapist-photo {
-
-                width: 100%;
-
-                min-height: 0;
-
-                aspect-ratio:
-                    4 / 5;
-
-                border-radius: 20px;
+                margin-bottom: 30px;
 
             }
 
 
-            .therapist-photo img {
+            .team-section .team-heading h2 {
 
-                width: 100%;
+                font-size:
+                    clamp(
+                        2.3rem,
+                        10vw,
+                        3.35rem
+                    );
 
-                height: 100%;
-
-                min-height: 0;
-
-                object-fit: cover;
-
-                object-position:
-                    center 15%;
+                line-height: 1.06;
 
             }
 
 
-            .therapist-copy {
+            .team-section .team-heading p {
 
-                width: 100%;
-
-                max-width: none;
+                font-size: 1rem;
 
             }
 
 
-            .therapist-copy h3 {
+            .team-section .team-list {
 
-                margin-top: 22px;
-
-                font-size: 1.48rem;
-
-                line-height: 1.2;
+                gap: 22px;
 
             }
 
 
-            .therapist-role {
-
-                margin-top: 7px;
-
-                font-size: .94rem;
-
-                line-height: 1.4;
-
-            }
-
-
-            .therapist-copy
-            > p:not(.therapist-role) {
-
-                margin-top: 18px;
-
-                font-size: .98rem;
-
-                line-height: 1.72;
-
-            }
-
-
-            .expertise-label {
-
-                margin-top: 30px;
-
-            }
-
-
-            .expertise-list {
-
-                display: grid;
+            .team-section .team-card {
 
                 grid-template-columns:
                     1fr;
 
-                gap: 8px;
+            }
 
-                margin-top: 14px;
+
+            .team-section .team-photo {
+
+                min-height: 0;
+
+                aspect-ratio:
+                    1 / 1;
 
             }
 
 
-            .expertise-list span {
-
-                width: 100%;
-
-                min-height: 0;
+            .team-section .team-body {
 
                 padding:
-                    10px 14px;
+                    24px 22px 28px;
 
-                border-radius: 12px;
+            }
 
-                font-size: .91rem;
+
+            .team-section .team-card h3 {
+
+                font-size: 1.5rem;
+
+            }
+
+
+            .team-section .team-bio {
+
+                font-size: .98rem;
 
             }
 
@@ -3128,14 +3167,6 @@
                 padding-left: 20px;
 
                 padding-right: 20px;
-
-            }
-
-
-            .therapist-photo {
-
-                aspect-ratio:
-                    1 / 1.18;
 
             }
 
@@ -3761,116 +3792,171 @@
 
 
         <!-- ==================================================
-             THERAPIST
+             TEAM: Ankit + Sharan
         =================================================== -->
 
-        <section class="therapist-section">
+        <section
+            id="therapist"
+            class="team-section"
+            aria-labelledby="team-title"
+        >
 
 
-            <div class="container therapist-layout">
+            <div class="container">
 
 
-                <div class="therapist-photo">
+                <div class="team-heading">
 
+                    <h2 id="team-title">
+                        Meet Your Physiotherapists
+                    </h2>
 
-                    <img
-                        src="assets/images/ankit_patel_professional.png"
-                        alt="Ankit Patel, physiotherapist and clinic owner at Can-Am Physical Therapy"
-                    >
-
+                    <p>
+                        One-on-one rehabilitation after a motor vehicle
+                        accident at our Crossfield clinic.
+                    </p>
 
                 </div>
 
 
 
-                <div class="therapist-copy">
+                <div class="team-list">
 
 
-                    <h2>
-                        Meet Your Physiotherapist
-                    </h2>
+                    <!-- ANKIT -->
+
+                    <article class="team-card">
+
+                        <div class="team-photo">
+
+                            <img
+                                src="assets/images/ankit_patel_professional.png"
+                                alt="Ankit Patel, physiotherapist and clinic owner at Can-Am Physical Therapy"
+                                width="640"
+                                height="640"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
+                        </div>
 
 
-                    <h3>
-                        Ankit Patel
-                    </h3>
+                        <div class="team-body">
+
+                            <h3>
+                                Ankit Patel
+                            </h3>
+
+                            <p class="team-role">
+                                Physiotherapist 
+                            </p>
+
+                            <p class="team-bio">
+                                Ankit has worked in the fitness and rehabilitation
+                                industry for many years, with experience across
+                                athletic, orthopedic, neurological and specialized
+                                rehabilitation settings.
+                            </p>
+
+                            <p class="team-bio">
+                                His approach focuses on one-on-one care,
+                                understanding what is limiting each patient and
+                                building an individualized plan to help improve
+                                movement, function and confidence.
+                            </p>
+
+                            <div class="expertise-title">
+                                Clinical Focus
+                            </div>
+
+                            <div
+                                class="expertise-list"
+                                aria-label="Ankit's areas of clinical focus"
+                            >
+                                <span>MVA Rehabilitation</span>
+                                <span>Advanced Manual Therapy</span>
+                                <span>Active Release Technique</span>
+                                <span>IASTM &amp; Cupping Therapy</span>
+                                <span>Dry Needling</span>
+                                <span>Concussion &amp; Vestibular</span>
+                                <span>Orthopedic &amp; Sports Rehab</span>
+                            </div>
+
+                        </div>
+
+                    </article>
 
 
-                    <p class="therapist-role">
 
-                        Physiotherapist & Clinic Owner
+                    <!-- SHARAN -->
 
-                    </p>
+                    <article class="team-card">
 
+                        <div class="team-photo">
 
+                            <img
+                                src="assets/images/gursharanjit-bhambra.jpeg"
+                                alt="Gursharanjit Bhambra, physiotherapist at Can-Am Physical Therapy"
+                                loading="lazy"
+                                decoding="async"
+                            >
 
-                    <p>
-
-                        Ankit has worked in the fitness and rehabilitation
-                        industry for many years. His experience includes
-                        working with athletes and patients across gym
-                        settings, specialized clinics, home care and
-                        other rehabilitation environments.
-
-                    </p>
+                        </div>
 
 
-                    <p>
+                        <div class="team-body">
 
-                        He established Can-Am Physical Therapy to provide
-                        dedicated one-on-one, hands-on care and help
-                        patients improve function, independence and
-                        quality of life.
+                            <h3>
+                                Gursharanjit Bhambra
+                            </h3>
 
-                    </p>
+                            <p class="team-role">
+                                Physiotherapist, Pelvic Health
+                            </p>
 
+                            <p class="team-bio">
+                                Sharan believes good physiotherapy starts with
+                                listening: understanding what you are experiencing,
+                                what is important to you, and what you want to feel
+                                confident doing again.
+                            </p>
 
+                            <p class="team-bio">
+                                Her experience includes pelvic health,
+                                musculoskeletal and neurological rehabilitation,
+                                vestibular care, functional dry needling, exercise
+                                prescription and sports injury rehabilitation. She
+                                enjoys working one-on-one with patients and creating
+                                care that feels personal, comfortable and easy to
+                                understand.
+                            </p>
 
-                    <div class="expertise-label">
-                        Clinical Focus
-                    </div>
+                            <p class="team-bio">
+                                Her goal is to help you feel heard and supported
+                                throughout your care, working together to improve
+                                movement, function and confidence so you can return
+                                to the activities and everyday moments that matter
+                                to you.
+                            </p>
 
+                            <div class="expertise-title">
+                                Areas of Focus
+                            </div>
 
+                            <div
+                                class="expertise-list"
+                                aria-label="Sharan's areas of clinical focus"
+                            >
+                                <span>Pelvic Health</span>
+                                <span>Functional Dry Needling</span>
+                                <span>Exercise Prescription</span>
+                                <span>Sports Injury Rehabilitation</span>
+                                <span>Vestibular Rehabilitation</span>
+                            </div>
 
-                    <div class="expertise-list">
+                        </div>
 
-
-                        <span>
-                            MVA Rehabilitation
-                        </span>
-
-
-                        <span>
-                            Advanced Manual Therapy
-                        </span>
-
-
-                        <span>
-                            Active Release Technique
-                        </span>
-
-
-                        <span>
-                            IASTM & Cupping Therapy
-                        </span>
-
-
-                        <span>
-                            Dry Needling
-                        </span>
-
-
-                        <span>
-                            Concussion & Vestibular
-                        </span>
-
-
-                        <span>
-                            Orthopedic & Sports Rehab
-                        </span>
-
-
-                    </div>
+                    </article>
 
 
                 </div>
@@ -3931,7 +4017,7 @@
 
 
                         <footer>
-                            Gina — Google Review
+                            Gina · Google Review
                         </footer>
 
 
@@ -3952,7 +4038,7 @@
 
 
                         <footer>
-                            Dan Richter — Google Review
+                            Dan Richter · Google Review
                         </footer>
 
 
@@ -3973,7 +4059,7 @@
 
 
                         <footer>
-                            Patrick D'Amour — Google Review
+                            Patrick D'Amour · Google Review
                         </footer>
 
 

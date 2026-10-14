@@ -245,6 +245,157 @@
             box-shadow: 0 12px 32px rgba(200, 150, 12, 0.50);
             transform: translateY(-2px);
         }
+
+        /* =====================================================
+           TEAM (Ankit + Sharan)
+           Photo left, full details right, one physio per row.
+           Scoped under .team-section so Tailwind can't clash.
+        ===================================================== */
+
+        .team-section .team-list {
+            display: grid;
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .team-section .team-card {
+            display: grid;
+            grid-template-columns: 340px minmax(0, 1fr);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            border-radius: 2rem;
+            background: #ffffff;
+            box-shadow: 0 25px 50px -12px rgba(13, 34, 71, .15);
+        }
+
+        .team-section .team-photo {
+            min-height: 440px;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .team-section .team-photo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .team-section .team-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 44px 48px;
+        }
+
+        .team-section .team-card h3 {
+            margin: 0;
+            color: var(--color-primary);
+            font-family: "Outfit", sans-serif;
+            font-size: 1.9rem;
+            font-weight: 800;
+            line-height: 1.15;
+        }
+
+        .team-section .team-role {
+            margin: 6px 0 0;
+            color: var(--color-secondary);
+            font-size: .95rem;
+            font-weight: 700;
+        }
+
+        .team-section .team-bio {
+            max-width: 680px;
+            margin: 16px 0 0;
+            color: #475569;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .team-section .team-bio + .team-bio {
+            margin-top: 12px;
+        }
+
+        .team-section .expertise-title {
+            margin-top: 26px;
+            padding-top: 22px;
+            border-top: 1px solid #f1f5f9;
+            color: var(--color-primary);
+            font-family: "Outfit", sans-serif;
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        .team-section .expertise-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 10px;
+            margin-top: 12px;
+        }
+
+        .team-section .expertise-list span {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+            background: #f8faff;
+            color: var(--color-dark);
+            font-size: .8rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+
+            .team-section .team-card {
+                grid-template-columns: 260px minmax(0, 1fr);
+            }
+
+            .team-section .team-photo {
+                min-height: 380px;
+            }
+
+            .team-section .team-body {
+                padding: 32px;
+            }
+
+            .team-section .team-card h3 {
+                font-size: 1.65rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .team-section .team-list {
+                gap: 22px;
+            }
+
+            .team-section .team-card {
+                grid-template-columns: 1fr;
+                border-radius: 1.5rem;
+            }
+
+            .team-section .team-photo {
+                min-height: 0;
+                aspect-ratio: 1 / 1;
+            }
+
+            .team-section .team-body {
+                padding: 24px 22px 28px;
+            }
+
+            .team-section .team-card h3 {
+                font-size: 1.5rem;
+            }
+
+            .team-section .team-bio {
+                font-size: .98rem;
+            }
+        }
     </style>
     <script>
         tailwind.config = {
@@ -827,88 +978,128 @@
             </div>
         </section>
 
-        <!-- 4. Meet The Therapist Section -->
+        <!-- 4. Meet The Team Section (Ankit + Sharan) -->
         <section id="therapist"
-            class="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
+            class="team-section py-24 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden"
+            aria-labelledby="team-title">
             <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse-slow"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16 scroll-reveal">
                     <div
                         class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                        <i data-lucide="user" class="w-4 h-4 text-primary"></i>
+                        <i data-lucide="users" class="w-4 h-4 text-primary"></i>
                         <span class="text-primary font-bold tracking-wider uppercase text-sm">Expert Care</span>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-black text-primary mb-6">
-                        Know Your <span class="text-gradient">Therapist</span>
+                    <h2 id="team-title" class="text-4xl md:text-5xl font-black text-primary mb-6">
+                        Know Your <span class="text-gradient">Therapists</span>
                     </h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                        One-on-one assessment and rehabilitation at our Crossfield clinic.
+                    </p>
                 </div>
 
-                <div
-                    class="bg-white rounded-[2rem] shadow-2xl overflow-hidden border border-slate-100 scroll-reveal max-w-5xl mx-auto">
-                    <div class="grid md:grid-cols-5 h-full">
-                        <!-- Photo Column -->
-                        <div class="md:col-span-2 relative h-80 md:h-auto bg-slate-100">
-                            <img src="assets/images/ankit_patel_professional.png" alt="Ankit Patel, Physiotherapist"
-                                class="absolute inset-0 w-full h-full object-cover">
+                <div class="team-list">
+
+                    <!-- ANKIT -->
+                    <article class="team-card scroll-reveal">
+
+                        <div class="team-photo">
+                            <img
+                                src="assets/images/ankit_patel_professional.png"
+                                alt="Ankit Patel, physiotherapist and clinic owner at Can-Am Physical Therapy"
+                                width="640"
+                                height="640"
+                                loading="lazy"
+                                decoding="async">
                         </div>
 
-                        <!-- Bio Content -->
-                        <div class="md:col-span-3 p-10 md:p-14">
-                            <h3 class="text-3xl font-black text-primary mb-2">Ankit Patel</h3>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span
-                                    class="px-3 py-1 bg-secondary/10 text-secondary text-sm font-bold rounded-full">Physiotherapist</span>
-                                <span class="px-3 py-1 bg-accent/10 text-accent text-sm font-bold rounded-full">Clinic
-                                    Owner</span>
-                            </div>
+                        <div class="team-body">
 
-                            <p class="text-slate-600 text-lg leading-relaxed mb-6">
-                                Ankit has worked in the fitness and rehabilitation industry for many years. He brings a
-                                wealth of diverse experience, having worked in gym settings, with young athletes, the
+                            <h3>Ankit Patel</h3>
+
+                            <p class="team-role">Physiotherapist </p>
+
+                            <p class="team-bio">
+                                Ankit has worked in the fitness and rehabilitation industry for many years. He brings
+                                a wealth of diverse experience, having worked in gym settings, with young athletes, the
                                 Olympic speed skaters' team, and ballet dancers. His career spans various environments
                                 including nursing homes, home care, prisons, and specialized clinics.
                             </p>
 
-                            <p class="text-slate-600 leading-relaxed mb-8">
+                            <p class="team-bio">
                                 He established his own clinic to prioritize exceptional manual therapy and provide a
                                 dedicated one-on-one, hands-on experience for every client. His primary goal is to help
                                 patients gain functional independence and significantly improve their quality of life.
                             </p>
 
-                            <div class="border-t border-gray-100 pt-8">
-                                <h4 class="text-lg font-bold text-primary mb-4">Clinical Expertise</h4>
-                                <div class="grid sm:grid-cols-2 gap-y-3 gap-x-6">
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> Advanced Manual Therapy
-                                    </div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> IASTM & Cupping Therapy
-                                    </div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> Active Release
-                                        Technique</div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> Dry Needling</div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> Concussion & Vestibular
-                                    </div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> Neuro Rehab (Stroke,
-                                        MS, ALS)</div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> Ortho & Sport Rehab
-                                    </div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> Cardio-respiratory
-                                        Rehab</div>
-                                    <div class="flex items-center gap-2 text-slate-700 text-sm font-medium"><i
-                                            data-lucide="check" class="w-4 h-4 text-accent"></i> MVA, WCB, & LTD Claims
-                                    </div>
-                                </div>
+                            <div class="expertise-title">Clinical Expertise</div>
+
+                            <div class="expertise-list" aria-label="Ankit's areas of clinical expertise">
+                                <span>Advanced Manual Therapy</span>
+                                <span>IASTM &amp; Cupping Therapy</span>
+                                <span>Active Release Technique</span>
+                                <span>Dry Needling</span>
+                                <span>Concussion &amp; Vestibular</span>
+                                <span>Neuro Rehab (Stroke, MS, ALS)</span>
+                                <span>Ortho &amp; Sport Rehab</span>
+                                <span>Cardio-respiratory Rehab</span>
+                                <span>MVA, WCB &amp; LTD Claims</span>
                             </div>
+
                         </div>
-                    </div>
+
+                    </article>
+
+                    <!-- SHARAN -->
+                    <article class="team-card scroll-reveal delay-100">
+
+                        <div class="team-photo">
+                            <img
+                                src="assets/images/gursharanjit-bhambra.jpeg"
+                                alt="Gursharanjit Bhambra, physiotherapist at Can-Am Physical Therapy"
+                                loading="lazy"
+                                decoding="async">
+                        </div>
+
+                        <div class="team-body">
+
+                            <h3>Gursharanjit Bhambra</h3>
+
+                            <p class="team-role">Physiotherapist, Pelvic Health</p>
+
+                            <p class="team-bio">
+                                Sharan believes good physiotherapy starts with listening: understanding what you are
+                                experiencing, what is important to you, and what you want to feel confident doing again.
+                            </p>
+
+                            <p class="team-bio">
+                                Her experience includes pelvic health, musculoskeletal and neurological rehabilitation,
+                                vestibular care, functional dry needling, exercise prescription and sports injury
+                                rehabilitation. She enjoys working one-on-one with patients and creating care that feels
+                                personal, comfortable and easy to understand.
+                            </p>
+
+                            <p class="team-bio">
+                                Her goal is to help you feel heard and supported throughout your care, working together
+                                to improve movement, function and confidence so you can return to the activities and
+                                everyday moments that matter to you.
+                            </p>
+
+                            <div class="expertise-title">Areas of Focus</div>
+
+                            <div class="expertise-list" aria-label="Sharan's areas of clinical focus">
+                                <span>Pelvic Health</span>
+                                <span>Functional Dry Needling</span>
+                                <span>Exercise Prescription</span>
+                                <span>Sports Injury Rehabilitation</span>
+                                <span>Vestibular Rehabilitation</span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
                 </div>
             </div>
         </section>
