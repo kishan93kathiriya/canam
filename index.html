@@ -36,7 +36,7 @@
     <meta property="og:image" content="https://www.canamrehab.com/assets/images/og-home.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Physiotherapists treating patients in a bright clinic gym" />
+    <meta property="og:image:alt" content="Physiotherapist treating a patient on a treatment table" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Structured data -->
@@ -515,6 +515,649 @@
                 font-size: .98rem;
             }
         }
+
+        /* =====================================================
+           HOMEPAGE REDESIGN: hero + body map, about
+        ===================================================== */
+        :root {
+            --color-cream: #FAF7F1;
+        }
+
+        body {
+            background-color: var(--color-cream);
+        }
+
+        [id] {
+            scroll-margin-top: 96px;
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        @media (min-width: 640px) {
+            .wrap {
+                padding: 0 24px;
+            }
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .eyebrow-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            border: 1px solid rgba(27, 58, 107, .35);
+            border-radius: 999px;
+            background: #fff;
+            color: var(--color-primary);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .eyebrow-pill::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 1px;
+            height: 18px;
+            background: rgba(27, 58, 107, .3);
+        }
+
+        .section-title {
+            margin-top: 28px;
+            color: var(--color-dark);
+            font-size: clamp(2rem, 4.4vw, 3.1rem);
+            font-weight: 800;
+            letter-spacing: -.01em;
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
+
+        .section-sub {
+            max-width: 620px;
+            margin: 16px auto 0;
+            color: var(--color-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .btn-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 0 26px;
+            border-radius: 999px;
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            transition: transform .25s ease, background-color .25s ease, box-shadow .25s ease, color .25s ease;
+        }
+
+        .btn-pill:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-pill-light {
+            background: #fff;
+            color: var(--color-dark);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+        }
+
+        .btn-pill-light:hover {
+            background: var(--color-gold-light);
+        }
+
+        .btn-pill-ghost {
+            border: 1px solid rgba(255, 255, 255, .45);
+            color: #fff;
+        }
+
+        .btn-pill-ghost:hover {
+            background: rgba(255, 255, 255, .12);
+        }
+
+        /* ---------- Hero ---------- */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 88px 16px 88px;
+            background: var(--color-dark);
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 55% 30% at 50% 18%, rgba(46, 91, 168, .55), transparent 70%),
+                repeating-linear-gradient(90deg,
+                    rgba(255, 255, 255, .05) 0,
+                    rgba(255, 255, 255, 0) 34px,
+                    rgba(0, 0, 0, .22) 68px,
+                    rgba(255, 255, 255, .05) 96px),
+                linear-gradient(180deg, #0D2247 0%, #13305c 45%, #0D2247 100%);
+        }
+
+        .hero-inner,
+        .hero-map {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-inner {
+            max-width: 920px;
+            margin: 0 auto;
+            animation: fadeInUp .8s ease-out both;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 7.2vw, 5rem);
+            font-weight: 800;
+            line-height: 1.02;
+            letter-spacing: -.015em;
+            text-transform: uppercase;
+        }
+
+        .hero-kicker {
+            display: block;
+            margin-bottom: 22px;
+            color: var(--color-gold-light);
+            font-family: "Inter", sans-serif;
+            font-size: clamp(.72rem, 1.6vw, .85rem);
+            font-weight: 600;
+            letter-spacing: .2em;
+        }
+
+        .hero-title-accent {
+            color: var(--color-gold-light);
+        }
+
+        .hero-sub {
+            max-width: 600px;
+            margin: 22px auto 0;
+            color: rgba(226, 232, 240, .88);
+            font-size: clamp(.95rem, 1.8vw, 1.08rem);
+            line-height: 1.7;
+        }
+
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 22px;
+            margin-top: 26px;
+            color: rgba(255, 255, 255, .85);
+            font-size: .8rem;
+            font-weight: 500;
+        }
+
+        .hero-badges li {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-badges svg {
+            color: var(--color-gold-light);
+        }
+
+        .hero-map {
+            max-width: 1100px;
+            margin: 72px auto 0;
+            animation: fadeInUp .9s .2s ease-out both;
+        }
+
+        .hero-map-head {
+            margin-bottom: 28px;
+        }
+
+        .hero-map-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            color: #fff;
+            font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .hero-map-title::before,
+        .hero-map-title::after {
+            content: "";
+            width: 36px;
+            height: 1px;
+            background: var(--color-gold-light);
+        }
+
+        .hero-map-head p {
+            margin-top: 8px;
+            color: rgba(226, 232, 240, .75);
+            font-size: .95rem;
+        }
+
+        /* ---------- Body map ---------- */
+        .bodymap {
+            position: relative;
+            text-align: left;
+        }
+
+        .bm-svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+
+        .bm-lines path {
+            stroke: var(--color-gold-light);
+            stroke-width: 1.3;
+            opacity: .7;
+            transition: opacity .25s ease, stroke-width .25s ease;
+        }
+
+        .bm-line-ends circle {
+            fill: var(--color-gold-light);
+        }
+
+        .bm-spots a {
+            cursor: pointer;
+            outline: none;
+        }
+
+        .bm-ring {
+            fill: var(--color-gold-light);
+            opacity: .35;
+            transform-box: fill-box;
+            transform-origin: center;
+            animation: bmPulse 2.4s ease-out infinite;
+        }
+
+        .bm-dot {
+            fill: var(--color-accent);
+            stroke: #fff;
+            stroke-width: 2;
+            transition: fill .2s ease;
+        }
+
+        .bm-spots text {
+            fill: #fff;
+            font-family: "Inter", sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+
+        .bm-spots a.is-active .bm-dot,
+        .bm-spots a:focus-visible .bm-dot {
+            fill: var(--color-secondary);
+        }
+
+        .bm-lines path.is-active {
+            opacity: 1;
+            stroke-width: 2.4;
+        }
+
+        @keyframes bmPulse {
+            0% {
+                transform: scale(.7);
+                opacity: .5;
+            }
+
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .bm-labels {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bm-label {
+            position: absolute;
+            left: var(--x);
+            top: var(--y);
+            width: 27.27%;
+        }
+
+        .bm-label a {
+            display: grid;
+            gap: 3px;
+            padding: 2px 0;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .bm-left a {
+            text-align: right;
+            justify-items: end;
+        }
+
+        .bm-num {
+            display: none;
+        }
+
+        .bm-area {
+            color: #fff;
+            font-family: "Outfit", sans-serif;
+            font-size: .98rem;
+            font-weight: 800;
+            letter-spacing: .06em;
+            line-height: 1.25;
+            text-transform: uppercase;
+        }
+
+        .bm-name {
+            color: var(--color-gold-light);
+            font-size: .86rem;
+            font-weight: 600;
+        }
+
+        .bm-conds {
+            color: rgba(203, 213, 225, .85);
+            font-size: .8rem;
+            line-height: 1.5;
+        }
+
+        .bm-go {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 2px;
+            color: #fff;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            opacity: .7;
+            transition: gap .2s ease, opacity .2s ease;
+        }
+
+        .bm-label a:hover .bm-go,
+        .bm-label.is-active .bm-go {
+            gap: 8px;
+            opacity: 1;
+        }
+
+        .bm-label a:hover .bm-area,
+        .bm-label.is-active .bm-area {
+            color: var(--color-gold-light);
+        }
+
+        .bm-more {
+            max-width: 640px;
+            margin: 28px auto 0;
+            color: rgba(226, 232, 240, .8);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+
+        .bm-more a {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: var(--color-gold-light);
+            text-underline-offset: 3px;
+        }
+
+        @media (max-width: 1023px) {
+            .bodymap {
+                display: grid;
+                gap: 28px;
+            }
+
+            .bm-svg {
+                width: min(240px, 62vw);
+                margin: 0 auto;
+            }
+
+            .bm-lines {
+                display: none;
+            }
+
+            .bm-labels {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px;
+            }
+
+            .bm-label {
+                position: static;
+                width: auto;
+            }
+
+            .bm-label a,
+            .bm-left a {
+                position: relative;
+                height: 100%;
+                padding: 16px 16px 16px 54px;
+                border: 1px solid rgba(255, 255, 255, .14);
+                border-radius: 18px;
+                background: rgba(255, 255, 255, .06);
+                text-align: left;
+                justify-items: start;
+                transition: border-color .2s ease, background-color .2s ease;
+            }
+
+            .bm-label a:hover,
+            .bm-label.is-active a {
+                border-color: var(--color-gold-light);
+                background: rgba(255, 255, 255, .1);
+            }
+
+            .bm-num {
+                position: absolute;
+                left: 16px;
+                top: 16px;
+                display: grid;
+                place-items: center;
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                background: var(--color-accent);
+                color: #fff;
+                font-size: .75rem;
+                font-weight: 700;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding: 64px 16px 64px;
+            }
+
+            .hero-map {
+                margin-top: 56px;
+            }
+
+            .bm-labels {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ---------- About (editorial layout) ---------- */
+        .about {
+            padding: 88px 0 104px;
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1.25fr);
+            grid-template-rows: auto 1fr;
+            gap: 28px 40px;
+        }
+
+        .about-heading {
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+
+        .about-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--color-muted);
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .about-eyebrow::after {
+            content: "";
+            flex: 0 0 80px;
+            height: 1px;
+            background: #D9D2C3;
+        }
+
+        .about-heading h2 {
+            max-width: 520px;
+            margin-top: 14px;
+            color: var(--color-dark);
+            font-size: clamp(2rem, 3.8vw, 2.9rem);
+            font-weight: 600;
+            letter-spacing: -.02em;
+            line-height: 1.08;
+        }
+
+        .about-img {
+            overflow: hidden;
+            border-radius: 22px;
+            background: #E9E3D6;
+        }
+
+        .about-img img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-img-left {
+            grid-column: 1;
+            grid-row: 2;
+            aspect-ratio: 4 / 5.4;
+            align-self: end;
+        }
+
+        .about-img-right {
+            grid-column: 3;
+            grid-row: 1 / 3;
+            min-height: 100%;
+        }
+
+        .about-copy {
+            grid-column: 2;
+            grid-row: 2;
+            align-self: center;
+            padding-top: 40px;
+        }
+
+        .about-copy p {
+            color: #9AA3AF;
+            font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+            font-weight: 500;
+            line-height: 1.55;
+        }
+
+        .about-copy-strong {
+            color: var(--color-dark);
+        }
+
+        .about-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 28px;
+            padding: 12px 22px;
+            border-radius: 999px;
+            background: var(--color-gold-light);
+            color: var(--color-dark);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            transition: transform .25s ease, background-color .25s ease;
+        }
+
+        .about-cta:hover {
+            transform: translateY(-2px);
+            background: #F0C866;
+        }
+
+        @media (max-width: 1023px) {
+            .about-layout {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                grid-template-rows: auto auto auto;
+            }
+
+            .about-heading {
+                grid-column: 1 / -1;
+            }
+
+            .about-copy {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                padding-top: 0;
+            }
+
+            .about-img-left {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .about-img-right {
+                grid-column: 2;
+                grid-row: 3;
+                aspect-ratio: 4 / 5.4;
+                min-height: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about {
+                padding: 64px 0 72px;
+            }
+
+            .about-layout {
+                gap: 20px 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .hero-inner,
+            .hero-map,
+            .bm-ring {
+                animation: none;
+            }
+        }
     </style>
     <script>
         tailwind.config = {
@@ -647,116 +1290,249 @@
     </header>
 
     <main id="main-content">
-        <!-- 1. Hero Section -->
-        <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-primary">
-            <!-- Background -->
-            <div class="absolute inset-0 z-0">
-                <img src="assets/images/hero_blue.png" alt="Physiotherapists treating patients in a bright clinic gym"
-                    width="1024" height="1024" fetchpriority="high"
-                    class="w-full h-full object-cover opacity-60" />
-                <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+        <!-- 1. Hero with body map -->
+        <!-- Photos: Unsplash (unsplash.com/license). Model: photo-1789111161024-14711920a5b0; about: photo-1540205895360-4ad4cffb3aa8, photo-1768507423533-b87b62769758; services: photo-1645005513709, photo-1637714409323, photo-1758691462321, photo-1688578735972, photo-1706353399656, photo-1616279969745, photo-1773227055624 -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true"></div>
+
+            <div class="hero-inner">
+                <h1 id="hero-title" class="hero-title">
+                    <span class="hero-kicker">Physiotherapy &amp; Rehab in Crossfield, AB</span>
+                    Elevating Health.<br />
+                    <span class="hero-title-accent">Restoring Motion.</span>
+                </h1>
+
+                <p class="hero-sub">
+                    Experience expert physiotherapy and specialized rehabilitation. From neuro-rehab to sports
+                    recovery, we provide personalized care for your journey to wellness.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener" class="btn-pill btn-pill-light">
+                        Book Appointment <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#conditions" class="btn-pill btn-pill-ghost">
+                        Find Your Treatment
+                    </a>
+                </div>
+
+                <ul class="hero-badges" aria-label="Billing and claims">
+                    <li><i data-lucide="check-circle-2" class="w-4 h-4"></i> MVA Claims Accepted</li>
+                    <li><i data-lucide="check-circle-2" class="w-4 h-4"></i> WCB Claims Accepted</li>
+                    <li><i data-lucide="check-circle-2" class="w-4 h-4"></i> Direct Billing Available</li>
+                </ul>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20">
-                <div class="max-w-4xl animate-fade-in-up">
-                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
-                        <span
-                            class="block text-base md:text-lg font-semibold uppercase tracking-[0.12em] md:tracking-[0.2em] text-accent mb-5">Physiotherapy
-                            &amp; Rehab in Crossfield, AB</span>
-                        Elevating Health.<br />
-                        <span class="text-gradient-light">Restoring Motion.</span>
-                    </h1>
-
-                    <p class="text-xl text-gray-300 mb-8 font-light max-w-2xl leading-relaxed">
-                        Experience expert physiotherapy and specialized rehabilitation. From neuro-rehab to sports
-                        recovery, we provide personalized care for your journey to wellness.
-                    </p>
-
-                    <!-- Claims Banner -->
-                    <div class="flex flex-wrap gap-4 mb-10 text-sm font-medium text-white/90">
-                        <div
-                            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/20">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
-                            MVA Claims Accepted
-                        </div>
-                        <div
-                            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/20">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
-                            WCB Claims Accepted
-                        </div>
-                        <div
-                            class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm border border-white/20">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent"></i>
-                            Direct Billing Available
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="http://canamrehab.janeapp.com/" target="_blank"
-                            class="btn-gold py-4 px-10 text-lg text-center transition duration-300 flex items-center justify-center gap-2">
-                            Schedule Appointment <i data-lucide="external-link" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#contact"
-                            class="group flex items-center justify-center gap-2 bg-secondary hover:bg-[#1f427d] text-white font-semibold py-4 px-8 rounded-full text-lg transition duration-300 shadow-md">
-                            Send General Inquiry <i data-lucide="message-square" class="w-5 h-5 ml-1"></i>
-                        </a>
-                    </div>
+            <div id="conditions" class="hero-map">
+                <div class="hero-map-head">
+                    <h2 class="hero-map-title">Conditions We Treat</h2>
+                    <p>Pick the area that's bothering you to see how we can help.</p>
                 </div>
+
+                <div class="bodymap" data-bodymap>
+                    <svg class="bm-svg" viewBox="0 0 1100 640" role="img" aria-labelledby="bm-svg-title"
+                        data-desktop-viewbox="0 0 1100 640" data-mobile-viewbox="380 0 340 640">
+                        <title id="bm-svg-title">Body map of the areas Can-Am treats</title>
+                        <defs>
+                            <radialGradient id="bm-glow" cx="0.5" cy="0.5" r="0.5">
+                                <stop offset="0" stop-color="#8FB0E6" stop-opacity="0.55" />
+                                <stop offset="0.55" stop-color="#5A82C4" stop-opacity="0.22" />
+                                <stop offset="1" stop-color="#2E5BA8" stop-opacity="0" />
+                            </radialGradient>
+                        </defs>
+
+                        <ellipse cx="550" cy="330" rx="200" ry="330" fill="url(#bm-glow)" />
+                        <ellipse cx="550" cy="628" rx="90" ry="9" fill="#000" opacity="0.28" />
+
+                        <!-- Leader lines (desktop only) -->
+                        <g class="bm-lines" fill="none">
+                            <path data-spot="1" d="M350 32 H470 L552 41" />
+                            <path data-spot="2" d="M350 162 H440 L512 140" />
+                            <path data-spot="3" d="M350 297 H450 L531 177" />
+                            <path data-spot="4" d="M350 442 H460 L533 457" />
+                            <path data-spot="5" d="M750 32 H650 L578 49" />
+                            <path data-spot="6" d="M750 152 H660 L558 115" />
+                            <path data-spot="7" d="M750 272 H670 L554 237" />
+                            <path data-spot="8" d="M750 402 H680 L602 300" />
+                            <g class="bm-line-ends">
+                                <circle data-spot="1" cx="350" cy="32" r="3.5" />
+                                <circle data-spot="2" cx="350" cy="162" r="3.5" />
+                                <circle data-spot="3" cx="350" cy="297" r="3.5" />
+                                <circle data-spot="4" cx="350" cy="442" r="3.5" />
+                                <circle data-spot="5" cx="750" cy="32" r="3.5" />
+                                <circle data-spot="6" cx="750" cy="152" r="3.5" />
+                                <circle data-spot="7" cx="750" cy="272" r="3.5" />
+                                <circle data-spot="8" cx="750" cy="402" r="3.5" />
+                            </g>
+                        </g>
+
+                        <!-- Real model photo (cut out) -->
+                        <image href="assets/images/home/model-back.webp" x="464.7" y="10" width="170.6" height="620"
+                            preserveAspectRatio="xMidYMid meet" />
+
+                        <!-- Hotspots -->
+                        <g class="bm-spots">
+                            <a href="concussion-physiotherapy.html" data-spot="1" aria-label="Head: concussion physiotherapy">
+                                <circle class="bm-ring" cx="552" cy="41" r="17" /><circle class="bm-dot" cx="552" cy="41" r="11" />
+                                <text x="552" y="45">1</text>
+                            </a>
+                            <a href="#service-list" data-spot="2" aria-label="Shoulder and elbow: sports and orthopaedic care">
+                                <circle class="bm-ring" cx="512" cy="140" r="17" /><circle class="bm-dot" cx="512" cy="140" r="11" />
+                                <text x="512" y="144">2</text>
+                            </a>
+                            <a href="#service-cardiac" data-spot="3" aria-label="Heart and lungs: cardiac rehabilitation">
+                                <circle class="bm-ring" cx="531" cy="177" r="17" /><circle class="bm-dot" cx="531" cy="177" r="11" />
+                                <text x="531" y="181">3</text>
+                            </a>
+                            <a href="#service-list" data-spot="4" aria-label="Knee and ankle: sports injury and post-surgical rehab">
+                                <circle class="bm-ring" cx="533" cy="457" r="17" /><circle class="bm-dot" cx="533" cy="457" r="11" />
+                                <text x="533" y="461">4</text>
+                            </a>
+                            <a href="vestibular-physiotherapy.html" data-spot="5" aria-label="Inner ear and balance: vestibular physiotherapy">
+                                <circle class="bm-ring" cx="578" cy="49" r="17" /><circle class="bm-dot" cx="578" cy="49" r="11" />
+                                <text x="578" y="53">5</text>
+                            </a>
+                            <a href="mva-physiotherapy.html" data-spot="6" aria-label="Neck: MVA and whiplash physiotherapy">
+                                <circle class="bm-ring" cx="558" cy="115" r="17" /><circle class="bm-dot" cx="558" cy="115" r="11" />
+                                <text x="558" y="119">6</text>
+                            </a>
+                            <a href="#service-manual" data-spot="7" aria-label="Back and spine: manual therapy">
+                                <circle class="bm-ring" cx="554" cy="237" r="17" /><circle class="bm-dot" cx="554" cy="237" r="11" />
+                                <text x="554" y="241">7</text>
+                            </a>
+                            <a href="pelvic-floor-physiotherapy.html" data-spot="8" aria-label="Hip and pelvis: pelvic floor physiotherapy">
+                                <circle class="bm-ring" cx="602" cy="300" r="17" /><circle class="bm-dot" cx="602" cy="300" r="11" />
+                                <text x="602" y="304">8</text>
+                            </a>
+                        </g>
+                    </svg>
+
+                    <ul class="bm-labels">
+                        <li class="bm-label bm-left" data-spot="1" style="--x:3.636%;--y:3.125%">
+                            <a href="concussion-physiotherapy.html">
+                                <span class="bm-num">1</span>
+                                <span class="bm-area">Head</span>
+                                <span class="bm-name">Concussion Physiotherapy</span>
+                                <span class="bm-conds">Headaches · Post-concussion symptoms · Return to activity</span>
+                                <span class="bm-go">View treatment <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                        <li class="bm-label bm-left" data-spot="2" style="--x:3.636%;--y:23.4375%">
+                            <a href="#service-list">
+                                <span class="bm-num">2</span>
+                                <span class="bm-area">Shoulder &amp; Elbow</span>
+                                <span class="bm-name">Sports &amp; Orthopaedic Care</span>
+                                <span class="bm-conds">Shoulder pain · Sports injuries · Acute injury care</span>
+                                <span class="bm-go">See services <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                        <li class="bm-label bm-left" data-spot="3" style="--x:3.636%;--y:44.53125%">
+                            <a href="#service-cardiac">
+                                <span class="bm-num">3</span>
+                                <span class="bm-area">Heart &amp; Lungs</span>
+                                <span class="bm-name">Cardiac Rehabilitation</span>
+                                <span class="bm-conds">Post-MI care · CHF management · After cardiac surgery</span>
+                                <span class="bm-go">See services <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                        <li class="bm-label bm-left" data-spot="4" style="--x:3.636%;--y:67.1875%">
+                            <a href="#service-list">
+                                <span class="bm-num">4</span>
+                                <span class="bm-area">Knee &amp; Ankle</span>
+                                <span class="bm-name">Sports Injury &amp; Post-Surgical Rehab</span>
+                                <span class="bm-conds">Knee &amp; hip pain · Sprains · Post-surgical care</span>
+                                <span class="bm-go">See services <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                        <li class="bm-label bm-right" data-spot="5" style="--x:69.09%;--y:3.125%">
+                            <a href="vestibular-physiotherapy.html">
+                                <span class="bm-num">5</span>
+                                <span class="bm-area">Inner Ear &amp; Balance</span>
+                                <span class="bm-name">Vestibular Physiotherapy</span>
+                                <span class="bm-conds">Vertigo &amp; BPPV · Dizziness · Motion sensitivity</span>
+                                <span class="bm-go">View treatment <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                        <li class="bm-label bm-right" data-spot="6" style="--x:69.09%;--y:21.875%">
+                            <a href="mva-physiotherapy.html">
+                                <span class="bm-num">6</span>
+                                <span class="bm-area">Neck</span>
+                                <span class="bm-name">MVA &amp; Whiplash Physiotherapy</span>
+                                <span class="bm-conds">Car accident injuries · Whiplash · Neck &amp; back pain</span>
+                                <span class="bm-go">View treatment <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                        <li class="bm-label bm-right" data-spot="7" style="--x:69.09%;--y:40.625%">
+                            <a href="#service-manual">
+                                <span class="bm-num">7</span>
+                                <span class="bm-area">Back &amp; Spine</span>
+                                <span class="bm-name">Manual Therapy &amp; Spinal Care</span>
+                                <span class="bm-conds">Lower back pain · Dry needling · Cupping &amp; IASTM</span>
+                                <span class="bm-go">See services <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                        <li class="bm-label bm-right" data-spot="8" style="--x:69.09%;--y:60.9375%">
+                            <a href="pelvic-floor-physiotherapy.html">
+                                <span class="bm-num">8</span>
+                                <span class="bm-area">Hip &amp; Pelvis</span>
+                                <span class="bm-name">Pelvic Floor Physiotherapy</span>
+                                <span class="bm-conds">Bladder concerns · Pregnancy &amp; postpartum · Pelvic pain</span>
+                                <span class="bm-go">View treatment <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="bm-more">
+                    We also offer <a href="#service-neuro">neuro rehab</a> for stroke, MS and Parkinson's,
+                    <a href="#service-home">home visits</a> and <a href="#service-workplace">workplace ergonomics</a>.
+                </p>
             </div>
         </section>
 
-        <!-- 2. Mission & Vision Cards -->
-        <section class="py-16 bg-white relative -mt-16 z-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div
-                        class="bg-white rounded-3xl shadow-xl overflow-hidden p-8 border-t-4 border-primary hover-lift scroll-reveal">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                                <i data-lucide="target" class="w-6 h-6 text-primary"></i>
-                            </div>
-                            <h2 class="text-2xl font-bold text-primary">Our Mission</h2>
-                        </div>
-                        <p class="text-slate-600 leading-relaxed">
-                            At Can-Am Physical Therapy & Rehab our mission is to provide individualized care to everyone
-                            regardless of age and ability. We empower you to become independent and successful with your
-                            functional goals using science-backed therapeutic techniques.
-                        </p>
+        <!-- 2. About -->
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="wrap">
+                <div class="about-layout">
+                    <div class="about-heading scroll-reveal">
+                        <span class="about-eyebrow">Who we are</span>
+                        <h2 id="about-title">A personal approach to moving well</h2>
                     </div>
 
-                    <div
-                        class="bg-white rounded-3xl shadow-xl overflow-hidden p-8 border-t-4 border-accent hover-lift scroll-reveal delay-100">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                                <i data-lucide="eye" class="w-6 h-6 text-accent"></i>
-                            </div>
-                            <h2 class="text-2xl font-bold text-primary">Our Vision</h2>
-                        </div>
-                        <p class="text-slate-600 leading-relaxed">
-                            Movement Without Pain, Dependence, or Limitations. Everyone deserves the ability to move
-                            freely and confidently. True health is the restoration of function, strength, and control
-                            that allows you to participate fully in daily life.
+                    <figure class="about-img about-img-left scroll-reveal">
+                        <img src="assets/images/home/about-stretch.webp" width="800" height="1100" loading="lazy"
+                            alt="Physiotherapist assisting a patient with a lunge stretch">
+                    </figure>
+
+                    <div class="about-copy scroll-reveal delay-100">
+                        <p>
+                            <span class="about-copy-strong">Can-Am Physical Therapy &amp; Rehab is built on a simple
+                                idea: everyone deserves to move freely and confidently, regardless of age or
+                                ability.</span>
+                            Our Crossfield physiotherapists combine hands-on treatment with science-backed exercise to
+                            restore function, strength and control, whether you visit the clinic, book a home visit or
+                            are recovering after an accident, injury or surgery.
                         </p>
+                        <a href="#therapist" class="about-cta">Meet our therapists <i data-lucide="arrow-right"
+                                class="w-4 h-4"></i></a>
                     </div>
+
+                    <figure class="about-img about-img-right scroll-reveal delay-200">
+                        <img src="assets/images/home/about-hands-on.webp" width="1000" height="1300" loading="lazy"
+                            alt="Physiotherapist applying hands-on treatment to a patient's upper back">
+                    </figure>
                 </div>
             </div>
         </section>
 
         <!-- 3. Services Section -->
-        <section id="services" class="py-24 relative bg-gradient-to-b from-light to-white">
+        <section id="services" class="py-24 relative bg-[var(--color-cream)]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <!-- Section Header -->
-                <div class="text-center mb-16 scroll-reveal">
-                    <div
-                        class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
-                        <i data-lucide="activity" class="w-4 h-4 text-secondary"></i>
-                        <span class="text-secondary font-bold tracking-wider uppercase text-sm">Comprehensive
-                            Care</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-black text-primary mb-6">
-                        Specialized <span class="text-gradient">Rehabilitation</span> Services
-                    </h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                <div class="section-head scroll-reveal">
+                    <span class="eyebrow-pill">Treatments</span>
+                    <h2 class="section-title">Specialized Rehabilitation Services</h2>
+                    <p class="section-sub">
                         We offer a wide range of evidence-based treatments tailored to your specific needs, from
                         neurological conditions to sports injuries.
                     </p>
@@ -765,10 +1541,10 @@
                 <!-- Featured Services Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
                     <!-- Neuro Rehab -->
-                    <div
+                    <div id="service-neuro"
                         class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-l-4 border-primary scroll-reveal">
                         <div class="h-64 overflow-hidden relative">
-                            <img src="assets/images/service_neuro.png" alt="Neuro Rehab"
+                            <img src="assets/images/home/svc-neuro.webp" width="800" height="600" loading="lazy" alt="Physiotherapist guiding a patient through an arm exercise"
                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
@@ -798,10 +1574,10 @@
                     </div>
 
                     <!-- Cardiac Rehab -->
-                    <div
+                    <div id="service-cardiac"
                         class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-l-4 border-secondary scroll-reveal delay-100">
                         <div class="h-64 overflow-hidden relative">
-                            <img src="assets/images/service_cardiac.png" alt="Cardiac Rehab"
+                            <img src="assets/images/home/svc-cardiac.webp" width="800" height="600" loading="lazy" alt="Woman walking on a treadmill"
                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
@@ -831,10 +1607,10 @@
                     </div>
 
                     <!-- Home Care -->
-                    <div
+                    <div id="service-home"
                         class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-l-4 border-accent scroll-reveal delay-200">
                         <div class="h-64 overflow-hidden relative">
-                            <img src="assets/images/home_care_physio_1763801193280.png" alt="Home Care"
+                            <img src="assets/images/home/svc-home.webp" width="800" height="600" loading="lazy" alt="Clinician visiting an older patient at home"
                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
@@ -864,10 +1640,10 @@
                     </div>
 
                     <!-- Workplace Analysis -->
-                    <div
+                    <div id="service-workplace"
                         class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-l-4 border-primary scroll-reveal">
                         <div class="h-64 overflow-hidden relative">
-                            <img src="assets/images/workplace_ergonomics_1763801210057.png" alt="Workplace Ergonomics"
+                            <img src="assets/images/home/svc-workplace.webp" width="800" height="600" loading="lazy" alt="Person working at a desk in an ergonomic chair"
                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
@@ -897,10 +1673,10 @@
                     </div>
 
                     <!-- Advanced Manual Therapy -->
-                    <div
+                    <div id="service-manual"
                         class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-l-4 border-secondary scroll-reveal delay-100">
                         <div class="h-64 overflow-hidden relative">
-                            <img src="assets/images/service_manual.png" alt="Manual Therapy"
+                            <img src="assets/images/home/svc-manual.webp" width="800" height="600" loading="lazy" alt="Physiotherapist treating a patient on a treatment table"
                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
@@ -930,10 +1706,10 @@
                     </div>
 
                     <!-- Vestibular Rehab -->
-                    <div
+                    <div id="service-vestibular"
                         class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-l-4 border-accent scroll-reveal delay-200">
                         <div class="h-64 overflow-hidden relative">
-                            <img src="assets/images/vestibular_rehab_1763801256707.png" alt="Vestibular Rehab"
+                            <img src="assets/images/home/svc-vestibular.webp" width="800" height="600" loading="lazy" alt="Man doing balance training on a half ball"
                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
@@ -1010,7 +1786,7 @@
                             <!-- Image container with mask fade to transparent on the left so it blends seamlessly into the dark background -->
                             <div class="w-full h-full relative"
                                 style="-webkit-mask-image: linear-gradient(to right, transparent, black 15%); mask-image: linear-gradient(to right, transparent, black 15%);">
-                                <img src="assets/images/home_care_physio_1763801193280.png" alt="Home Care"
+                                <img src="assets/images/home/home-visit.webp" width="800" height="800" loading="lazy" alt="Caregiver helping an older woman walk with a walker at home"
                                     class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal hover:opacity-100 transition duration-700">
                                 <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/40 to-transparent">
                                 </div>
@@ -1020,7 +1796,7 @@
                 </div>
 
                 <!-- Complete Checklist Box -->
-                <div
+                <div id="service-list"
                     class="bg-white shadow-2xl overflow-hidden scroll-reveal rounded-3xl p-10 border-t-8 border-primary">
                     <div class="text-center mb-10">
                         <h3 class="text-3xl font-black text-primary mb-4">Complete Range of Therapy Services</h3>
@@ -1111,21 +1887,15 @@
 
         <!-- 4. Meet The Team Section (Ankit + Sharan) -->
         <section id="therapist"
-            class="team-section py-24 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden"
+            class="team-section py-24 bg-white relative overflow-hidden"
             aria-labelledby="team-title">
             <div class="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse-slow"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16 scroll-reveal">
-                    <div
-                        class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-                        <i data-lucide="users" class="w-4 h-4 text-primary"></i>
-                        <span class="text-primary font-bold tracking-wider uppercase text-sm">Expert Care</span>
-                    </div>
-                    <h2 id="team-title" class="text-4xl md:text-5xl font-black text-primary mb-6">
-                        Know Your <span class="text-gradient">Therapists</span>
-                    </h2>
-                    <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                <div class="section-head scroll-reveal">
+                    <span class="eyebrow-pill">Therapists</span>
+                    <h2 id="team-title" class="section-title">Know Your Therapists</h2>
+                    <p class="section-sub">
                         One-on-one assessment and rehabilitation at our Crossfield clinic.
                     </p>
                 </div>
@@ -1578,6 +2348,30 @@
             });
         }, observerOptions);
         document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Body map: crop the SVG to the figure on small screens and link labels to hotspots
+        (function () {
+            const map = document.querySelector('[data-bodymap]');
+            if (!map) return;
+
+            const svg = map.querySelector('.bm-svg');
+            const wide = window.matchMedia('(min-width: 1024px)');
+            const setViewBox = () => {
+                svg.setAttribute('viewBox', wide.matches ? svg.dataset.desktopViewbox : svg.dataset.mobileViewbox);
+            };
+            setViewBox();
+            wide.addEventListener('change', setViewBox);
+
+            const setActive = (spot, on) => {
+                map.querySelectorAll('[data-spot="' + spot + '"]').forEach(el => el.classList.toggle('is-active', on));
+            };
+
+            map.querySelectorAll('.bm-label, .bm-spots a').forEach(el => {
+                const spot = el.dataset.spot;
+                ['mouseenter', 'focusin'].forEach(evt => el.addEventListener(evt, () => setActive(spot, true)));
+                ['mouseleave', 'focusout'].forEach(evt => el.addEventListener(evt, () => setActive(spot, false)));
+            });
+        })();
 
         // Form Submission Logic
         const form = document.getElementById('contact-form');
