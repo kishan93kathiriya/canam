@@ -143,6 +143,7 @@
 
     <link rel="stylesheet" href="assets/css/header.css">
     <script src="assets/js/header.js" defer></script>
+    <script src="assets/js/lead-tracking.js" defer></script>
 
     <style>
         :root {
@@ -985,6 +986,9 @@
                     if (!res.ok) throw new Error("Failed");
                     statusEl.className = "form-status ok";
                     statusEl.textContent = "Thanks! We'll contact you shortly.";
+                    if (window.canamTrackLead) {
+                        window.canamTrackLead({ form_name: "website_inquiry", inquiry_type: form.elements.service.value || "not_selected" });
+                    }
                     form.reset();
                 } catch (err) {
                     statusEl.className = "form-status err";
