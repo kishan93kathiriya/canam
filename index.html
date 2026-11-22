@@ -136,7 +136,7 @@
     }
     </script>
     <!-- Photos: Unsplash (unsplash.com/license), self-hosted in assets/images/home/ -->
-    <link rel="preload" as="image" href="assets/images/home/hero.webp" type="image/webp" />
+    <link rel="preload" as="image" href="assets/images/home/hero-clinic.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -200,11 +200,12 @@
         .btn-arrow .circle { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; }
 
         /* ---------- Hero ---------- */
-        .hero { position: relative; min-height: 740px; display: flex; flex-direction: column; color: #fff; overflow: hidden; background: #1c1a18; }
-        .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 35%; }
-        .hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,16,28,.82) 0%, rgba(10,16,28,.5) 42%, rgba(10,16,28,.08) 72%), linear-gradient(0deg, rgba(10,16,28,.6) 0%, rgba(10,16,28,0) 50%); }
-        .hero-content { position: relative; z-index: 2; margin-top: auto; padding: 96px clamp(20px, 4vw, 56px) 64px; max-width: 800px; }
-        .hero h1 { font-size: clamp(44px, 6.2vw, 84px); font-weight: 600; line-height: 1.02; letter-spacing: -.02em; }
+        .hero { position: relative; min-height: 740px; display: flex; flex-direction: column; justify-content: center; color: #fff; overflow: hidden; background: var(--ink); }
+        /* bright photo on the right, fading into the navy text panel */
+        .hero-img { position: absolute; top: 0; right: 0; width: 58%; height: 100%; object-fit: cover; object-position: 50% 28%; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 26%); mask-image: linear-gradient(90deg, transparent 0%, #000 26%); }
+        .hero-scrim { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 0% 50%, rgba(46,91,168,.35), transparent 70%); }
+        .hero-content { position: relative; z-index: 2; padding: 88px clamp(20px, 4vw, 56px); max-width: min(780px, 52vw); }
+        .hero h1 { font-size: clamp(44px, 5.4vw, 76px); font-weight: 600; line-height: 1.02; letter-spacing: -.02em; }
         .hero-kicker { display: block; margin-bottom: 18px; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); line-height: 1.4; }
         .hero-sub { margin-top: 22px; max-width: 540px; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,.86); }
         .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
@@ -363,7 +364,9 @@
 
         @media (max-width: 760px) {
             .section { padding: 88px 20px; }
-            .hero { min-height: 640px; }
+            .hero { min-height: 0; justify-content: flex-end; padding-top: 300px; }
+            .hero-img { width: 100%; height: 380px; object-position: 55% 20%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+            .hero-content { padding-top: 0; padding-bottom: 56px; max-width: none; }
             .bm-col-left { text-align: left; }
             .bm-col-left .bm-row { flex-direction: row; }
             .bm-col { gap: 28px; }
@@ -486,8 +489,8 @@
 
     <!-- Hero -->
     <section class="hero" id="top" aria-labelledby="hero-title">
-        <img class="hero-img" src="assets/images/home/hero.webp" width="2000" height="1333" fetchpriority="high"
-            alt="Physiotherapist treating a patient's shoulder">
+        <img class="hero-img" src="assets/images/home/hero-clinic.webp" width="2000" height="1333" fetchpriority="high"
+            alt="Smiling physiotherapist treating a patient's shoulder on a treatment table">
         <div class="hero-scrim" aria-hidden="true"></div>
 
 
@@ -647,7 +650,7 @@
                         </div>
                     </article>
                     <article class="svc" data-cat="clinic">
-                        <img src="assets/images/home/svc-manual.webp" width="800" height="600" loading="lazy" alt="Physiotherapist treating a patient on a treatment table">
+                        <img src="assets/images/home/svc-manual.webp" width="800" height="600" loading="lazy" alt="Physiotherapist assessing a patient's knee on a treatment table">
                         <div class="svc-body">
                             <h3>Advanced Therapy</h3>
                             <p>Specialized hands-on techniques including IASTM, Functional Dry Needling, Cupping, and Manual Therapy.</p>
