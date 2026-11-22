@@ -141,6 +141,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="assets/css/header.css">
+    <script src="assets/js/header.js" defer></script>
+
     <style>
         :root {
             --ink: #0D1B33;
@@ -165,7 +168,7 @@
         p { margin: 0; }
         a { color: var(--navy); }
         a:hover { color: var(--ink); }
-        [id] { scroll-margin-top: 24px; }
+        [id] { scroll-margin-top: 96px; }
         ul { margin: 0; padding: 0; list-style: none; }
         button { font: inherit; }
         :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
@@ -196,24 +199,10 @@
         .btn-arrow .circle { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; }
 
         /* ---------- Hero ---------- */
-        .hero { position: relative; min-height: 820px; display: flex; flex-direction: column; color: #fff; overflow: hidden; background: #1c1a18; }
+        .hero { position: relative; min-height: 740px; display: flex; flex-direction: column; color: #fff; overflow: hidden; background: #1c1a18; }
         .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 35%; }
         .hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,16,28,.82) 0%, rgba(10,16,28,.5) 42%, rgba(10,16,28,.08) 72%), linear-gradient(0deg, rgba(10,16,28,.6) 0%, rgba(10,16,28,0) 50%); }
-        .topbar { position: relative; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 28px clamp(20px, 4vw, 56px); }
-        .topbar .logo img { height: 64px; width: auto; }
-        .nav-pill { display: flex; align-items: center; gap: 2px; padding: 6px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
-        .nav-pill a { color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 10px 18px; border-radius: 999px; transition: background-color .2s ease; }
-        .nav-pill a:hover { background: rgba(255,255,255,.16); color: #fff; }
-        .topbar-actions { display: flex; align-items: center; gap: 10px; }
-        .book-pill { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; padding: 6px 6px 6px 20px; border-radius: 999px; background: #fff; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; }
-        .book-pill:hover { color: var(--ink); background: var(--gold-soft); }
-        .book-pill .circle { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; }
-        .menu-btn { display: none; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.14); color: #fff; cursor: pointer; align-items: center; justify-content: center; }
-        .mobile-nav { position: absolute; z-index: 6; top: 96px; left: 16px; right: 16px; padding: 10px; border-radius: 20px; background: #fff; box-shadow: 0 24px 48px -12px rgba(0,0,0,.35); }
-        .mobile-nav[hidden] { display: none; }
-        .mobile-nav a { display: block; padding: 14px 16px; border-radius: 12px; color: var(--ink); font-weight: 600; text-decoration: none; }
-        .mobile-nav a:hover { background: var(--grey); }
-        .hero-content { position: relative; z-index: 2; margin-top: auto; padding: 0 clamp(20px, 4vw, 56px) 64px; max-width: 800px; }
+        .hero-content { position: relative; z-index: 2; margin-top: auto; padding: 96px clamp(20px, 4vw, 56px) 64px; max-width: 800px; }
         .hero h1 { font-size: clamp(44px, 6.2vw, 84px); font-weight: 600; line-height: 1.02; letter-spacing: -.02em; }
         .hero-kicker { display: block; margin-bottom: 18px; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-soft); line-height: 1.4; }
         .hero-sub { margin-top: 22px; max-width: 540px; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,.86); }
@@ -370,16 +359,10 @@
         .footer-col .btn:hover { text-decoration: none; }
         .footer-bottom { margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.14); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: rgba(255,255,255,.65); }
 
-        @media (max-width: 960px) {
-            .nav-pill { display: none; }
-            .menu-btn { display: inline-flex; }
-        }
 
         @media (max-width: 760px) {
             .section { padding: 88px 20px; }
-            .hero { min-height: 720px; }
-            .topbar .logo img { height: 52px; }
-            .book-pill { padding-left: 16px; font-size: 13px; }
+            .hero { min-height: 640px; }
             .bm-col-left { text-align: left; }
             .bm-col-left .bm-row { flex-direction: row; }
             .bm-col { gap: 28px; }
@@ -388,12 +371,6 @@
             .card-photo { min-height: 560px; }
             .range { padding: 28px 24px; }
             .closing { min-height: 560px; }
-        }
-
-        @media (max-width: 400px) {
-            .topbar { padding-left: 16px; padding-right: 16px; gap: 10px; }
-            .topbar .logo img { height: 44px; }
-            .book-pill { gap: 8px; padding-left: 14px; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -406,42 +383,110 @@
 <body>
     <a class="skip" href="#main">Skip to content</a>
 
+    <header class="cam-site-header" id="canam-site-header">
+        <div class="cam-header-shell">
+            <a class="cam-brand" href="index.html" aria-label="Can-Am Physical Therapy home" aria-current="page">
+                <img src="assets/images/logo-short.webp" alt="Can-Am Physical Therapy &amp; Rehab" width="168" height="140">
+            </a>
+
+            <nav class="cam-desktop-nav" aria-label="Primary navigation">
+                <details class="cam-dropdown">
+                    <summary class="cam-dropdown-summary">
+                        Services
+                        <svg class="cam-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+
+                    <div class="cam-dropdown-menu">
+                        <a class="cam-dropdown-link" href="#treatments">
+                            <strong>All Services</strong>
+                            <span>View physiotherapy and rehabilitation services.</span>
+                        </a>
+
+                        <div class="cam-dropdown-divider"></div>
+
+                        <a class="cam-dropdown-link" href="concussion-physiotherapy.html">
+                            <strong>Concussion Physiotherapy</strong>
+                            <span>Assessment and rehab after a concussion.</span>
+                        </a>
+                        <a class="cam-dropdown-link" href="vestibular-physiotherapy.html">
+                            <strong>Vestibular Physiotherapy</strong>
+                            <span>Care for dizziness, vertigo and balance problems.</span>
+                        </a>
+                        <a class="cam-dropdown-link" href="pelvic-floor-physiotherapy.html">
+                            <strong>Pelvic Floor Physiotherapy</strong>
+                            <span>Pelvic health care for women and men.</span>
+                        </a>
+                        <a class="cam-dropdown-link" href="mva-physiotherapy.html">
+                            <strong>MVA Physiotherapy</strong>
+                            <span>Rehabilitation after a motor vehicle accident.</span>
+                        </a>
+                        <a class="cam-dropdown-link" href="mva-physiotherapy-airdrie.html">
+                            <strong>MVA Physiotherapy for Airdrie</strong>
+                            <span>Car accident rehab for Airdrie drivers.</span>
+                        </a>
+                        <a class="cam-dropdown-link" href="physiotherapy-carstairs.html">
+                            <strong>Physiotherapy near Carstairs</strong>
+                            <span>Our Crossfield clinic, minutes from Carstairs.</span>
+                        </a>
+                    </div>
+                </details>
+
+                <a class="cam-nav-link" href="#about">About</a>
+                <a class="cam-nav-link" href="#team">Meet the Team</a>
+                <a class="cam-nav-link" href="#contact">Contact</a>
+            </nav>
+
+            <div class="cam-header-actions">
+                <a class="cam-phone-link" href="tel:+15878991653" aria-label="Call Can-Am at 587-899-1653">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+                    587&#8209;899&#8209;1653
+                </a>
+
+                <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">Book Appointment</a>
+
+                <button class="cam-menu-button" id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <nav class="cam-mobile-nav hidden" id="mobile-menu" aria-label="Mobile navigation">
+            <div class="cam-mobile-nav-inner">
+                <details class="cam-mobile-dropdown">
+                    <summary>
+                        <span>Services</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </summary>
+
+                    <div class="cam-mobile-dropdown-links">
+                        <a class="cam-mobile-dropdown-link" href="#treatments">All Services</a>
+                        <a class="cam-mobile-dropdown-link" href="concussion-physiotherapy.html">Concussion Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="vestibular-physiotherapy.html">Vestibular Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="pelvic-floor-physiotherapy.html">Pelvic Floor Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="mva-physiotherapy.html">MVA Physiotherapy</a>
+                        <a class="cam-mobile-dropdown-link" href="mva-physiotherapy-airdrie.html">MVA Physiotherapy for Airdrie</a>
+                        <a class="cam-mobile-dropdown-link" href="physiotherapy-carstairs.html">Physiotherapy near Carstairs</a>
+                    </div>
+                </details>
+
+                <a class="cam-nav-link" href="#about">About</a>
+                <a class="cam-nav-link" href="#team">Meet the Team</a>
+                <a class="cam-nav-link" href="#contact">Contact</a>
+
+                <div class="cam-mobile-actions">
+                    <a class="cam-mobile-call" href="tel:+15878991653">Call&nbsp;587&#8209;899&#8209;1653</a>
+                    <a class="cam-book-button" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">Book Appointment</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <!-- Hero -->
     <section class="hero" id="top" aria-labelledby="hero-title">
         <img class="hero-img" src="assets/images/home/hero.webp" width="2000" height="1333" fetchpriority="high"
             alt="Physiotherapist treating a patient's shoulder">
         <div class="hero-scrim" aria-hidden="true"></div>
 
-        <header class="topbar">
-            <a class="logo" href="index.html" aria-label="Can-Am Physical Therapy &amp; Rehab home">
-                <img src="assets/images/home/logo-white.png" width="240" height="200" alt="Can-Am Physical Therapy &amp; Rehab">
-            </a>
-            <nav class="nav-pill" aria-label="Main">
-                <a href="#conditions">Conditions</a>
-                <a href="#treatments">Treatments</a>
-                <a href="#team">Our Team</a>
-                <a href="physiotherapy-carstairs.html">Carstairs</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div class="topbar-actions">
-                <a class="book-pill" href="https://canamrehab.janeapp.com/" target="_blank" rel="noopener">
-                    <span class="label">Book Appointment</span>
-                    <span class="circle" aria-hidden="true">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M8 7h9v9"></path></svg>
-                    </span>
-                </a>
-                <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
-                </button>
-            </div>
-        </header>
-        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
-            <a href="#conditions">Conditions</a>
-            <a href="#treatments">Treatments</a>
-            <a href="#team">Our Team</a>
-            <a href="physiotherapy-carstairs.html">Carstairs</a>
-            <a href="#contact">Contact</a>
-        </nav>
 
         <div class="hero-content">
             <h1 id="hero-title">
@@ -890,19 +935,6 @@
     <script>
         (function () {
             "use strict";
-
-            // Mobile menu
-            var menuBtn = document.querySelector(".menu-btn");
-            var mobileNav = document.getElementById("mobile-nav");
-            function setMenu(open) {
-                mobileNav.hidden = !open;
-                menuBtn.setAttribute("aria-expanded", String(open));
-                menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-            }
-            menuBtn.addEventListener("click", function () { setMenu(mobileNav.hidden); });
-            mobileNav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
-            document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !mobileNav.hidden) { setMenu(false); menuBtn.focus(); } });
-            document.addEventListener("click", function (e) { if (!mobileNav.hidden && !mobileNav.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false); });
 
             // Body map: highlight a dot and its label together
             var map = document.querySelector("[data-bodymap]");
