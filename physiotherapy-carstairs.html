@@ -73,10 +73,16 @@
           ],
           "openingHoursSpecification": [
             {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-              "opens": "09:00",
-              "closes": "19:00"
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "19:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "09:00",
+                "closes": "19:00"
             }
           ]
         },
@@ -1557,7 +1563,8 @@
                         <h3>Clinic hours</h3>
                         <p>Online booking is available at any time. Appointment availability varies.</p>
                         <ul class="hours-list">
-                            <li><span>Monday–Saturday</span><strong>9:00 AM–7:00 PM</strong></li>
+                            <li><span>Monday–Friday</span><strong>8:00 AM–7:00 PM</strong></li>
+                            <li><span>Saturday</span><strong>9:00 AM–7:00 PM</strong></li>
                             <li><span>Sunday</span><strong>Closed</strong></li>
                         </ul>
                     </div>
